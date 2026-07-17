@@ -1,0 +1,237 @@
+.widget {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  padding: clamp(26px, 4vw, 44px);
+}
+.head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 26px;
+}
+.head h2 {
+  font-size: clamp(1.5rem, 2.8vw, 2.1rem);
+  margin-bottom: 8px;
+}
+.head p {
+  color: var(--muted);
+  margin: 0;
+}
+.stamp {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.76rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--green-deep);
+  background: var(--mint);
+  border: 1px solid var(--sage);
+  padding: 7px 14px;
+  border-radius: var(--radius);
+  margin-bottom: 14px;
+}
+.reset {
+  flex-shrink: 0;
+  background: none;
+  border: 0;
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.reset:hover {
+  color: var(--green-deep);
+}
+
+/* rail */
+.rail {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.railBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 16px;
+  background: var(--ice);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--muted);
+  transition: all 0.2s;
+}
+.railBtn span {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid var(--line);
+  font-size: 0.8rem;
+}
+.railActive {
+  background: var(--mint);
+  border-color: var(--green);
+  color: var(--ink);
+}
+.railActive span {
+  border-color: var(--green);
+  color: var(--green-deep);
+}
+.railDone span {
+  background: var(--green);
+  border-color: var(--green);
+  color: #fff;
+}
+
+.pane {
+  animation: pane 0.3s ease-out;
+}
+@keyframes pane {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pane {
+    animation: none;
+  }
+}
+.pane h3 {
+  margin-bottom: 6px;
+}
+.helper {
+  color: var(--muted);
+  font-size: 0.96rem;
+  margin-bottom: 18px;
+}
+
+.options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+.option {
+  display: grid;
+  gap: 5px;
+  text-align: left;
+  padding: 18px 20px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  font: inherit;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s, background 0.2s;
+}
+.option strong {
+  font-family: var(--font-display);
+  color: var(--ink);
+  font-size: 1.04rem;
+}
+.option small {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+.option:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-sm);
+  border-color: var(--sage);
+}
+.optionActive {
+  background: var(--mint);
+  border-color: var(--green);
+  box-shadow: 0 0 0 1px var(--green) inset;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.back {
+  background: none;
+  border: 0;
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.back:disabled {
+  opacity: 0.4;
+}
+.back:not(:disabled):hover {
+  color: var(--green-deep);
+}
+
+/* result */
+.result {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 26px;
+}
+.resultCol {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--ice);
+  padding: 22px;
+}
+.resultLabel {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--green-deep);
+  margin-bottom: 14px;
+}
+.resultCol ul {
+  display: grid;
+  gap: 11px;
+}
+.resultCol li {
+  display: flex;
+  gap: 9px;
+  align-items: flex-start;
+  font-size: 0.94rem;
+  color: var(--text);
+}
+.resultCol li svg {
+  color: var(--green-deep);
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+.resultCol strong {
+  color: var(--ink);
+}
+
+@media (max-width: 760px) {
+  .options,
+  .result {
+    grid-template-columns: 1fr;
+  }
+  .actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+  .actions .btn {
+    width: 100%;
+  }
+}

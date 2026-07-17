@@ -1,0 +1,69 @@
+.form {
+  display: grid;
+  gap: 12px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 26px;
+  box-shadow: var(--shadow-sm);
+}
+.title {
+  font-size: 1.15rem;
+  margin-bottom: 2px;
+}
+.sub {
+  font-size: 0.86rem;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.form input,
+.form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid var(--line);
+  border-radius: 11px;
+  font: inherit;
+  font-size: 0.93rem;
+  color: var(--ink);
+  background: var(--ice);
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+}
+.form input:focus,
+.form textarea:focus {
+  outline: none;
+  border-color: var(--green);
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(30, 165, 103, 0.12);
+}
+.form textarea {
+  resize: vertical;
+}
+
+.done {
+  text-align: center;
+  background: var(--mint);
+  border: 1px solid var(--sage);
+  border-radius: var(--radius-lg);
+  padding: 30px 22px;
+}
+.doneIcon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--green-deep);
+}
+.done strong {
+  display: block;
+  font-family: var(--font-display);
+  color: var(--ink);
+  font-size: 1.05rem;
+  margin-bottom: 4px;
+}
+.done p {
+  font-size: 0.9rem;
+  color: var(--text);
+}

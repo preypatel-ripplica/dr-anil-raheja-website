@@ -1,0 +1,416 @@
+/* ==========================================================================
+   Dr. Anil Raheja — orthopedic design system. See DESIGN_TASTE.md.
+   Deep navy ink + vital green on ice/white. Space Grotesk + IBM Plex Sans.
+   ========================================================================== */
+
+:root {
+  /* Brand */
+  --ice: #f4f8f7;
+  --mint: #e6f4ec;
+  --sage: #cfe8da;
+  --green: #1ea567;
+  --green-deep: #0e7a4a;
+  --navy: #0b1f3a;
+  --navy-soft: #12315a;
+
+  /* Ink & neutrals (cool) */
+  --ink: #10233e;
+  --text: #42526b;
+  --muted: #7787a0;
+  --line: #e2ece7;
+  --line-strong: #cddbd3;
+  --amber: #f2a93b;
+
+  /* Legacy aliases so shared components (Faq, VideoCard, PhotoGallery) work */
+  --teal: var(--green);
+  --pink: var(--green);
+  --blue: var(--navy);
+  --blue-dark: var(--navy);
+  --bg: #ffffff;
+  --bg-alt: var(--mint);
+  --bg-soft: var(--ice);
+  --border: var(--line);
+  --font-heading: var(--font-body);
+
+  /* Type */
+  --font-display: var(--font-grotesk), "Space Grotesk", system-ui, sans-serif;
+  --font-body: var(--font-plex), "IBM Plex Sans", system-ui, sans-serif;
+
+  /* Shape & depth — calm, premium, precise (subtle corners, soft shadows) */
+  --radius: 6px;
+  --radius-lg: 10px;
+  --radius-xl: 16px;
+  --bw: 1px; /* standard hairline weight */
+  --shadow-sm: 0 4px 16px rgba(11, 31, 58, 0.06);
+  --shadow-md: 0 16px 40px rgba(11, 31, 58, 0.09);
+  --shadow-lg: 0 30px 64px rgba(11, 31, 58, 0.13);
+
+  /* Signature gradients — used softly on backgrounds, never as loud blocks */
+  --grad-green: linear-gradient(120deg, #23b673 0%, #12977c 100%);
+  --grad-green-deep: linear-gradient(120deg, #189a5e 0%, #0b7a68 100%);
+  --grad-ink: linear-gradient(160deg, #0b1f3a 0%, #10314f 60%, #0e3a4a 100%);
+  --grad-mint: linear-gradient(165deg, #f2f9f5 0%, #e6f4ec 55%, #dcefe4 100%);
+  --grad-hairline: linear-gradient(90deg, var(--green), rgba(30, 165, 103, 0));
+  --font-grotesk: "Space Grotesk";
+  --font-plex: "IBM Plex Sans";
+
+  /* Layout */
+  --container: 1200px;
+  --gutter: 24px;
+  --header-h: 88px;
+}
+
+/* ------------------------------ reset ---------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  font-family: var(--font-body);
+  color: var(--text);
+  background: #fff;
+  line-height: 1.7;
+  font-size: 17.5px; /* bumped for readability */
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button {
+  font: inherit;
+  cursor: pointer;
+}
+ul,
+ol {
+  padding: 0;
+  list-style: none;
+}
+
+/* --------------------------- typography -------------------------------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  color: var(--ink);
+  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+h1 {
+  font-size: clamp(2.6rem, 5vw, 4.2rem);
+}
+h2 {
+  font-size: clamp(1.9rem, 3.4vw, 2.9rem);
+}
+h3 {
+  font-size: clamp(1.3rem, 2vw, 1.65rem);
+  line-height: 1.25;
+}
+p {
+  margin: 0 0 1rem;
+}
+p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------------------------- utilities -------------------------------- */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+.section {
+  padding-block: clamp(60px, 8.5vw, 112px);
+}
+.section--ice {
+  background: var(--ice);
+}
+.section--mint {
+  background: var(--grad-mint);
+}
+.section--navy {
+  background: var(--grad-ink);
+}
+/* hairline rule between sections (subtle, not thick) */
+.section--ruled {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+/* Calm section label — uppercase, with a short green rule. Reassuring, quiet. */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.82rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--green-deep);
+  margin-bottom: 20px;
+}
+.eyebrow::before {
+  content: "";
+  width: 26px;
+  height: 2px;
+  background: var(--green);
+}
+/* on-dark variant */
+.eyebrow--invert {
+  color: #7fddb2;
+}
+.eyebrow--invert::before {
+  background: #7fddb2;
+}
+
+/* Section heads are left-aligned and editorial-technical by default */
+.section-head {
+  max-width: 760px;
+  margin: 0 0 52px;
+  text-align: left;
+}
+.section-head p {
+  color: var(--muted);
+  margin-top: 14px;
+  font-size: 1.06rem;
+  max-width: 560px;
+}
+.section-head--center {
+  margin-inline: auto;
+  text-align: center;
+}
+.section-head--center .eyebrow {
+  justify-content: center;
+}
+.section-head--center .eyebrow::after {
+  display: none;
+}
+.section-head--center p {
+  margin-inline: auto;
+}
+.accent {
+  color: var(--green);
+}
+/* gradient ink for a single emphasized word */
+.grad-text {
+  background: var(--grad-green);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+/* emphasized word — quiet green, keeps the calm tone */
+.mark-block {
+  color: var(--green-deep);
+}
+/* large confident display numerals for stats */
+.meganum {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(3.2rem, 6.5vw, 5.6rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+}
+
+/* ----------------------------- buttons ---------------------------------
+   Calm, solid, confident. Subtle corners, soft shadow, gentle lift on hover. */
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  padding: 16px 28px;
+  border-radius: var(--radius);
+  border: 1.5px solid transparent;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease,
+    color 0.2s ease, border-color 0.2s ease;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.btn svg {
+  transition: transform 0.2s ease;
+}
+.btn:hover {
+  transform: translateY(-2px);
+}
+.btn:hover svg {
+  transform: translateX(3px);
+}
+.btn:active {
+  transform: translateY(0);
+}
+.btn--primary {
+  background: var(--grad-green);
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(30, 165, 103, 0.26);
+}
+.btn--primary:hover {
+  box-shadow: 0 16px 32px rgba(14, 122, 74, 0.3);
+}
+.btn--navy {
+  background: var(--navy);
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(11, 31, 58, 0.22);
+}
+.btn--navy:hover {
+  background: var(--navy-soft);
+  box-shadow: 0 16px 32px rgba(11, 31, 58, 0.28);
+}
+.btn--outline {
+  background: #fff;
+  color: var(--ink);
+  border-color: var(--line-strong);
+  box-shadow: var(--shadow-sm);
+}
+.btn--outline:hover {
+  border-color: var(--green);
+  color: var(--green-deep);
+}
+.btn--light {
+  background: #fff;
+  color: var(--navy);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.16);
+}
+.btn--light:hover {
+  color: var(--green-deep);
+}
+/* quiet text link with a growing underline */
+.btn--ghost {
+  padding: 8px 2px;
+  background: none;
+  color: var(--green-deep);
+  border: 0;
+  font-size: 1.02rem;
+}
+.btn--ghost::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 2px;
+  background: var(--green);
+  transform: scaleX(0.3);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+.btn--ghost:hover {
+  transform: none;
+}
+.btn--ghost:hover::after {
+  transform: scaleX(1);
+}
+.btn--ghost-dark {
+  color: #9fe0c2;
+}
+/* legacy alias */
+.btn--pink {
+  background: var(--grad-green);
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(30, 165, 103, 0.26);
+}
+
+/* --------------------------- rich content ------------------------------ */
+.prose h2,
+.prose h3 {
+  margin-top: 1.8em;
+  margin-bottom: 0.55em;
+}
+.prose h2:first-child,
+.prose h3:first-child {
+  margin-top: 0;
+}
+.prose p {
+  color: var(--text);
+  margin-bottom: 1.15rem;
+}
+.prose ul {
+  list-style: none;
+  margin: 0 0 1.3rem;
+  display: grid;
+  gap: 12px;
+}
+.prose ul li {
+  position: relative;
+  padding-left: 30px;
+  color: var(--text);
+}
+.prose ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--mint);
+  box-shadow: inset 0 0 0 4px var(--green);
+}
+.prose strong {
+  color: var(--ink);
+}
+
+/* ------------------------ motion / reveal system ------------------------ */
+/* Elements with data-reveal start hidden and slide up when .is-visible is
+   added by the <Reveal> observer. Children can stagger via --reveal-delay. */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.55s ease-out, transform 0.55s ease-out;
+  transition-delay: var(--reveal-delay, 0s);
+}
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+:focus-visible {
+  outline: 3px solid rgba(30, 165, 103, 0.5);
+  outline-offset: 2px;
+}

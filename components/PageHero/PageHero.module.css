@@ -1,0 +1,49 @@
+.hero {
+  position: relative;
+  background: #fff;
+  padding: clamp(48px, 6vw, 80px) 0 clamp(32px, 4vw, 52px);
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+}
+/* faint corner grid — echoes the home hero's blueprint texture */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40%;
+  height: 100%;
+  background-image:
+    linear-gradient(rgba(16, 35, 62, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16, 35, 62, 0.05) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(closest-side at 100% 0%, #000, transparent);
+  pointer-events: none;
+}
+.crumbs {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--muted);
+  margin-bottom: 22px;
+}
+.crumbs a {
+  color: var(--green-deep);
+}
+.crumbs a:hover {
+  text-decoration: underline;
+}
+.title {
+  position: relative;
+  max-width: 820px;
+  font-size: clamp(2.2rem, 4.6vw, 3.5rem);
+}
+.subtitle {
+  position: relative;
+  color: var(--text);
+  font-size: 1.06rem;
+  max-width: 620px;
+  margin-top: 16px;
+}
