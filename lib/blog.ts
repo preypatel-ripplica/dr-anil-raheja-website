@@ -29,7 +29,9 @@ export type Article = {
   source: string;
   body: Block[];
   related: string; // treatment slug this article maps to
-  selfCheck: SelfCheck;
+  selfCheck?: SelfCheck; // optional: CMS entries may omit the checklist
+  seoTitle?: string;
+  metaDescription?: string;
 };
 
 export const articles: Article[] = [

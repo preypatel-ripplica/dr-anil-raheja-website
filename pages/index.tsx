@@ -1,9 +1,11 @@
+import type { GetStaticProps } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./page.module.css";
 import { treatments, contact, clinics, site } from "@/lib/site";
-import { reviews, reviewsSummary, featureVideos, generalFaqs } from "@/lib/content";
-import { articles as blogPosts } from "@/lib/blog";
+import { reviews, reviewsSummary, generalFaqs } from "@/lib/content";
+import type { Article } from "@/lib/blog";
+import { getArticles, getVideos, type VideoItem } from "@/lib/cms";
 import BookCta from "@/components/BookCta/BookCta";
 import SymptomGuide from "@/components/SymptomGuide/SymptomGuide";
 import VideoCard from "@/components/VideoCard/VideoCard";
@@ -29,7 +31,21 @@ import {
 
 const serviceIcons = [Joint, Bone, Spine, Tool, Pulse];
 
-export default function HomePage() {
+export const getStaticProps: GetStaticProps<{
+  blogPosts: Article[];
+  featureVideos: VideoItem[];
+}> = async () => {
+  const [blogPosts, videos] = await Promise.all([getArticles(), getVideos()]);
+  return { props: { blogPosts, featureVideos: videos.featured } };
+};
+
+export default function HomePage({
+  blogPosts,
+  featureVideos,
+}: {
+  blogPosts: Article[];
+  featureVideos: VideoItem[];
+}) {
   return (
     <>
       {/* ============ HERO — calm, reassuring split ============ */}
@@ -335,9 +351,9 @@ export default function HomePage() {
             </Link>
           </Reveal>
           <div className={styles.videoGrid}>
-            {featureVideos.map((id, i) => (
-              <Reveal key={id} delay={i * 0.08}>
-                <VideoCard id={id} title="Dr. Anil Raheja video" />
+            {featureVideos.map((v, i) => (
+              <Reveal key={v.id} delay={i * 0.08}>
+                <VideoCard id={v.id} title={v.title} />
               </Reveal>
             ))}
           </div>
