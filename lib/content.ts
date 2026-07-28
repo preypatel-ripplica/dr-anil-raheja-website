@@ -102,15 +102,23 @@ export type Faq = { q: string; a: string };
 export const hipFaqs: Faq[] = [
   {
     q: "Who is the best hip replacement surgeon in Delhi?",
-    a: "Dr. Anil Raheja is widely recognized as a leading hip replacement surgeon in Delhi, bringing over 28 years of surgical expertise. As Director of Orthopedics at Apollo Spectra Hospital (Karol Bagh), he specializes in high-success, minimally invasive total hip arthroplasty.",
+    a: "Dr. Anil Raheja is widely recognized as a leading hip replacement surgeon in Delhi, bringing over 30 years of surgical expertise and 25,000+ surgeries. An internationally trained arthroplasty surgeon, he specialises in Primary, Complex and Revision Hip Replacement, with a special interest in the muscle-sparing Direct Anterior Approach (DAA).",
+  },
+  {
+    q: "What is the Direct Anterior Approach (DAA) in hip replacement?",
+    a: "The Direct Anterior Approach reaches the hip joint through a natural inter-muscular and inter-nervous plane, rather than cutting through muscles as conventional approaches do. Because important muscles around the hip are preserved, many appropriately selected patients experience less pain and a faster, earlier return to normal activities.",
+  },
+  {
+    q: "What are the advantages of Direct Anterior Hip Replacement?",
+    a: "For appropriately selected patients, potential advantages include a smaller incision with minimal muscle damage, less postoperative pain, reduced blood loss, a lower risk of hip dislocation, faster walking and rehabilitation, and better restoration of natural hip mechanics. A detailed clinical evaluation and imaging determine whether DAA is the safest approach for each individual.",
   },
   {
     q: "What does hip replacement surgery cost in Delhi?",
     a: "Total hip replacement surgery cost in Delhi generally ranges from INR 1,50,000 to INR 4,50,000 for a unilateral (single side) procedure. The overall cost depends on the type of implant selected (ceramic vs. metal-on-polyethylene) and the patient's specific medical requirements.",
   },
   {
-    q: "When is total hip replacement recommended?",
-    a: "Total hip replacement is primarily recommended for severe hip joint damage due to osteoarthritis, avascular necrosis (AVN), rheumatoid arthritis, or complex hip fractures that do not respond to non-surgical treatment.",
+    q: "When is hip replacement recommended?",
+    a: "Hip replacement may be recommended for persistent hip pain despite medications and physiotherapy, difficulty walking or climbing stairs, pain that disturbs sleep, marked stiffness with restricted movement, or loss of independence in daily activities — commonly due to advanced osteoarthritis, avascular necrosis (AVN), rheumatoid arthritis, hip fractures or a failed previous replacement.",
   },
 ];
 
@@ -130,5 +138,69 @@ export const generalFaqs: Faq[] = [
   {
     q: "Which insurance / payment options are accepted?",
     a: "Procedures at Apollo Spectra and Jeewan Mala Hospital are covered by leading health insurers and TPAs. Contact the clinic with your policy details to confirm cashless eligibility.",
+  },
+];
+
+export const kneeFaqs: Faq[] = [
+  {
+    q: "What is the difference between total and partial knee replacement?",
+    a: "In a total knee replacement all three compartments of the knee are resurfaced. In a partial (unicompartmental) knee replacement only the damaged compartment is replaced while the healthy portions and ligaments are preserved — an option for patients whose arthritis is limited to one compartment.",
+  },
+  {
+    q: "Am I a candidate for partial knee replacement?",
+    a: "Partial knee replacement suits patients with osteoarthritis confined to a single compartment, good ligament stability and a reasonable range of motion. A clinical examination along with X-rays helps confirm whether it is the right choice for you.",
+  },
+  {
+    q: "How long is recovery after knee replacement?",
+    a: "Most patients stay 3–5 days in hospital, with pain relief soon after surgery and real improvement felt after about a month. A walker or crutches support the knee in the initial weeks, followed by a guided physiotherapy programme. Partial knee replacement often allows an even quicker recovery.",
+  },
+  {
+    q: "How long does a knee replacement last?",
+    a: "Modern implants with proven long-term performance are chosen to maximise durability, and most knee replacements last many years. Longevity depends on the implant, your activity level and body weight — all of which are considered when planning your surgery.",
+  },
+];
+
+export const spineFaqs: Faq[] = [
+  {
+    q: "Do I need surgery for my back pain?",
+    a: "Usually not. Most back pain settles with rest, medication and physiotherapy within about two months. Surgery is considered only when severe pain persists despite these measures, or when there is nerve compression that affects strength, sensation or bladder/bowel control.",
+  },
+  {
+    q: "What non-surgical options are tried first?",
+    a: "A spine specialist may recommend heat and ice therapy, physiotherapist-guided exercises to strengthen and stretch the back, activity modification, medication and, where appropriate, therapeutic massage — before any surgical option is considered.",
+  },
+  {
+    q: "Is spine surgery minimally invasive?",
+    a: "Where suitable, minimally invasive techniques are used — smaller incisions that mean less tissue disruption, reduced pain and a faster recovery. The right technique is chosen based on your diagnosis and imaging.",
+  },
+];
+
+export const arthroscopyFaqs: Faq[] = [
+  {
+    q: "Which joints can be treated with arthroscopy?",
+    a: "Arthroscopy is performed on the knee, shoulder, hip, ankle, wrist and elbow. Through a buttonhole-sized incision, a fibre-optic camera lets the surgeon diagnose and treat problems inside the joint with minimal disruption to surrounding tissue.",
+  },
+  {
+    q: "Can arthroscopy treat cartilage and meniscus injuries?",
+    a: "Yes. Arthroscopy is commonly used to repair or trim a torn meniscus, treat damaged cartilage, address torn ligaments, remove loose fragments and clear inflamed joint lining — restoring smooth, pain-free movement.",
+  },
+  {
+    q: "What is recovery after arthroscopy like?",
+    a: "Recovery is generally faster than open surgery. Your doctor or therapist will guide a simple protocol — medication for comfort, temporary protection of the joint, prescribed strengthening exercises, and RICE (rest, ice, compression and elevation) to reduce swelling.",
+  },
+];
+
+export const arthritisFaqs: Faq[] = [
+  {
+    q: "Can arthritis be treated without surgery?",
+    a: "In most cases, yes — especially when caught early. Weight management, guided exercise, heat and cold therapy, and timely medication can bring significant relief. Surgery is considered only when pain is severe and conservative measures no longer help.",
+  },
+  {
+    q: "Why does early diagnosis of arthritis matter?",
+    a: "Early diagnosis allows treatment to begin before the cartilage wears down further, helping to minimise pain, protect joint function and delay or avoid the need for surgery.",
+  },
+  {
+    q: "How is arthritis diagnosed?",
+    a: "Diagnosis begins with a physical examination of the affected joint, supported by X-rays or MRI for a clearer picture. In some cases, blood, urine or joint-fluid tests are done to identify the specific type of arthritis.",
   },
 ];

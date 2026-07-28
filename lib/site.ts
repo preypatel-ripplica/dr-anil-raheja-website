@@ -8,9 +8,9 @@ export const site = {
   name: "Dr. Anil Raheja",
   credentials: "MS (Ortho), M.Ch (Ortho)",
   tagline: "Director Orthopedics — Apollo Spectra Hospital & Jeewan Mala Hospital",
-  title: "Best Orthopedic Doctor in Delhi | #1 Orthopedic Surgeon - Dr Anil",
+  title: "Hip Replacement Surgeon in Delhi | Dr. Anil Raheja — Direct Anterior Approach",
   description:
-    "Dr. Anil Raheja is a renowned orthopedic surgeon in Delhi with 28 years of experience and 12,000+ surgeries — joint replacement, spine surgery, arthroscopy and arthritis care.",
+    "Dr. Anil Raheja is a leading Hip Replacement Surgeon in Delhi with 30 years of experience and 25,000+ surgeries — specialising in the Direct Anterior Approach (DAA) and minimally invasive hip surgery, plus knee replacement, spine surgery, arthroscopy and arthritis care.",
   url: "https://www.dranilraheja.com",
 };
 
@@ -40,7 +40,7 @@ export const clinics: Clinic[] = [
     name: "Raheja Ortho And Gynae Clinic",
     area: "Vijay Nagar, Delhi",
     days: "Mon – Sat",
-    hours: "6:00 PM – 9:00 PM",
+    hours: "5:00 PM – 8:00 PM",
     note: "Block C-25 A, Ground Floor, Vijay Nagar",
   },
   {
@@ -94,8 +94,8 @@ export const nav: NavItem[] = [
 ];
 
 export const stats = [
-  { value: 28, suffix: "+", label: "Years of Experience" },
-  { value: 12000, suffix: "+", label: "Surgeries Performed" },
+  { value: 30, suffix: "+", label: "Years of Experience" },
+  { value: 25000, suffix: "+", label: "Surgeries Performed" },
   { value: 212, suffix: "+", label: "Google Reviews" },
   { value: 3, suffix: "", label: "Clinic Locations" },
 ];
@@ -115,7 +115,7 @@ export const treatments: Treatment[] = [
     title: "Hip Replacement Surgery",
     short: "Hip Replacement",
     excerpt:
-      "Hip replacement (hip arthroplasty) replaces a worn out or damaged hip with an artificial joint — done for hip fractures or severe arthritis pain.",
+      "Primary, complex and revision hip replacement — with a special focus on the muscle-sparing Direct Anterior Approach (DAA) for less pain and faster recovery.",
     image: "/images/2-rin034ev3rcl0zmgzeyaj1290zhgft7s4lqwaot0kw.png",
   },
   {

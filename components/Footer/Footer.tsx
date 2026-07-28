@@ -17,8 +17,8 @@ export default function Footer() {
             </span>
           </div>
           <p className={styles.blurb}>
-            Renowned orthopedic surgeon in Delhi with 28 years of experience and
-            12,000+ surgeries. Director Orthopedics at Apollo Spectra Hospital
+            Renowned orthopedic surgeon in Delhi with 30 years of experience and
+            25,000+ surgeries. Director Orthopedics at Apollo Spectra Hospital
             Karol Bagh &amp; Jeewan Mala Hospital.
           </p>
           <a

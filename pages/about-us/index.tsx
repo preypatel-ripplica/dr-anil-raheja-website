@@ -11,7 +11,7 @@ import styles from "./about.module.css";
 export const metadata: Metadata = {
   title: "About Dr. Anil Raheja",
   description:
-    "Dr. Anil Raheja — MS (Ortho), M.Ch (Ortho). Director Orthopedics at Apollo Spectra Hospital Karol Bagh & Jeewan Mala Hospital with 28 years of experience and 12,000+ surgeries.",
+    "Dr. Anil Raheja — MS (Ortho), M.Ch (Ortho). Director Orthopedics at Apollo Spectra Hospital Karol Bagh & Jeewan Mala Hospital with 30 years of experience and 25,000+ surgeries.",
 };
 
 const expertise = [
@@ -37,7 +37,7 @@ export default function AboutPage() {
       <PageHero
         eyebrow="About Us"
         title="About Dr. Anil Raheja"
-        subtitle="Best orthopedic surgeon in Delhi, India — 28 years of experience, 12,000+ surgeries."
+        subtitle="Best orthopedic surgeon in Delhi, India — 30 years of experience, 25,000+ surgeries."
         breadcrumb="About Us"
       />
 
@@ -57,7 +57,7 @@ export default function AboutPage() {
             </div>
             <div className={styles.introBadge}>
               <span>
-                <CountUp value={12000} suffix="+" />
+                <CountUp value={25000} suffix="+" />
               </span>
               <small>Surgeries performed</small>
             </div>
@@ -71,7 +71,7 @@ export default function AboutPage() {
               Dr. Anil Raheja is an orthopedic surgeon specialized in treating knee and
               shoulder injuries. He is the Director of Orthopedics at Apollo Spectra
               Hospital Karol Bagh &amp; Jeewan Mala Hospital — a highly skilled joint
-              replacement surgeon with an experience of over 12,000 surgeries.
+              replacement surgeon with an experience of over 25,000 surgeries.
             </p>
             <p>
               A proud alumnus of M.D.U University, Rohtak, he holds special skills in

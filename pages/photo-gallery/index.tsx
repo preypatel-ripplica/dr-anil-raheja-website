@@ -18,7 +18,7 @@ export default function PhotoGalleryPage() {
       <PageHero
         eyebrow="Media"
         title="Inside the practice"
-        subtitle="A look at the clinics, the team and the milestones — the everyday work behind 12,000+ surgeries."
+        subtitle="A look at the clinics, the team and the milestones — the everyday work behind 25,000+ surgeries."
         breadcrumb="Photo Gallery"
       />
 

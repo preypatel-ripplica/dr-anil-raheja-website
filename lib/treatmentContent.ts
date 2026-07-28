@@ -1,5 +1,11 @@
 import type { Faq } from "@/lib/content";
-import { hipFaqs } from "@/lib/content";
+import {
+  hipFaqs,
+  kneeFaqs,
+  spineFaqs,
+  arthroscopyFaqs,
+  arthritisFaqs,
+} from "@/lib/content";
 
 // -----------------------------------------------------------------------------
 // Treatment page content — transcribed/condensed from the client's live pages.
@@ -28,76 +34,116 @@ export type TreatmentContent = {
 export const treatmentContent: Record<string, TreatmentContent> = {
   "hip-replacement-surgery": {
     slug: "hip-replacement-surgery",
-    title: "Hip Replacement Surgery in Delhi",
+    title: "Hip Replacement Surgeon in Delhi",
     subtitle:
-      "Replacing a worn or damaged hip with an artificial joint — relieving pain and restoring full hip function.",
+      "Expert hip replacement surgery with the Direct Anterior Approach (DAA) — an advanced muscle-sparing technique for less pain and a faster recovery.",
     heroImage: "/images/2-rin034ev3rcl0zmgzeyaj1290zhgft7s4lqwaot0kw.png",
     facts: [
-      { label: "Surgery time", value: "~1–2 hours" },
-      { label: "Hospital stay", value: "3–5 days" },
-      { label: "Technique", value: "Minimal invasive available" },
-      { label: "Cost range", value: "₹1.5L – ₹4.5L" },
+      { label: "Special interest", value: "Direct Anterior (DAA)" },
+      { label: "Scope", value: "Primary · Complex · Revision" },
+      { label: "Technique", value: "Muscle-sparing MIS" },
+      { label: "Experience", value: "30+ years" },
     ],
     sections: [
       {
         type: "text",
-        heading: "What is hip replacement?",
+        heading: "Expert hip replacement in Delhi",
         paragraphs: [
-          "Hip replacement, also known as hip arthroplasty, is a procedure wherein a worn out or damaged hip is replaced with an artificial joint (prosthesis). This is a major surgery done when a person has suffered a hip fracture or has severe pain from arthritis. A hemi (half) or complete replacement is performed depending on the condition.",
-          "The aim of surgery is to relieve hip pain and comprehensively improve hip function. The surgeon removes the femoral head and replaces it with an artificial one.",
+          "Living with hip pain can make even simple activities like walking, climbing stairs, getting into a car, or sleeping uncomfortable. When medications, physiotherapy, and injections no longer provide lasting relief, hip replacement surgery offers a reliable solution to restore mobility and improve quality of life.",
+          "Dr. Anil Raheja is an internationally trained arthroplasty surgeon with 30+ years of experience in joint replacement surgery. He specialises in Primary, Complex and Revision Hip Replacement, with a special interest in the Direct Anterior Approach (DAA) — an advanced muscle-sparing technique that allows many patients to experience less pain, faster recovery, and an earlier return to normal activities.",
         ],
       },
       {
         type: "list",
-        heading: "Symptoms that need hip replacement",
+        heading: "Why choose Dr. Anil Raheja?",
         items: [
-          "Severe pain in the hip",
-          "Stiffness of the hip",
-          "Limited mobility",
-          "Walking with a limp",
-          "Deformity of hip",
-        ],
-      },
-      {
-        type: "list",
-        heading: "Reasons for hip replacement",
-        items: [
-          "Old age — hip arthritis is most common above 50, when osteoporosis and cartilage wear expose the bone within the joint.",
-          "Excess body weight increases load on the joint and accelerates wear.",
-          "Family history — hip arthritis can run in the family.",
-          "Severe traumatic injury or fracture of the joint.",
+          "30+ years of dedicated orthopaedic & arthroplasty experience",
+          "International training in advanced hip replacement surgery",
+          "Specialist in Direct Anterior Hip Replacement (DAA)",
+          "Expertise in minimally invasive and muscle-sparing techniques",
+          "Comprehensive management of complex primary and revision hip replacements",
+          "Evidence-based treatment with personalised rehabilitation protocols",
         ],
       },
       {
         type: "imageText",
-        heading: "How is it diagnosed?",
-        image: "/images/3-rin03a1w8rja4s6k9jrml74zwdi3fea1h3rpj0tp9k.png",
+        heading: "Direct Anterior Hip Replacement (DAA)",
+        image: "/images/4-rin03uqcf4calkun34o2hnycn7y6ift7b2jazz9lvk.png",
         imageSide: "right",
         paragraphs: [
-          "The doctor makes a physical examination of the affected area and orders X-rays for a clear picture of the injury. These are kept on record for later comparison — to track how much progress treatment or surgery has made.",
+          "Unlike conventional hip replacement approaches that require cutting through muscles, the Direct Anterior Approach reaches the hip joint through a natural inter-muscular and inter-nervous plane, preserving important muscles around the hip.",
+        ],
+      },
+      {
+        type: "list",
+        heading: "Advantages of the Direct Anterior Approach",
+        intro: "Potential advantages for appropriately selected patients include:",
+        items: [
+          "Smaller incision with minimal muscle damage",
+          "Less postoperative pain",
+          "Reduced blood loss",
+          "Lower risk of hip dislocation",
+          "Faster walking and rehabilitation",
+          "Improved early recovery",
+          "Better restoration of natural hip mechanics",
         ],
       },
       {
         type: "text",
-        heading: "The procedure",
+        heading: "Is DAA right for you?",
         paragraphs: [
-          "The worn cartilage and bone of the hip joint are removed and replaced with artificial material. The hip is a ball-and-socket joint: the socket (acetabulum) is refitted with a durable cup, and the femoral head is replaced with a prosthetic ball anchored in the thigh bone.",
+          "Not every patient is an ideal candidate for DAA. A detailed clinical evaluation and imaging help determine the safest and most effective approach for each individual.",
+        ],
+      },
+      {
+        type: "list",
+        heading: "When should you consider hip replacement?",
+        intro: "Hip replacement may be recommended if you have:",
+        items: [
+          "Persistent hip pain despite medications and physiotherapy",
+          "Difficulty walking or climbing stairs",
+          "Pain that disturbs sleep",
+          "Marked stiffness with restricted movement",
+          "Loss of independence in daily activities",
+        ],
+      },
+      {
+        type: "list",
+        heading: "Conditions commonly treated",
+        intro: "Hip replacement is commonly performed for:",
+        items: [
+          "Advanced osteoarthritis",
+          "Avascular necrosis (AVN) of the hip",
+          "Rheumatoid arthritis",
+          "Hip fractures",
+          "Post-traumatic arthritis",
+          "Failed previous hip replacement requiring revision surgery",
         ],
       },
       {
         type: "imageText",
-        heading: "Minimal invasive hip replacement",
-        image: "/images/4-rin03uqcf4calkun34o2hnycn7y6ift7b2jazz9lvk.png",
+        heading: "Precision hip replacement",
+        image: "/images/3-rin03a1w8rja4s6k9jrml74zwdi3fea1h3rpj0tp9k.png",
         imageSide: "left",
         paragraphs: [
-          "One of the latest techniques, taking less time in surgery. The surgeon makes two small incisions of about 5 cm and 9 cm and uses small implements to remove the damaged bone and place the new prosthesis — making recovery faster with smaller scars.",
+          "Every hip replacement is individually planned based on your anatomy, bone quality, activity level and lifestyle. High-quality implants with proven long-term clinical performance are selected to maximise durability, stability and function.",
+          "The objective is not merely to replace a damaged joint — but to restore confidence in walking, relieve pain, and help patients return to an active, independent life.",
         ],
       },
       {
         type: "text",
-        heading: "Other alternatives",
+        heading: "Our philosophy",
         paragraphs: [
-          "Hip replacement is a major procedure and should be done as recommended by your surgeon. In early stages, simple steps can help avoid surgery: losing weight, and therapist-guided exercises to reduce discomfort.",
+          "Hip replacement should never be performed simply because an X-ray shows arthritis. Surgery is recommended only when symptoms significantly affect quality of life and conservative treatment has failed.",
+          "Our commitment is to provide the right operation, for the right patient, at the right time, using modern surgical techniques and evidence-based care to achieve the best possible long-term outcome.",
+        ],
+      },
+      {
+        type: "text",
+        heading: "Take the first step today",
+        paragraphs: [
+          "Hip pain rarely improves on its own once it starts affecting daily life. Delaying treatment can lead to worsening stiffness, muscle weakness, and reduced mobility, making recovery more difficult later.",
+          "If you are struggling with persistent hip pain, now is the right time to seek expert advice. Early consultation can help you avoid unnecessary suffering and explore both non-surgical and surgical options before the condition progresses further.",
         ],
       },
     ],
@@ -135,31 +181,52 @@ export const treatmentContent: Record<string, TreatmentContent> = {
       },
       {
         type: "text",
-        heading: "Recovery after knee surgery",
+        heading: "Partial knee replacement",
         paragraphs: [
-          "After surgery the patient stays 3 to 5 days in the hospital. Pain is relieved quickly, but full improvement is noticed after about one month. Since the recovering knee cannot yet support complete body weight, a walker or crutches are used in the initial weeks.",
+          "Partial (unicompartmental) knee replacement resurfaces only the damaged compartment of the knee, while the healthy bone, cartilage and ligaments are preserved. For patients whose arthritis is limited to a single compartment, it is a smaller, more targeted procedure than a total knee replacement.",
+          "Because more of the natural knee is kept intact, many patients report a more natural-feeling knee and a quicker return to everyday activities.",
         ],
       },
       {
         type: "list",
-        heading: "Simple steps for speedy recovery",
-        intro: "Precautions that protect the new joint while it heals:",
+        heading: "Benefits of partial knee replacement",
+        intro: "For suitable candidates, partial knee replacement can offer:",
         items: [
-          "Avoid kneeling and squatting after the surgery.",
-          "Climbing stairs should be minimised initially.",
-          "While lying in bed, keep the knee as straight as possible.",
-          "Prefer straight-back chairs; avoid recliners.",
-          "Remove rugs and loose materials from the floor to avoid falls.",
+          "Smaller incision and less bone removal",
+          "Preservation of healthy cartilage and ligaments",
+          "A more natural-feeling knee",
+          "Faster recovery and rehabilitation",
+          "Shorter hospital stay for many patients",
         ],
       },
       {
         type: "text",
-        heading: "Risks — and why they're rare",
+        heading: "Recovery after knee surgery",
         paragraphs: [
-          "After a total knee replacement, high-impact sports and jogging are no longer advised. Side effects like blood clotting, infection or scarring are possible but rare — and every precaution is taken to prevent them. Our knee replacement practice provides surgery at reasonable cost.",
+          "After surgery the patient stays 3 to 5 days in the hospital. Pain is relieved quickly, but full improvement is noticed after about one month. A walker or crutches support the recovering knee in the initial weeks, followed by a guided physiotherapy programme.",
+        ],
+      },
+      {
+        type: "list",
+        heading: "Recommendations for a smooth recovery",
+        intro: "Simple habits that help the new joint heal well:",
+        items: [
+          "Keep the knee straight while resting in bed so it heals in a good position.",
+          "Choose firm, straight-backed chairs that make standing up easier.",
+          "Keep floors clear of rugs and loose items so walking stays safe.",
+          "Follow your physiotherapy plan and take gentle, regular walks as advised.",
+          "Use your walker or crutches for support during the first few weeks.",
+        ],
+      },
+      {
+        type: "text",
+        heading: "Life after knee replacement",
+        paragraphs: [
+          "Most patients return to comfortable, independent daily activity after a knee replacement — walking, travelling and enjoying low-impact activities such as cycling and swimming. Every precaution is taken to keep the procedure safe, and surgery is offered at a reasonable cost.",
         ],
       },
     ],
+    faqs: kneeFaqs,
   },
 
   "spine-surgery": {
@@ -202,6 +269,7 @@ export const treatmentContent: Record<string, TreatmentContent> = {
         ],
       },
     ],
+    faqs: spineFaqs,
   },
 
   "arthroscopic-surgery": {
@@ -227,13 +295,24 @@ export const treatmentContent: Record<string, TreatmentContent> = {
       {
         type: "list",
         heading: "What it treats",
-        intro: "Arthroscopy is performed on the knee, hip, shoulder, ankle, wrist and elbow — for:",
+        intro: "Arthroscopy is performed on the knee, shoulder, hip, ankle, wrist and elbow — to diagnose and treat:",
         items: [
+          "Torn meniscus — the cartilage cushion of the knee",
+          "Damaged or worn joint cartilage",
+          "Torn or unstable ligaments",
           "Inflamed joint linings",
-          "Damaged or torn cartilage",
-          "Torn ligaments",
-          "Carpal tunnel syndrome",
-          "Scarring within the joint",
+          "Loose fragments of bone or cartilage within the joint",
+          "Scarring and stiffness inside the joint",
+        ],
+      },
+      {
+        type: "list",
+        heading: "Common indications by joint",
+        intro: "Some of the most common reasons arthroscopy is recommended:",
+        items: [
+          "Knee — meniscus tears, cartilage damage and ligament (ACL) injuries",
+          "Shoulder — rotator cuff tears, labral tears and impingement",
+          "Ankle — cartilage injuries, impingement and loose bodies",
         ],
       },
       {
@@ -256,6 +335,7 @@ export const treatmentContent: Record<string, TreatmentContent> = {
         ],
       },
     ],
+    faqs: arthroscopyFaqs,
   },
 
   "arthritis-treatment": {
@@ -314,6 +394,7 @@ export const treatmentContent: Record<string, TreatmentContent> = {
         ],
       },
     ],
+    faqs: arthritisFaqs,
   },
 };
 
