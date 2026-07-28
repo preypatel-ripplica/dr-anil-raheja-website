@@ -42,7 +42,7 @@ export default function Header() {
       <div className={styles.topbar}>
         <div className={`container ${styles.topInner}`}>
           <span className={styles.topNote}>
-            {site.credentials} · 30+ years · 25,000+ surgeries
+            {site.credentials} · 30+ years · 15,000+ surgeries
           </span>
           <div className={styles.topContact}>
             <a href={`tel:${contact.phonePrimary}`} className={styles.topItem}>

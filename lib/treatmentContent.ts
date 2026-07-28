@@ -5,6 +5,11 @@ import {
   spineFaqs,
   arthroscopyFaqs,
   arthritisFaqs,
+  partialKneeFaqs,
+  kneeArthroscopyFaqs,
+  shoulderArthroscopyFaqs,
+  sportsInjuryFaqs,
+  fractureTraumaFaqs,
 } from "@/lib/content";
 
 // -----------------------------------------------------------------------------
@@ -40,9 +45,9 @@ export const treatmentContent: Record<string, TreatmentContent> = {
     heroImage: "/images/2-rin034ev3rcl0zmgzeyaj1290zhgft7s4lqwaot0kw.png",
     facts: [
       { label: "Special interest", value: "Direct Anterior (DAA)" },
-      { label: "Scope", value: "Primary · Complex · Revision" },
+      { label: "Incision", value: "8–10 cm (single)" },
       { label: "Technique", value: "Muscle-sparing MIS" },
-      { label: "Experience", value: "30+ years" },
+      { label: "Scope", value: "Primary · Complex · Revision" },
     ],
     sections: [
       {
@@ -72,6 +77,7 @@ export const treatmentContent: Record<string, TreatmentContent> = {
         imageSide: "right",
         paragraphs: [
           "Unlike conventional hip replacement approaches that require cutting through muscles, the Direct Anterior Approach reaches the hip joint through a natural inter-muscular and inter-nervous plane, preserving important muscles around the hip.",
+          "The procedure is performed through a single incision of about 8–10 cm (approximately 9 cm), which — combined with the muscle-sparing technique — supports less pain and a faster early recovery.",
         ],
       },
       {
@@ -181,10 +187,10 @@ export const treatmentContent: Record<string, TreatmentContent> = {
       },
       {
         type: "text",
-        heading: "Partial knee replacement",
+        heading: "Partial (unicondylar) knee replacement — a modern option",
         paragraphs: [
-          "Partial (unicompartmental) knee replacement resurfaces only the damaged compartment of the knee, while the healthy bone, cartilage and ligaments are preserved. For patients whose arthritis is limited to a single compartment, it is a smaller, more targeted procedure than a total knee replacement.",
-          "Because more of the natural knee is kept intact, many patients report a more natural-feeling knee and a quicker return to everyday activities.",
+          "Partial knee replacement — also called unicondylar or unicompartmental knee replacement — is a modern, joint-preserving option that resurfaces only the damaged compartment of the knee, while the healthy bone, cartilage and ligaments are kept intact. For patients whose arthritis is limited to a single compartment, it is a smaller, more targeted procedure than a total knee replacement.",
+          "Because more of the natural knee is preserved, many patients report a more natural-feeling knee and a quicker return to everyday activities.",
         ],
       },
       {
@@ -276,10 +282,10 @@ export const treatmentContent: Record<string, TreatmentContent> = {
     slug: "arthroscopic-surgery",
     title: "Arthroscopic Surgeon in Delhi",
     subtitle:
-      "Keyhole surgery for joints — a fiber-optic camera through a buttonhole incision, for faster diagnosis and recovery.",
+      "Keyhole surgery for joints — a fiber-optic camera through a small keyhole incision, for faster diagnosis and recovery.",
     heroImage: "/images/9-rin1b64ld9o9vd4f5a53dhtvtjqtb7fyxjnccilbdg.png",
     facts: [
-      { label: "Incision", value: "Buttonhole-sized" },
+      { label: "Technique", value: "Keyhole surgery" },
       { label: "Joints", value: "Knee · hip · shoulder · more" },
       { label: "Recovery", value: "Faster than open surgery" },
       { label: "Protocol", value: "RICE + guided exercise" },
@@ -289,7 +295,7 @@ export const treatmentContent: Record<string, TreatmentContent> = {
         type: "text",
         heading: "What is arthroscopy?",
         paragraphs: [
-          "Arthroscopy is a procedure apt for diagnosing and treating joint problems. The surgeon inserts a narrow tube through a small incision the size of a buttonhole, connected to a fiber-optic video camera. The instrument's small lens and lighting system give a clear view inside the joint.",
+          "Arthroscopy — often called keyhole surgery — is a procedure apt for diagnosing and treating joint problems. The surgeon inserts a narrow tube through a small keyhole incision, connected to a fiber-optic video camera. The instrument's small lens and lighting system give a clear view inside the joint.",
         ],
       },
       {
@@ -395,6 +401,251 @@ export const treatmentContent: Record<string, TreatmentContent> = {
       },
     ],
     faqs: arthritisFaqs,
+  },
+
+  // ---------------------------------------------------------------------------
+  // Newer standalone pages added after the client meeting.
+  // Draft copy — please have Dr. Raheja review before publishing.
+  // ---------------------------------------------------------------------------
+
+  "partial-knee-replacement": {
+    slug: "partial-knee-replacement",
+    title: "Partial Knee Replacement in Delhi",
+    subtitle:
+      "Unicondylar knee replacement — a modern, joint-preserving option that resurfaces only the damaged compartment of the knee.",
+    heroImage: "/images/6-rin0jnep9vy2caeho4ipikf0cyt8hm9qq4t5fijuw8.png",
+    facts: [
+      { label: "Also called", value: "Unicondylar" },
+      { label: "Approach", value: "Joint-preserving" },
+      { label: "Best for", value: "Single-compartment arthritis" },
+      { label: "Recovery", value: "Often quicker than total" },
+    ],
+    sections: [
+      {
+        type: "text",
+        heading: "What is partial knee replacement?",
+        paragraphs: [
+          "Partial knee replacement — also called unicondylar or unicompartmental knee replacement — is a modern, joint-preserving procedure that resurfaces only the damaged compartment of the knee. The healthy bone, cartilage and ligaments are kept intact.",
+          "For patients whose arthritis is limited to a single compartment, it offers a smaller, more targeted alternative to total knee replacement.",
+        ],
+      },
+      {
+        type: "list",
+        heading: "Benefits of partial knee replacement",
+        intro: "For suitable candidates, partial knee replacement can offer:",
+        items: [
+          "Smaller incision and less bone removal",
+          "Preservation of healthy cartilage and ligaments",
+          "A more natural-feeling knee",
+          "Faster recovery and rehabilitation",
+          "A shorter hospital stay for many patients",
+        ],
+      },
+      {
+        type: "list",
+        heading: "Who is it suitable for?",
+        intro: "Partial knee replacement may be an option if you have:",
+        items: [
+          "Osteoarthritis limited to one compartment of the knee",
+          "Good ligament stability",
+          "A reasonable range of knee movement",
+          "Pain that limits daily activities despite non-surgical care",
+        ],
+      },
+      {
+        type: "text",
+        heading: "Recovery and rehabilitation",
+        paragraphs: [
+          "Many patients recover more quickly than after a total knee replacement, often with a shorter hospital stay. A guided physiotherapy plan supports a steady return to walking and everyday activities.",
+        ],
+      },
+    ],
+    faqs: partialKneeFaqs,
+  },
+
+  "knee-arthroscopy": {
+    slug: "knee-arthroscopy",
+    title: "Knee Arthroscopy in Delhi",
+    subtitle:
+      "Keyhole surgery for the knee — diagnosing and treating meniscus, cartilage and ligament problems through small incisions.",
+    heroImage: "/images/9-rin1b64ld9o9vd4f5a53dhtvtjqtb7fyxjnccilbdg.png",
+    facts: [
+      { label: "Technique", value: "Keyhole surgery" },
+      { label: "Camera", value: "Fibre-optic arthroscope" },
+      { label: "Common use", value: "Meniscus & cartilage" },
+      { label: "Recovery", value: "Faster than open surgery" },
+    ],
+    sections: [
+      {
+        type: "text",
+        heading: "What is knee arthroscopy?",
+        paragraphs: [
+          "Knee arthroscopy is a keyhole procedure in which a fibre-optic camera is inserted through a small incision to give a clear view inside the knee. Fine instruments are used through further small incisions to treat the problem — with minimal disruption to surrounding tissue.",
+        ],
+      },
+      {
+        type: "list",
+        heading: "What it treats",
+        intro: "Knee arthroscopy is commonly used for:",
+        items: [
+          "Torn meniscus — the cartilage cushion of the knee",
+          "Damaged or worn joint cartilage",
+          "Ligament injuries, including the ACL",
+          "Loose fragments of bone or cartilage",
+          "Inflamed joint lining",
+        ],
+      },
+      {
+        type: "imageText",
+        heading: "Recovery after knee arthroscopy",
+        image: "/images/cartilage-1.png",
+        imageSide: "right",
+        paragraphs: [
+          "Recovery is generally faster than open surgery. Many patients begin gentle walking soon after the procedure, with support as needed, and follow a guided physiotherapy plan to restore strength and movement.",
+        ],
+      },
+    ],
+    faqs: kneeArthroscopyFaqs,
+  },
+
+  "shoulder-arthroscopy": {
+    slug: "shoulder-arthroscopy",
+    title: "Shoulder Arthroscopy in Delhi",
+    subtitle:
+      "Keyhole surgery for the shoulder — treating rotator cuff tears, labral tears, impingement and instability.",
+    heroImage: "/images/10-rin1bbrmi9wa1bkdedx320bnks748c1y92b68nmfuw.png",
+    facts: [
+      { label: "Technique", value: "Keyhole surgery" },
+      { label: "Camera", value: "Fibre-optic arthroscope" },
+      { label: "Common use", value: "Rotator cuff & labrum" },
+      { label: "Recovery", value: "Guided rehabilitation" },
+    ],
+    sections: [
+      {
+        type: "text",
+        heading: "What is shoulder arthroscopy?",
+        paragraphs: [
+          "Shoulder arthroscopy is a keyhole procedure that uses a fibre-optic camera and fine instruments, passed through small incisions, to diagnose and treat problems inside the shoulder joint — with less disruption than open surgery.",
+        ],
+      },
+      {
+        type: "list",
+        heading: "What it treats",
+        intro: "Shoulder arthroscopy is commonly used for:",
+        items: [
+          "Rotator cuff tears",
+          "Labral (SLAP) tears",
+          "Shoulder impingement",
+          "Recurrent shoulder dislocation and instability",
+          "Removal of loose bodies",
+        ],
+      },
+      {
+        type: "imageText",
+        heading: "Recovery after shoulder arthroscopy",
+        image: "/images/arthroscopic-surgery.png",
+        imageSide: "right",
+        paragraphs: [
+          "A sling is often used for a short period to protect the shoulder while it heals. A structured physiotherapy programme then gradually restores movement and strength, with a return to activities guided by your surgeon.",
+        ],
+      },
+    ],
+    faqs: shoulderArthroscopyFaqs,
+  },
+
+  "sports-injury-conservative-care": {
+    slug: "sports-injury-conservative-care",
+    title: "Sports Injury & Conservative Care in Delhi",
+    subtitle:
+      "Non-surgical treatment for sports and joint injuries — physiotherapy, bracing, PRP injections and guided rehabilitation.",
+    heroImage: "/images/Orthopaedics-1.jpg",
+    facts: [
+      { label: "First approach", value: "Non-surgical" },
+      { label: "Options", value: "PRP · physiotherapy" },
+      { label: "Focus", value: "Restore function" },
+      { label: "Surgery", value: "Only if needed" },
+    ],
+    sections: [
+      {
+        type: "text",
+        heading: "Conservative care first",
+        paragraphs: [
+          "Many sports and joint injuries recover well without surgery. A careful assessment guides a personalised, non-surgical plan aimed at relieving pain, restoring movement and getting you safely back to activity.",
+        ],
+      },
+      {
+        type: "list",
+        heading: "Non-surgical treatment options",
+        intro: "Depending on your injury, care may include:",
+        items: [
+          "Physiotherapy and guided strengthening",
+          "Activity modification and bracing or support",
+          "PRP (platelet-rich plasma) injections for suitable injuries",
+          "Pain-relief and anti-inflammatory measures",
+          "A structured return-to-activity plan",
+        ],
+      },
+      {
+        type: "imageText",
+        heading: "What are PRP injections?",
+        image: "/images/cartilage-1.png",
+        imageSide: "right",
+        paragraphs: [
+          "PRP (platelet-rich plasma) is prepared from a small sample of your own blood and injected into the injured area to support the body's natural healing. It is one of several non-surgical options used for suitable soft-tissue and joint injuries.",
+        ],
+      },
+      {
+        type: "text",
+        heading: "When to see a specialist",
+        paragraphs: [
+          "Seek advice if you have persistent pain, swelling, instability or reduced movement after an injury, or if symptoms do not settle with rest. Early assessment helps guide the safest and most effective recovery plan — and identifies the rare cases where surgery is the better option.",
+        ],
+      },
+    ],
+    faqs: sportsInjuryFaqs,
+  },
+
+  "fracture-trauma-treatment": {
+    slug: "fracture-trauma-treatment",
+    title: "Fracture & Trauma Treatment in Delhi",
+    subtitle:
+      "Prompt, expert care for fractures and orthopedic trauma — from simple breaks to complex, multiple injuries.",
+    heroImage: "/images/Orthopaedics.jpg",
+    facts: [
+      { label: "Covers", value: "Simple to complex" },
+      { label: "Priority", value: "Prompt assessment" },
+      { label: "Treatment", value: "Cast or surgery" },
+      { label: "Goal", value: "Restore function" },
+    ],
+    sections: [
+      {
+        type: "text",
+        heading: "Expert fracture & trauma care",
+        paragraphs: [
+          "Fractures and injuries range from simple breaks that heal with a cast to complex, unstable or multiple injuries that need surgery. Prompt assessment and the right treatment plan give the best chance of a full recovery.",
+        ],
+      },
+      {
+        type: "list",
+        heading: "Conditions treated",
+        intro: "Care is provided for:",
+        items: [
+          "Simple and displaced fractures",
+          "Complex and multiple (poly-) trauma",
+          "Fractures around joints",
+          "Injuries needing fixation with plates, screws or nails",
+          "Post-injury rehabilitation",
+        ],
+      },
+      {
+        type: "text",
+        heading: "Treatment and recovery",
+        paragraphs: [
+          "Many fractures heal well with a cast or splint and close monitoring. Displaced, unstable or complex fractures may need surgery to restore alignment and stability. Treatment is followed by a guided rehabilitation programme to rebuild strength, movement and confidence.",
+        ],
+      },
+    ],
+    faqs: fractureTraumaFaqs,
   },
 };
 

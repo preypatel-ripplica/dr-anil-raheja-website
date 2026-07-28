@@ -28,7 +28,7 @@ export default function BookCta({ defaultTreatment }: { defaultTreatment?: strin
               <Check width={17} height={17} /> 30+ years of surgical experience
             </li>
             <li>
-              <Check width={17} height={17} /> 25,000+ successful surgeries
+              <Check width={17} height={17} /> 15,000+ successful surgeries
             </li>
             <li>
               <Check width={17} height={17} /> Insurance &amp; cashless supported

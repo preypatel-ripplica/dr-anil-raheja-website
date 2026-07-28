@@ -102,7 +102,7 @@ export type Faq = { q: string; a: string };
 export const hipFaqs: Faq[] = [
   {
     q: "Who is the best hip replacement surgeon in Delhi?",
-    a: "Dr. Anil Raheja is widely recognized as a leading hip replacement surgeon in Delhi, bringing over 30 years of surgical expertise and 25,000+ surgeries. An internationally trained arthroplasty surgeon, he specialises in Primary, Complex and Revision Hip Replacement, with a special interest in the muscle-sparing Direct Anterior Approach (DAA).",
+    a: "Dr. Anil Raheja is widely recognized as a leading hip replacement surgeon in Delhi, bringing over 30 years of surgical expertise and 15,000+ surgeries. An internationally trained arthroplasty surgeon, he specialises in Primary, Complex and Revision Hip Replacement, with a special interest in the muscle-sparing Direct Anterior Approach (DAA).",
   },
   {
     q: "What is the Direct Anterior Approach (DAA) in hip replacement?",
@@ -114,7 +114,7 @@ export const hipFaqs: Faq[] = [
   },
   {
     q: "What does hip replacement surgery cost in Delhi?",
-    a: "Total hip replacement surgery cost in Delhi generally ranges from INR 1,50,000 to INR 4,50,000 for a unilateral (single side) procedure. The overall cost depends on the type of implant selected (ceramic vs. metal-on-polyethylene) and the patient's specific medical requirements.",
+    a: "Total hip replacement surgery cost in Delhi generally ranges from INR 3,00,000 to INR 4,50,000 for a unilateral (single side) procedure. The overall cost depends on the type of implant selected (ceramic vs. metal-on-polyethylene) and the patient's specific medical requirements.",
   },
   {
     q: "When is hip replacement recommended?",
@@ -133,7 +133,7 @@ export const generalFaqs: Faq[] = [
   },
   {
     q: "What is minimally invasive surgery?",
-    a: "Techniques that use much smaller incisions — like arthroscopy (buttonhole-sized cuts with a camera) or minimal-incision hip replacement — which mean less pain, smaller scars and faster recovery.",
+    a: "Techniques that use much smaller incisions — like arthroscopy (keyhole surgery with a camera) or minimal-incision hip replacement — which mean less pain, smaller scars and faster recovery.",
   },
   {
     q: "Which insurance / payment options are accepted?",
@@ -178,7 +178,7 @@ export const spineFaqs: Faq[] = [
 export const arthroscopyFaqs: Faq[] = [
   {
     q: "Which joints can be treated with arthroscopy?",
-    a: "Arthroscopy is performed on the knee, shoulder, hip, ankle, wrist and elbow. Through a buttonhole-sized incision, a fibre-optic camera lets the surgeon diagnose and treat problems inside the joint with minimal disruption to surrounding tissue.",
+    a: "Arthroscopy is performed on the knee, shoulder, hip, ankle, wrist and elbow. Through a small keyhole incision, a fibre-optic camera lets the surgeon diagnose and treat problems inside the joint with minimal disruption to surrounding tissue.",
   },
   {
     q: "Can arthroscopy treat cartilage and meniscus injuries?",
@@ -202,5 +202,82 @@ export const arthritisFaqs: Faq[] = [
   {
     q: "How is arthritis diagnosed?",
     a: "Diagnosis begins with a physical examination of the affected joint, supported by X-rays or MRI for a clearer picture. In some cases, blood, urine or joint-fluid tests are done to identify the specific type of arthritis.",
+  },
+];
+
+// --- FAQ sets for the newer standalone pages (draft copy — verify with the doctor) ---
+
+export const partialKneeFaqs: Faq[] = [
+  {
+    q: "Who is a candidate for partial knee replacement?",
+    a: "Partial (unicondylar) knee replacement suits patients whose arthritis is limited to one compartment of the knee, with good ligament stability and a reasonable range of motion. A clinical examination and X-rays confirm whether it is the right option for you.",
+  },
+  {
+    q: "How is partial knee replacement different from total knee replacement?",
+    a: "A partial replacement resurfaces only the damaged compartment while preserving the healthy bone, cartilage and ligaments. This usually means a smaller incision, less bone removal, a more natural-feeling knee and often a quicker recovery than a total knee replacement.",
+  },
+  {
+    q: "How long does recovery take after partial knee replacement?",
+    a: "Many patients recover faster than after a total knee replacement, often with a shorter hospital stay. A guided physiotherapy plan supports a steady return to walking and everyday activities.",
+  },
+];
+
+export const kneeArthroscopyFaqs: Faq[] = [
+  {
+    q: "What knee conditions does arthroscopy treat?",
+    a: "Knee arthroscopy is commonly used for meniscus (cartilage) tears, damaged joint cartilage, ligament injuries such as the ACL, removal of loose fragments and treatment of an inflamed joint lining.",
+  },
+  {
+    q: "Is knee arthroscopy a major surgery?",
+    a: "It is a keyhole procedure performed through small incisions with a fibre-optic camera, so it is far less invasive than open surgery. Most patients go home the same day or after a short stay.",
+  },
+  {
+    q: "How soon can I walk after knee arthroscopy?",
+    a: "Many patients begin gentle walking soon after surgery, with support as needed. Your surgeon and physiotherapist will guide the pace of rehabilitation based on the procedure performed.",
+  },
+];
+
+export const shoulderArthroscopyFaqs: Faq[] = [
+  {
+    q: "What shoulder problems can arthroscopy treat?",
+    a: "Shoulder arthroscopy is used for rotator cuff tears, labral tears, shoulder impingement, recurrent dislocation and removal of loose bodies — restoring stability and pain-free movement.",
+  },
+  {
+    q: "Will I need a sling after shoulder arthroscopy?",
+    a: "A sling is often used for a short period to protect the shoulder while it heals. A structured physiotherapy programme then gradually restores movement and strength.",
+  },
+  {
+    q: "How long is recovery after shoulder arthroscopy?",
+    a: "Recovery depends on the procedure, but the keyhole approach generally means less pain and a quicker return to daily activities than open surgery, supported by guided rehabilitation.",
+  },
+];
+
+export const sportsInjuryFaqs: Faq[] = [
+  {
+    q: "Do all sports injuries need surgery?",
+    a: "No. Many sports injuries respond well to conservative care — rest, physiotherapy, bracing, activity modification and treatments such as PRP injections. Surgery is considered only when non-surgical measures do not restore function.",
+  },
+  {
+    q: "What is a PRP injection?",
+    a: "PRP (platelet-rich plasma) is prepared from a small sample of your own blood and injected into the injured area to support the body's natural healing. It is one of several non-surgical options used for suitable soft-tissue and joint injuries.",
+  },
+  {
+    q: "When should I see a specialist for a sports injury?",
+    a: "Seek advice if you have persistent pain, swelling, instability or reduced movement after an injury, or if symptoms do not settle with rest. Early assessment helps guide the safest and most effective recovery plan.",
+  },
+];
+
+export const fractureTraumaFaqs: Faq[] = [
+  {
+    q: "Do all fractures need surgery?",
+    a: "No. Many fractures heal well with a cast or splint and close monitoring. Surgery is recommended for displaced, unstable or complex fractures to restore alignment and allow proper healing.",
+  },
+  {
+    q: "How soon should a fracture be treated?",
+    a: "Fractures and significant injuries should be assessed promptly. Timely treatment reduces complications and supports the best possible recovery of function.",
+  },
+  {
+    q: "What does recovery after a fracture involve?",
+    a: "Recovery depends on the injury and treatment, and typically combines a period of protection or immobilisation with a guided rehabilitation programme to restore strength, movement and confidence.",
   },
 ];

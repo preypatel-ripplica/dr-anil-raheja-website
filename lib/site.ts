@@ -10,7 +10,7 @@ export const site = {
   tagline: "Director Orthopedics — Apollo Spectra Hospital & Jeewan Mala Hospital",
   title: "Hip Replacement Surgeon in Delhi | Dr. Anil Raheja — Direct Anterior Approach",
   description:
-    "Dr. Anil Raheja is a leading Hip Replacement Surgeon in Delhi with 30 years of experience and 25,000+ surgeries — specialising in the Direct Anterior Approach (DAA) and minimally invasive hip surgery, plus knee replacement, spine surgery, arthroscopy and arthritis care.",
+    "Dr. Anil Raheja is a leading Hip Replacement Surgeon in Delhi with 30 years of experience and 15,000+ surgeries — specialising in the Direct Anterior Approach (DAA) and minimally invasive hip surgery, plus knee replacement, spine surgery, arthroscopy and arthritis care.",
   url: "https://www.dranilraheja.com",
 };
 
@@ -19,7 +19,7 @@ export const contact = {
   phoneDisplay: "+91-96676 94000",
   email: "dranilraheja@gmail.com",
   address:
-    "Block C-25 A, Ground Floor, Vijay Nagar, New Delhi, Delhi 110033",
+    "Block C-25 A, Vijay Nagar, New Delhi, Delhi 110033",
   youtube: "https://youtube.com/@dranilrahejaortho",
   mapEmbed:
     "https://www.google.com/maps?q=Raheja+Ortho+And+Gynae+Clinic+C-25A+Vijay+Nagar+New+Delhi&output=embed",
@@ -41,14 +41,14 @@ export const clinics: Clinic[] = [
     area: "Vijay Nagar, Delhi",
     days: "Mon – Sat",
     hours: "5:00 PM – 8:00 PM",
-    note: "Block C-25 A, Ground Floor, Vijay Nagar",
+    note: "Block C-25 A, Vijay Nagar",
   },
   {
     id: "apollo-spectra",
     name: "Apollo Spectra Hospitals",
     area: "Karol Bagh, Delhi",
     days: "Mon – Sat",
-    hours: "11:00 AM – 2:00 PM",
+    hours: "10:30 AM – 12:00 PM",
     note: "Director Orthopedics",
   },
   {
@@ -56,7 +56,7 @@ export const clinics: Clinic[] = [
     name: "Jeewan Mala Hospital",
     area: "Karol Bagh, Delhi",
     days: "Mon – Sat",
-    hours: "11:00 AM – 2:00 PM",
+    hours: "12:30 PM – 2:00 PM",
   },
 ];
 
@@ -75,8 +75,13 @@ export const nav: NavItem[] = [
     children: [
       { label: "Hip Replacement Surgery", href: "/hip-replacement-surgery" },
       { label: "Knee Replacement Surgery", href: "/knee-replacement-surgery" },
+      { label: "Partial Knee Replacement", href: "/partial-knee-replacement" },
       { label: "Spine Surgery", href: "/spine-surgery" },
       { label: "Arthroscopic Surgery", href: "/arthroscopic-surgery" },
+      { label: "Knee Arthroscopy", href: "/knee-arthroscopy" },
+      { label: "Shoulder Arthroscopy", href: "/shoulder-arthroscopy" },
+      { label: "Sports Injury & Conservative Care", href: "/sports-injury-conservative-care" },
+      { label: "Fracture & Trauma Treatment", href: "/fracture-trauma-treatment" },
       { label: "Arthritis Treatment", href: "/arthritis-treatment" },
     ],
   },
@@ -95,7 +100,7 @@ export const nav: NavItem[] = [
 
 export const stats = [
   { value: 30, suffix: "+", label: "Years of Experience" },
-  { value: 25000, suffix: "+", label: "Surgeries Performed" },
+  { value: 15000, suffix: "+", label: "Surgeries Performed" },
   { value: 212, suffix: "+", label: "Google Reviews" },
   { value: 3, suffix: "", label: "Clinic Locations" },
 ];
@@ -139,7 +144,7 @@ export const treatments: Treatment[] = [
     title: "Arthroscopic Surgery",
     short: "Arthroscopy",
     excerpt:
-      "Keyhole diagnosis and treatment of joint problems via a fiber-optic camera through a buttonhole-sized incision.",
+      "Keyhole surgery for joint problems — knee and shoulder arthroscopy via a fiber-optic camera through a small keyhole incision.",
     image: "/images/9-rin1b64ld9o9vd4f5a53dhtvtjqtb7fyxjnccilbdg.png",
   },
   {
@@ -149,5 +154,45 @@ export const treatments: Treatment[] = [
     excerpt:
       "Care for the slow wear and tear of joint cartilage — from early diagnosis and relief plans to surgery when medication no longer helps.",
     image: "/images/11-rin1ll6745xys2nshblgrx3t17md9dsgnuozueepxk.png",
+  },
+  {
+    slug: "partial-knee-replacement",
+    title: "Partial Knee Replacement",
+    short: "Partial Knee",
+    excerpt:
+      "Unicondylar knee replacement — a modern, joint-preserving option that resurfaces only the damaged compartment for a quicker recovery.",
+    image: "/images/6-rin0jnep9vy2caeho4ipikf0cyt8hm9qq4t5fijuw8.png",
+  },
+  {
+    slug: "knee-arthroscopy",
+    title: "Knee Arthroscopy",
+    short: "Knee Arthroscopy",
+    excerpt:
+      "Keyhole surgery for the knee — treating meniscus tears, cartilage damage and ligament (ACL) injuries through small incisions.",
+    image: "/images/9-rin1b64ld9o9vd4f5a53dhtvtjqtb7fyxjnccilbdg.png",
+  },
+  {
+    slug: "shoulder-arthroscopy",
+    title: "Shoulder Arthroscopy",
+    short: "Shoulder Arthroscopy",
+    excerpt:
+      "Keyhole surgery for the shoulder — treating rotator cuff tears, labral tears, impingement and instability.",
+    image: "/images/10-rin1bbrmi9wa1bkdedx320bnks748c1y92b68nmfuw.png",
+  },
+  {
+    slug: "sports-injury-conservative-care",
+    title: "Sports Injury & Conservative Care",
+    short: "Sports Injury",
+    excerpt:
+      "Non-surgical treatment for sports and joint injuries — physiotherapy, bracing, PRP injections and guided rehabilitation.",
+    image: "/images/Orthopaedics-1.jpg",
+  },
+  {
+    slug: "fracture-trauma-treatment",
+    title: "Fracture & Trauma Treatment",
+    short: "Fracture & Trauma",
+    excerpt:
+      "Prompt, expert care for fractures and orthopedic trauma — from simple breaks to complex, multiple injuries.",
+    image: "/images/Orthopaedics.jpg",
   },
 ];

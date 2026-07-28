@@ -27,7 +27,7 @@ import {
   Scan,
 } from "@/components/Icons";
 
-const serviceIcons = [Joint, Bone, Spine, Tool, Pulse];
+const serviceIcons = [Joint, Bone, Spine, Tool, Pulse, Bone, Scan, Shield, Walk, Pulse];
 
 export default function HomePage() {
   return (
@@ -42,7 +42,7 @@ export default function HomePage() {
             </h1>
             <p className={styles.heroLead}>
               Dr. Anil Raheja is a leading Hip Replacement Surgeon in Delhi with 30 years
-              of experience and over 25,000 successful surgeries. He specialises in the
+              of experience and over 15,000 successful surgeries. He specialises in the
               muscle-sparing Direct Anterior Approach (DAA) and minimally invasive hip
               surgery — alongside knee replacement, spine surgery, arthroscopy and
               arthritis care. Trusted, minimally invasive, recovery-focused.
@@ -87,7 +87,7 @@ export default function HomePage() {
             </div>
             <div className={styles.heroCard}>
               <span className={styles.heroCardNum}>
-                <CountUp value={25000} suffix="+" />
+                <CountUp value={15000} suffix="+" />
               </span>
               <span className={styles.heroCardLabel}>Successful surgeries</span>
             </div>
@@ -115,7 +115,7 @@ export default function HomePage() {
           </Reveal>
           <Reveal delay={0.08} className={styles.stat}>
             <span className={styles.statNum}>
-              <CountUp value={25000} suffix="+" />
+              <CountUp value={15000} suffix="+" />
             </span>
             <span className={styles.statLabel}>Surgeries performed</span>
           </Reveal>
