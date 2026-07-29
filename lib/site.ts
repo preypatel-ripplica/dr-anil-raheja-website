@@ -3,6 +3,7 @@
 // Plain data so the CMS integrator can swap these for CMS queries later.
 // All values transcribed from the live dranilraheja.com.
 // -----------------------------------------------------------------------------
+import navTreatments from "./nav-treatments.json";
 
 export const site = {
   name: "Dr. Anil Raheja",
@@ -72,13 +73,7 @@ export const nav: NavItem[] = [
   {
     label: "Specialities & Services",
     href: "#",
-    children: [
-      { label: "Hip Replacement Surgery", href: "/hip-replacement-surgery" },
-      { label: "Knee Replacement Surgery", href: "/knee-replacement-surgery" },
-      { label: "Spine Surgery", href: "/spine-surgery" },
-      { label: "Arthroscopic Surgery", href: "/arthroscopic-surgery" },
-      { label: "Arthritis Treatment", href: "/arthritis-treatment" },
-    ],
+    children: navTreatments as { label: string; href: string }[],
   },
   {
     label: "Media",

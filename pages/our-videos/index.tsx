@@ -1,22 +1,38 @@
-import type { Metadata } from "next";
+import type { GetStaticProps } from "next";
+import Head from "next/head";
 import PageHero from "@/components/PageHero/PageHero";
 import BookCta from "@/components/BookCta/BookCta";
 import VideoCard from "@/components/VideoCard/VideoCard";
 import Reveal from "@/components/Motion/Reveal";
-import { featureVideos, shorts } from "@/lib/content";
+import { getVideos, type VideoItem } from "@/lib/cms";
 import { contact } from "@/lib/site";
 import { Youtube } from "@/components/Icons";
 import styles from "./videos.module.css";
 
-export const metadata: Metadata = {
-  title: "Our Videos",
-  description:
-    "Patient education videos and shorts from Dr. Anil Raheja — understand your orthopedic treatment before you walk in.",
+export const getStaticProps: GetStaticProps<{
+  featured: VideoItem[];
+  shorts: VideoItem[];
+}> = async () => {
+  const { featured, shorts } = await getVideos();
+  return { props: { featured, shorts } };
 };
 
-export default function VideosPage() {
+export default function VideosPage({
+  featured,
+  shorts,
+}: {
+  featured: VideoItem[];
+  shorts: VideoItem[];
+}) {
   return (
     <>
+      <Head>
+        <title>Our Videos | Dr. Anil Raheja</title>
+        <meta
+          name="description"
+          content="Patient education videos and shorts from Dr. Anil Raheja — understand your orthopedic treatment before you walk in."
+        />
+      </Head>
       <PageHero
         eyebrow="Media"
         title="Our Videos"
@@ -31,9 +47,9 @@ export default function VideosPage() {
             <h2>Patient talks &amp; procedures</h2>
           </Reveal>
           <div className={styles.featureGrid}>
-            {featureVideos.map((id, i) => (
-              <Reveal key={id} delay={i * 0.08}>
-                <VideoCard id={id} title="Dr. Anil Raheja video" />
+            {featured.map((v, i) => (
+              <Reveal key={v.id} delay={i * 0.08}>
+                <VideoCard id={v.id} title={v.title} />
               </Reveal>
             ))}
           </div>
@@ -47,9 +63,9 @@ export default function VideosPage() {
             <h2>Quick answers, under a minute</h2>
           </Reveal>
           <div className={styles.shortsGrid}>
-            {shorts.map((id, i) => (
-              <Reveal key={id} delay={(i % 4) * 0.06}>
-                <VideoCard id={id} title="Dr. Anil Raheja short" vertical />
+            {shorts.map((v, i) => (
+              <Reveal key={v.id} delay={(i % 4) * 0.06}>
+                <VideoCard id={v.id} title={v.title} vertical />
               </Reveal>
             ))}
           </div>
