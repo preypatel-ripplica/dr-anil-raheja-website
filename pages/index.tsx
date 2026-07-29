@@ -29,7 +29,7 @@ import {
   Scan,
 } from "@/components/Icons";
 
-const serviceIcons = [Joint, Bone, Spine, Tool, Pulse];
+const serviceIcons = [Joint, Bone, Spine, Tool, Pulse, Bone, Scan, Shield, Walk, Pulse];
 
 export const getStaticProps: GetStaticProps<{
   blogPosts: Article[];
@@ -52,15 +52,16 @@ export default function HomePage({
       <section className={styles.hero}>
         <div className={`container ${styles.heroInner}`}>
           <Reveal className={styles.heroText}>
-            <span className="eyebrow">Orthopedic Surgeon · Delhi</span>
+            <span className="eyebrow">Hip Replacement Surgeon · Delhi</span>
             <h1 className={styles.heroTitle}>
               Get back to <span className="grad-text">pain-free</span> movement
             </h1>
             <p className={styles.heroLead}>
-              Dr. Anil Raheja is a senior orthopedic surgeon with 28 years of experience
-              and over 12,000 successful surgeries — hip and knee replacement, spine
-              surgery, arthroscopy and arthritis care. Trusted, minimally invasive,
-              recovery-focused.
+              Dr. Anil Raheja is a leading Hip Replacement Surgeon in Delhi with 30 years
+              of experience and over 15,000 successful surgeries. He specialises in the
+              muscle-sparing Direct Anterior Approach (DAA) and minimally invasive hip
+              surgery — alongside knee replacement, spine surgery, arthroscopy and
+              arthritis care. Trusted, minimally invasive, recovery-focused.
             </p>
             <div className={styles.heroCtas}>
               <Link href="/contact-us" className="btn btn--primary">
@@ -102,7 +103,7 @@ export default function HomePage({
             </div>
             <div className={styles.heroCard}>
               <span className={styles.heroCardNum}>
-                <CountUp value={12000} suffix="+" />
+                <CountUp value={15000} suffix="+" />
               </span>
               <span className={styles.heroCardLabel}>Successful surgeries</span>
             </div>
@@ -111,7 +112,7 @@ export default function HomePage({
                 <Check width={16} height={16} />
               </span>
               <div>
-                <strong>28 years</strong>
+                <strong>30 years</strong>
                 <small>of experience</small>
               </div>
             </div>
@@ -124,13 +125,13 @@ export default function HomePage({
         <div className={`container ${styles.statsGrid}`}>
           <Reveal className={styles.stat}>
             <span className={styles.statNum}>
-              <CountUp value={28} suffix="+" />
+              <CountUp value={30} suffix="+" />
             </span>
             <span className={styles.statLabel}>Years of experience</span>
           </Reveal>
           <Reveal delay={0.08} className={styles.stat}>
             <span className={styles.statNum}>
-              <CountUp value={12000} suffix="+" />
+              <CountUp value={15000} suffix="+" />
             </span>
             <span className={styles.statLabel}>Surgeries performed</span>
           </Reveal>
@@ -219,7 +220,7 @@ export default function HomePage({
             </div>
             <div className={styles.aboutBadge}>
               <span className={styles.aboutBadgeNum}>
-                <CountUp value={28} suffix="+" />
+                <CountUp value={30} suffix="+" />
               </span>
               <span>years of trusted care</span>
             </div>
