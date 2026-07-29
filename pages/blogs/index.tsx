@@ -1,23 +1,31 @@
-import type { Metadata } from "next";
+import type { GetStaticProps } from "next";
+import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import PageHero from "@/components/PageHero/PageHero";
 import BookCta from "@/components/BookCta/BookCta";
 import Reveal from "@/components/Motion/Reveal";
-import { articles } from "@/lib/blog";
+import type { Article } from "@/lib/blog";
+import { getArticles } from "@/lib/cms";
 import { ArrowRight, Clock } from "@/components/Icons";
 import styles from "./blogs.module.css";
 
-export const metadata: Metadata = {
-  title: "Blogs",
-  description: "Orthopedic health articles by Dr. Anil Raheja — joints, surgery and recovery.",
-};
+export const getStaticProps: GetStaticProps<{ articles: Article[] }> = async () => ({
+  props: { articles: await getArticles() },
+});
 
-export default function BlogsPage() {
+export default function BlogsPage({ articles }: { articles: Article[] }) {
   const [featured, ...rest] = articles;
 
   return (
     <>
+      <Head>
+        <title>Blogs | Dr. Anil Raheja</title>
+        <meta
+          name="description"
+          content="Orthopedic health articles by Dr. Anil Raheja — joints, surgery and recovery."
+        />
+      </Head>
       <PageHero
         eyebrow="Our Blog Posts"
         title="From the desk of Dr. Raheja"
@@ -27,24 +35,26 @@ export default function BlogsPage() {
       <section className="section">
         <div className="container">
           {/* featured */}
-          <Reveal>
-            <Link href={`/blogs/${featured.slug}`} className={styles.featured}>
-              <div className={styles.featuredImg}>
-                <Image src={featured.image} alt={featured.title} fill sizes="(max-width: 900px) 100vw, 55vw" className={styles.cover} />
-              </div>
-              <div className={styles.featuredBody}>
-                <span className={styles.tag}>Featured · {featured.category}</span>
-                <h2>{featured.title}</h2>
-                <p>{featured.excerpt}</p>
-                <span className={styles.meta}>
-                  <Clock width={14} height={14} /> {featured.readMins} min read
-                </span>
-                <span className={styles.readMore}>
-                  Read article <ArrowRight width={16} height={16} />
-                </span>
-              </div>
-            </Link>
-          </Reveal>
+          {featured && (
+            <Reveal>
+              <Link href={`/blogs/${featured.slug}`} className={styles.featured}>
+                <div className={styles.featuredImg}>
+                  <Image src={featured.image} alt={featured.title} fill sizes="(max-width: 900px) 100vw, 55vw" className={styles.cover} />
+                </div>
+                <div className={styles.featuredBody}>
+                  <span className={styles.tag}>Featured · {featured.category}</span>
+                  <h2>{featured.title}</h2>
+                  <p>{featured.excerpt}</p>
+                  <span className={styles.meta}>
+                    <Clock width={14} height={14} /> {featured.readMins} min read
+                  </span>
+                  <span className={styles.readMore}>
+                    Read article <ArrowRight width={16} height={16} />
+                  </span>
+                </div>
+              </Link>
+            </Reveal>
+          )}
 
           {/* rest */}
           <div className={styles.grid}>

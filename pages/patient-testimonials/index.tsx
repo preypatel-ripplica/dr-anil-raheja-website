@@ -1,21 +1,29 @@
-import type { Metadata } from "next";
+import type { GetStaticProps } from "next";
+import Head from "next/head";
 import PageHero from "@/components/PageHero/PageHero";
 import BookCta from "@/components/BookCta/BookCta";
 import VideoCard from "@/components/VideoCard/VideoCard";
 import Reveal from "@/components/Motion/Reveal";
-import { reviews, reviewsSummary, featureVideos } from "@/lib/content";
+import { reviews, reviewsSummary } from "@/lib/content";
+import { getVideos, type VideoItem } from "@/lib/cms";
 import { Star, Quote } from "@/components/Icons";
 import styles from "./testimonials.module.css";
 
-export const metadata: Metadata = {
-  title: "Patient Testimonials",
-  description:
-    "What patients say about Dr. Anil Raheja — rated EXCELLENT from 212 Google reviews.",
+export const getStaticProps: GetStaticProps<{ featureVideos: VideoItem[] }> = async () => {
+  const { featured } = await getVideos();
+  return { props: { featureVideos: featured } };
 };
 
-export default function TestimonialsPage() {
+export default function TestimonialsPage({ featureVideos }: { featureVideos: VideoItem[] }) {
   return (
     <>
+      <Head>
+        <title>Patient Testimonials | Dr. Anil Raheja</title>
+        <meta
+          name="description"
+          content="What patients say about Dr. Anil Raheja — rated EXCELLENT from 212 Google reviews."
+        />
+      </Head>
       <PageHero
         eyebrow="Media"
         title="Patient Testimonials"
@@ -62,9 +70,9 @@ export default function TestimonialsPage() {
             <h2>Video testimonials</h2>
           </Reveal>
           <div className={styles.videoGrid}>
-            {featureVideos.map((id, i) => (
-              <Reveal key={id} delay={i * 0.08}>
-                <VideoCard id={id} title="Patient testimonial" />
+            {featureVideos.map((v, i) => (
+              <Reveal key={v.id} delay={i * 0.08}>
+                <VideoCard id={v.id} title={v.title} />
               </Reveal>
             ))}
           </div>
