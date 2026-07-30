@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { nav, contact, site } from "@/lib/site";
+import { appointmentUrl, nav, contact, site, logo } from "@/lib/site";
 import { Phone, Mail, Chevron, Menu, Close, ArrowRight } from "@/components/Icons";
 import styles from "./Header.module.css";
 
@@ -42,7 +42,7 @@ export default function Header() {
       <div className={styles.topbar}>
         <div className={`container ${styles.topInner}`}>
           <span className={styles.topNote}>
-            {site.credentials} · 30+ years · 15,000+ surgeries
+            {site.credentials} · 30+ years · 25,000+ surgeries
           </span>
           <div className={styles.topContact}>
             <a href={`tel:${contact.phonePrimary}`} className={styles.topItem}>
@@ -61,7 +61,9 @@ export default function Header() {
       <div className={styles.mainbar}>
         <div className={`container ${styles.mainInner}`}>
           <Link href="/" className={styles.brand} aria-label="Dr. Anil Raheja — Home">
-            <span className={styles.brandMark}>AR</span>
+            <span className={styles.brandMark}>
+              <img src={logo.icon} alt="" />
+            </span>
             <span className={styles.brandText}>
               <strong>Dr. Anil Raheja</strong>
               <small>Orthopedic Surgeon</small>
@@ -101,9 +103,9 @@ export default function Header() {
             </ul>
           </nav>
 
-          <Link href="/contact-us" className={`btn btn--primary ${styles.cta}`}>
+          <a href={appointmentUrl} target="_blank" rel="noopener noreferrer" className={`btn btn--primary ${styles.cta}`}>
             Book Appointment
-          </Link>
+          </a>
 
           <button
             type="button"
@@ -165,9 +167,15 @@ export default function Header() {
               )
             )}
           </ul>
-          <Link href="/contact-us" className="btn btn--primary" style={{ width: "100%", marginTop: 20 }}>
+          <a
+            href={appointmentUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn--primary"
+            style={{ width: "100%", marginTop: 20 }}
+          >
             Book Appointment <ArrowRight width={18} height={18} />
-          </Link>
+          </a>
         </nav>
       </div>
       {open && <div className={styles.backdrop} onClick={() => setOpen(false)} />}

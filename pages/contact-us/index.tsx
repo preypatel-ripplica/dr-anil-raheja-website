@@ -1,26 +1,41 @@
-import type { Metadata } from "next";
+import Head from "next/head";
 import PageHero from "@/components/PageHero/PageHero";
 import BookCta from "@/components/BookCta/BookCta";
 import VisitPlanner from "@/components/VisitPlanner/VisitPlanner";
 import CallPrepKit from "@/components/CallPrepKit/CallPrepKit";
 import Reveal from "@/components/Motion/Reveal";
-import { contact, clinics } from "@/lib/site";
+import { appointmentUrl, contact, clinics } from "@/lib/site";
+import { breadcrumbSchema, canonicalUrl, jsonLd, physicianSchema } from "@/lib/seo";
 import { Phone, Mail, MapPin, Clock } from "@/components/Icons";
 import styles from "./contact.module.css";
-
-export const metadata: Metadata = {
-  title: "Contact Us",
-  description:
-    "Book an appointment with Dr. Anil Raheja — Vijay Nagar clinic, Apollo Spectra and Jeewan Mala Hospital, Karol Bagh.",
-};
 
 export default function ContactPage() {
   return (
     <>
+      <Head>
+        <title>Contact Us | Dr. Anil Raheja</title>
+        <meta
+          name="description"
+          content="Contact Dr. Anil Raheja's clinic for orthopaedic enquiries, clinic timings and appointment booking."
+        />
+        <link rel="canonical" href={canonicalUrl("/contact-us")} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: jsonLd([
+              physicianSchema,
+              breadcrumbSchema([
+                { name: "Home", path: "/" },
+                { name: "Contact Us", path: "/contact-us" },
+              ]),
+            ]),
+          }}
+        />
+      </Head>
       <PageHero
         eyebrow="Contact us"
         title="Talk to the clinic"
-        subtitle="Call, write, or plan your visit — we'll confirm your appointment date and time."
+        subtitle="Book online for an appointment, or send an enquiry and the clinic team will guide the next step."
         breadcrumb="Contact us"
       />
 
@@ -31,11 +46,11 @@ export default function ContactPage() {
               <span className={styles.icon}>
                 <Phone width={21} height={21} />
               </span>
-              <h3>For appointments</h3>
-              <a href={`tel:${contact.phonePrimary}`} className={styles.big}>
-                {contact.phoneDisplay}
+              <h3>Book online</h3>
+              <a href={appointmentUrl} target="_blank" rel="noopener noreferrer" className={styles.big}>
+                Book appointment
               </a>
-              <p className={styles.muted}>Mon – Sat, OPD hours</p>
+              <p className={styles.muted}>Opens the HealthPlix booking page</p>
             </Reveal>
             <Reveal delay={0.07} className={styles.card}>
               <span className={styles.icon}>

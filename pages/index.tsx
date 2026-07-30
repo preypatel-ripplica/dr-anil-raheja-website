@@ -1,9 +1,11 @@
 import type { GetStaticProps } from "next";
+import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./page.module.css";
-import { treatments, contact, clinics, site } from "@/lib/site";
+import { appointmentUrl, treatments, contact, clinics, site, treatmentHref } from "@/lib/site";
 import { reviews, reviewsSummary, generalFaqs } from "@/lib/content";
+import { breadcrumbSchema, canonicalUrl, faqSchema, jsonLd, physicianSchema, websiteSchema } from "@/lib/seo";
 import type { Article } from "@/lib/blog";
 import { getArticles, getVideos, type VideoItem } from "@/lib/cms";
 import BookCta from "@/components/BookCta/BookCta";
@@ -48,6 +50,20 @@ export default function HomePage({
 }) {
   return (
     <>
+      <Head>
+        <link rel="canonical" href={canonicalUrl("/")} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: jsonLd([
+              websiteSchema,
+              physicianSchema,
+              breadcrumbSchema([{ name: "Home", path: "/" }]),
+              faqSchema(generalFaqs),
+            ].filter(Boolean) as object[]),
+          }}
+        />
+      </Head>
       {/* ============ HERO — calm, reassuring split ============ */}
       <section className={styles.hero}>
         <div className={`container ${styles.heroInner}`}>
@@ -58,15 +74,15 @@ export default function HomePage({
             </h1>
             <p className={styles.heroLead}>
               Dr. Anil Raheja is a leading Hip Replacement Surgeon in Delhi with 30 years
-              of experience and over 15,000 successful surgeries. He specialises in the
+              of experience and over 25,000 successful surgeries. He specialises in the
               muscle-sparing Direct Anterior Approach (DAA) and minimally invasive hip
               surgery — alongside knee replacement, spine surgery, arthroscopy and
               arthritis care. Trusted, minimally invasive, recovery-focused.
             </p>
             <div className={styles.heroCtas}>
-              <Link href="/contact-us" className="btn btn--primary">
+              <a href={appointmentUrl} target="_blank" rel="noopener noreferrer" className="btn btn--primary">
                 Book an Appointment <ArrowRight width={17} height={17} />
-              </Link>
+              </a>
               <a href={`tel:${contact.phonePrimary}`} className="btn btn--outline">
                 <Phone width={16} height={16} /> {contact.phoneDisplay}
               </a>
@@ -103,7 +119,7 @@ export default function HomePage({
             </div>
             <div className={styles.heroCard}>
               <span className={styles.heroCardNum}>
-                <CountUp value={15000} suffix="+" />
+                <CountUp value={25000} suffix="+" />
               </span>
               <span className={styles.heroCardLabel}>Successful surgeries</span>
             </div>
@@ -131,15 +147,15 @@ export default function HomePage({
           </Reveal>
           <Reveal delay={0.08} className={styles.stat}>
             <span className={styles.statNum}>
-              <CountUp value={15000} suffix="+" />
+              <CountUp value={100000} suffix="+" />
             </span>
-            <span className={styles.statLabel}>Surgeries performed</span>
+            <span className={styles.statLabel}>Happy patients</span>
           </Reveal>
           <Reveal delay={0.16} className={styles.stat}>
             <span className={styles.statNum}>
-              <CountUp value={212} suffix="+" />
+              <CountUp value={25000} suffix="+" />
             </span>
-            <span className={styles.statLabel}>5-star Google reviews</span>
+            <span className={styles.statLabel}>Surgeries performed</span>
           </Reveal>
           <Reveal delay={0.24} className={styles.stat}>
             <span className={styles.statNum}>3</span>
@@ -168,7 +184,7 @@ export default function HomePage({
               const Icon = serviceIcons[i] ?? Joint;
               return (
                 <Reveal key={t.slug} delay={i * 0.06}>
-                  <Link href={`/${t.slug}`} className={styles.serviceCard}>
+                  <Link href={treatmentHref(t.slug)} className={styles.serviceCard}>
                     <div className={styles.serviceImg}>
                       <Image src={t.image} alt={t.title} fill sizes="(max-width: 700px) 100vw, 33vw" className={styles.cover} />
                       <span className={styles.serviceIcon}>

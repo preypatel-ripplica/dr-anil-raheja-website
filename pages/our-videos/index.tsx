@@ -6,6 +6,7 @@ import VideoCard from "@/components/VideoCard/VideoCard";
 import Reveal from "@/components/Motion/Reveal";
 import { getVideos, type VideoItem } from "@/lib/cms";
 import { contact } from "@/lib/site";
+import { breadcrumbSchema, canonicalUrl, jsonLd } from "@/lib/seo";
 import { Youtube } from "@/components/Icons";
 import styles from "./videos.module.css";
 
@@ -31,6 +32,18 @@ export default function VideosPage({
         <meta
           name="description"
           content="Patient education videos and shorts from Dr. Anil Raheja — understand your orthopedic treatment before you walk in."
+        />
+        <link rel="canonical" href={canonicalUrl("/our-videos")} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: jsonLd(
+              breadcrumbSchema([
+                { name: "Home", path: "/" },
+                { name: "Our Videos", path: "/our-videos" },
+              ])
+            ),
+          }}
         />
       </Head>
       <PageHero

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { site, contact, clinics, treatments } from "@/lib/site";
+import { appointmentUrl, site, contact, clinics, treatments, logo, treatmentHref } from "@/lib/site";
 import { Phone, Mail, MapPin, Clock, Youtube, ArrowRight } from "@/components/Icons";
 import styles from "./Footer.module.css";
 
@@ -10,7 +10,9 @@ export default function Footer() {
         {/* Brand */}
         <div>
           <div className={styles.brand}>
-            <span className={styles.brandMark}>AR</span>
+            <span className={styles.brandMark}>
+              <img src={logo.icon} alt="" />
+            </span>
             <span>
               <strong>{site.name}</strong>
               <small>{site.credentials}</small>
@@ -38,7 +40,7 @@ export default function Footer() {
           <ul className={styles.links}>
             {treatments.map((t) => (
               <li key={t.slug}>
-                <Link href={`/${t.slug}`}>
+                <Link href={treatmentHref(t.slug)}>
                   <ArrowRight width={13} height={13} /> {t.title}
                 </Link>
               </li>
@@ -81,9 +83,9 @@ export default function Footer() {
               <a href={`mailto:${contact.email}`}>{contact.email}</a>
             </li>
           </ul>
-          <Link href="/contact-us" className={`btn btn--primary ${styles.footBtn}`}>
+          <a href={appointmentUrl} target="_blank" rel="noopener noreferrer" className={`btn btn--primary ${styles.footBtn}`}>
             Book an Appointment
-          </Link>
+          </a>
         </div>
       </div>
 

@@ -11,8 +11,15 @@ export const site = {
   tagline: "Director Orthopedics — Apollo Spectra Hospital & Jeewan Mala Hospital",
   title: "Hip Replacement Surgeon in Delhi | Dr. Anil Raheja — Direct Anterior Approach",
   description:
-    "Dr. Anil Raheja is a leading Hip Replacement Surgeon in Delhi with 30 years of experience and 15,000+ surgeries — specialising in the Direct Anterior Approach (DAA) and minimally invasive hip surgery, plus knee replacement, spine surgery, arthroscopy and arthritis care.",
+    "Dr. Anil Raheja is a leading Hip Replacement Surgeon in Delhi with 30+ years of experience, 100k+ happy patients and 25,000+ surgeries, specialising in the Direct Anterior Approach (DAA) and minimally invasive hip surgery, plus knee replacement, spine surgery, arthroscopy and arthritis care.",
   url: "https://www.dranilraheja.com",
+};
+
+export const appointmentUrl =
+  "https://book.healthplix.com/dr-tripti-raheja-gynaecologist-single-storey-";
+
+export const logo = {
+  icon: "/images/dr-anil-raheja-logo-icon.svg",
 };
 
 export const contact = {
@@ -88,10 +95,12 @@ export const nav: NavItem[] = [
   { label: "Contact us", href: "/contact-us" },
 ];
 
+export const treatmentHref = (slug: string) => `/treatment/${slug}`;
+
 export const stats = [
   { value: 30, suffix: "+", label: "Years of Experience" },
-  { value: 15000, suffix: "+", label: "Surgeries Performed" },
-  { value: 212, suffix: "+", label: "Google Reviews" },
+  { value: 100000, suffix: "+", label: "Happy Patients" },
+  { value: 25000, suffix: "+", label: "Surgeries Performed" },
   { value: 3, suffix: "", label: "Clinic Locations" },
 ];
 
@@ -103,14 +112,14 @@ export type Treatment = {
   image: string;
 };
 
-// The five treatments in the header/footer menu and home services grid.
+// Treatments shown in the header/footer menu and home services grid.
 export const treatments: Treatment[] = [
   {
     slug: "hip-replacement-surgery",
     title: "Hip Replacement Surgery",
     short: "Hip Replacement",
     excerpt:
-      "Primary, complex and revision hip replacement — with a special focus on the muscle-sparing Direct Anterior Approach (DAA) for less pain and faster recovery.",
+      "Primary, complex and revision hip replacement with a special focus on the muscle-sparing Direct Anterior Approach (DAA).",
     image: "/images/2-rin034ev3rcl0zmgzeyaj1290zhgft7s4lqwaot0kw.png",
   },
   {
@@ -118,7 +127,7 @@ export const treatments: Treatment[] = [
     title: "Knee Replacement Surgery",
     short: "Knee Replacement",
     excerpt:
-      "Recommended for arthritis or injury that stops the knee moving freely — total or partial replacement across the knee's three compartments.",
+      "Total and partial knee replacement for arthritis or injury that limits walking, movement and daily activities.",
     image: "/images/5-rin0je0bdjmwhyt078hteyafkng66b5z5arspmipr4.png",
   },
   {
@@ -126,7 +135,7 @@ export const treatments: Treatment[] = [
     title: "Spine Surgery",
     short: "Spine Surgery",
     excerpt:
-      "A major operation performed only when extreme need arises — for severe, persistent back pain after non-surgical options are exhausted.",
+      "Evaluation and surgical care for selected spine conditions after non-surgical treatment options have been considered.",
     image: "/images/7-rin0voqasihiuwa7q4jk2gejqza95myqfnjbrwt9e0.png",
   },
   {
@@ -134,7 +143,7 @@ export const treatments: Treatment[] = [
     title: "Arthroscopic Surgery",
     short: "Arthroscopy",
     excerpt:
-      "Keyhole surgery for joint problems — knee and shoulder arthroscopy via a fiber-optic camera through a small keyhole incision.",
+      "Keyhole surgery for selected joint problems using a camera and fine instruments through small incisions.",
     image: "/images/9-rin1b64ld9o9vd4f5a53dhtvtjqtb7fyxjnccilbdg.png",
   },
   {
@@ -142,7 +151,7 @@ export const treatments: Treatment[] = [
     title: "Arthritis Treatment",
     short: "Arthritis Care",
     excerpt:
-      "Care for the slow wear and tear of joint cartilage — from early diagnosis and relief plans to surgery when medication no longer helps.",
+      "Diagnosis and treatment for painful joint wear, from medication and lifestyle guidance to surgery when needed.",
     image: "/images/11-rin1ll6745xys2nshblgrx3t17md9dsgnuozueepxk.png",
   },
   {
@@ -150,31 +159,15 @@ export const treatments: Treatment[] = [
     title: "Partial Knee Replacement",
     short: "Partial Knee",
     excerpt:
-      "Unicondylar knee replacement — a modern, joint-preserving option that resurfaces only the damaged compartment for a quicker recovery.",
+      "Unicondylar knee replacement for arthritis limited to one compartment, preserving healthy ligaments and bone where appropriate.",
     image: "/images/6-rin0jnep9vy2caeho4ipikf0cyt8hm9qq4t5fijuw8.png",
-  },
-  {
-    slug: "knee-arthroscopy",
-    title: "Knee Arthroscopy",
-    short: "Knee Arthroscopy",
-    excerpt:
-      "Keyhole surgery for the knee — treating meniscus tears, cartilage damage and ligament (ACL) injuries through small incisions.",
-    image: "/images/9-rin1b64ld9o9vd4f5a53dhtvtjqtb7fyxjnccilbdg.png",
-  },
-  {
-    slug: "shoulder-arthroscopy",
-    title: "Shoulder Arthroscopy",
-    short: "Shoulder Arthroscopy",
-    excerpt:
-      "Keyhole surgery for the shoulder — treating rotator cuff tears, labral tears, impingement and instability.",
-    image: "/images/10-rin1bbrmi9wa1bkdedx320bnks748c1y92b68nmfuw.png",
   },
   {
     slug: "sports-injury-conservative-care",
     title: "Sports Injury & Conservative Care",
     short: "Sports Injury",
     excerpt:
-      "Non-surgical treatment for sports and joint injuries — physiotherapy, bracing, PRP injections and guided rehabilitation.",
+      "Assessment and non-surgical care for sprains, ligament injuries, tendon pain and activity-related joint problems.",
     image: "/images/Orthopaedics-1.jpg",
   },
   {
@@ -182,7 +175,7 @@ export const treatments: Treatment[] = [
     title: "Fracture & Trauma Treatment",
     short: "Fracture & Trauma",
     excerpt:
-      "Prompt, expert care for fractures and orthopedic trauma — from simple breaks to complex, multiple injuries.",
-    image: "/images/Orthopaedics.jpg",
+      "Prompt assessment and treatment for simple, displaced and complex fractures, followed by structured rehabilitation.",
+    image: "/images/ffcf7431-82e0-415e-901e-f91cdd3a67f4-1.png",
   },
 ];

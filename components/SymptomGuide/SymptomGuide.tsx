@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import { ArrowRight, Check } from "@/components/Icons";
+import { appointmentUrl, treatmentHref } from "@/lib/site";
 import Reveal from "@/components/Motion/Reveal";
 import styles from "./SymptomGuide.module.css";
 
@@ -179,12 +180,12 @@ export default function SymptomGuide() {
                   You told us: <em>{answeredLabels.join(" · ")}</em>
                 </p>
                 <div className={styles.resultCtas}>
-                  <Link href={`/${result.slug}`} className="btn btn--primary">
+                  <Link href={treatmentHref(result.slug)} className="btn btn--primary">
                     Read about {result.title} <ArrowRight width={17} height={17} />
                   </Link>
-                  <Link href="/contact-us" className="btn btn--outline">
+                  <a href={appointmentUrl} target="_blank" rel="noopener noreferrer" className="btn btn--outline">
                     Book a visit
-                  </Link>
+                  </a>
                 </div>
                 <button type="button" className={styles.back} onClick={reset}>
                   ↺ Start over

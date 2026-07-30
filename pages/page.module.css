@@ -647,6 +647,47 @@
     gap: 14px;
   }
 }
+@media (hover: none) and (pointer: coarse) {
+  .hero {
+    overflow-x: hidden;
+  }
+  .heroInner,
+  .aboutGrid,
+  .servicesHead,
+  .faqBlogGrid {
+    grid-template-columns: 1fr;
+    gap: 44px;
+  }
+  .heroText,
+  .heroLead {
+    min-width: 0;
+    max-width: 100%;
+  }
+  .heroTitle {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+  .heroMedia {
+    justify-self: start;
+    max-width: 100%;
+  }
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 20px;
+  }
+  .stat:nth-child(3)::before {
+    display: none;
+  }
+  .reviewHead,
+  .videoHead {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .clinicsInner {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}
 @media (max-width: 560px) {
   .serviceGrid,
   .videoGrid,

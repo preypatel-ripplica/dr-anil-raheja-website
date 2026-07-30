@@ -20,11 +20,26 @@ import { featureVideos as localFeatured, shorts as localShorts } from "@/lib/con
 const USE_CMS = process.env.USE_CMS !== "false";
 const CMS_API_URL = process.env.CMS_API_URL;
 const CMS_API_TOKEN = process.env.CMS_API_TOKEN;
+const HIDDEN_TREATMENTS = new Set(["knee-arthroscopy", "shoulder-arthroscopy"]);
+
+function apiBase(): string {
+  if (!CMS_API_URL) return "";
+  try {
+    return new URL(CMS_API_URL).origin;
+  } catch {
+    return CMS_API_URL.replace(/\/$/, "");
+  }
+}
 
 async function cmsPost(endpoint: string, body: object): Promise<any | null> {
   if (!CMS_API_URL || !CMS_API_TOKEN) return null;
+  const endpointMap: Record<string, string> = {
+    "content.entries.list": "entry.list",
+    "content.media.get": "media.list",
+  };
+  const apiEndpoint = endpointMap[endpoint] ?? endpoint;
   try {
-    const res = await fetch(`${CMS_API_URL}/api/${endpoint}`, {
+    const res = await fetch(`${apiBase()}/api/${apiEndpoint}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -41,10 +56,30 @@ async function cmsPost(endpoint: string, body: object): Promise<any | null> {
 }
 
 const collectionCache = new Map<string, any[]>();
+const cmsCollectionsCache = new Map<string, any[]>();
+
+async function getCmsUser(): Promise<any | null> {
+  return cmsPost("user.me", {});
+}
+
+async function getCmsCollections(): Promise<any[]> {
+  if (cmsCollectionsCache.has("all")) return cmsCollectionsCache.get("all")!;
+  const user = await getCmsUser();
+  const userId = user?.user_id ?? user?.id;
+  const collections = await cmsPost("collection.list", userId ? { user_id: userId } : {});
+  const list = Array.isArray(collections) ? collections : [];
+  cmsCollectionsCache.set("all", list);
+  return list;
+}
 
 async function fetchCollection(slug: string): Promise<any[]> {
   if (collectionCache.has(slug)) return collectionCache.get(slug)!;
-  const data = await cmsPost("content.entries.list", { collection_slug: slug, page_size: 100 });
+  const collections = await getCmsCollections();
+  const collection = collections.find((c) => c.slug === slug || c.collection_slug === slug || c.name === slug);
+  const collectionId = collection?.collection_id ?? collection?.id;
+  const data = collectionId
+    ? await cmsPost("entry.list", { collection_id: collectionId })
+    : await cmsPost("content.entries.list", { collection_slug: slug, page_size: 100 });
   const entries =
     data == null ? [] : Array.isArray(data) ? data : data.entries || data.data || data.items || [];
   collectionCache.set(slug, entries);
@@ -72,7 +107,12 @@ const mediaCache = new Map<string, string | null>();
 async function mediaToLocalPath(mediaId: string): Promise<string | null> {
   if (mediaCache.has(mediaId)) return mediaCache.get(mediaId) ?? null;
   let result: string | null = null;
-  const media = await cmsPost("content.media.get", { media_id: mediaId });
+  const user = await getCmsUser();
+  const userId = user?.user_id ?? user?.id;
+  const mediaList = await cmsPost("media.list", userId ? { user_id: userId } : {});
+  const media = Array.isArray(mediaList)
+    ? mediaList.find((m) => m.media_id === mediaId || m.id === mediaId)
+    : null;
   if (media) {
     const ext = path.extname(media.filename || media.name || "") || ".jpg";
     const localPath = `/cms-images/${mediaId}${ext}`;
@@ -113,11 +153,19 @@ function jsonClean<T>(value: T): T {
   return JSON.parse(JSON.stringify(value));
 }
 
+function visibleTreatments(source: Record<string, TreatmentContent>): Record<string, TreatmentContent> {
+  return Object.fromEntries(Object.entries(source).filter(([slug]) => !HIDDEN_TREATMENTS.has(slug)));
+}
+
 // ------------------------------- blogs ---------------------------------------
 
 function normalizeBlocks(raw: any[]): Block[] {
   const blocks: Block[] = [];
   for (const b of raw || []) {
+    if (typeof b === "string") {
+      if (b.trim()) blocks.push({ type: "p", text: b });
+      continue;
+    }
     if (!b || typeof b.type !== "string") continue;
     if (b.type === "list") blocks.push({ type: "list", items: (b.items || []).filter(Boolean) });
     else if (b.type === "lead" || b.type === "p" || b.type === "h")
@@ -130,6 +178,7 @@ function normalizeBlocks(raw: any[]): Block[] {
 export async function getArticles(): Promise<Article[]> {
   if (!USE_CMS) return jsonClean(localArticles);
   const entries = await fetchCollection("blogs");
+  if (!entries.length) return jsonClean(localArticles);
   const articles: Article[] = [];
 
   for (const item of entries) {
@@ -139,10 +188,10 @@ export async function getArticles(): Promise<Article[]> {
       slug: e.slug,
       title: e.title,
       excerpt: e.excerpt || "",
-      image: await resolveImage(e.hero_image),
+      image: await resolveImage(e.hero_image || e.heroImage || e.image, "/images/B1-1.png"),
       category: e.category || "",
-      date: e.date || e.published || item.published_at || "",
-      readMins: Number(e.readMins) || 5,
+      date: e.date || e.publishedAt || e.published || item.published_at || "",
+      readMins: Number(e.readMins || e.readingTime) || 5,
       source: e.source || "",
       related: e.related || "",
       body: normalizeBlocks(e.body),
@@ -152,7 +201,7 @@ export async function getArticles(): Promise<Article[]> {
     });
   }
 
-  return jsonClean(articles.sort((x, y) => (y.date || "").localeCompare(x.date || "")));
+  return jsonClean((articles.length ? articles : localArticles).sort((x, y) => (y.date || "").localeCompare(x.date || "")));
 }
 
 // ----------------------------- treatments ------------------------------------
@@ -197,16 +246,17 @@ async function mapTreatment(item: any): Promise<TreatmentContent | null> {
   };
 }
 
-/** Treatment pages keyed by slug — CMS entries only. */
+/** Treatment pages keyed by slug, falling back to local content for static export. */
 export async function getTreatments(): Promise<Record<string, TreatmentContent>> {
-  if (!USE_CMS) return jsonClean(localTreatments);
+  if (!USE_CMS) return jsonClean(visibleTreatments(localTreatments));
   const entries = await fetchCollection("treatments");
+  if (!entries.length) return jsonClean(visibleTreatments(localTreatments));
   const result: Record<string, TreatmentContent> = {};
   for (const item of entries) {
     const t = await mapTreatment(item);
-    if (t) result[t.slug] = t;
+    if (t && !HIDDEN_TREATMENTS.has(t.slug)) result[t.slug] = t;
   }
-  return jsonClean(result);
+  return jsonClean(Object.keys(result).length ? result : visibleTreatments(localTreatments));
 }
 
 /** Returns null when the treatment has no CMS entry — the page then 404s. */

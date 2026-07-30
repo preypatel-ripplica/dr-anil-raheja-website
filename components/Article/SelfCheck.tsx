@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import type { SelfCheck } from "@/lib/blog";
-import { contact } from "@/lib/site";
+import { contact, treatmentHref } from "@/lib/site";
 import { Check, ArrowRight, Phone } from "@/components/Icons";
 import styles from "./SelfCheck.module.css";
 
@@ -61,7 +61,7 @@ export default function SelfCheck({
           <strong>{level.title}</strong>
           <p>{level.note}</p>
           <div className={styles.resultCtas}>
-            <Link href={`/${relatedSlug}`} className="btn btn--navy">
+            <Link href={treatmentHref(relatedSlug)} className="btn btn--navy">
               Read the treatment <ArrowRight width={15} height={15} />
             </Link>
             <a href={`tel:${contact.phonePrimary}`} className="btn btn--outline">

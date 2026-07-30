@@ -5,7 +5,7 @@ import EnquiryForm from "@/components/EnquiryForm/EnquiryForm";
 import TreatmentJourney from "@/components/TreatmentJourney/TreatmentJourney";
 import Faq from "@/components/Faq/Faq";
 import Reveal from "@/components/Motion/Reveal";
-import { treatments, contact } from "@/lib/site";
+import { treatments, contact, treatmentHref } from "@/lib/site";
 import type { TreatmentContent, Section } from "@/lib/treatmentContent";
 import { Check, Phone, ArrowRight } from "@/components/Icons";
 import styles from "./TreatmentLayout.module.css";
@@ -222,7 +222,7 @@ export default function TreatmentLayout({ content }: { content: TreatmentContent
           <span className={styles.othersLabel}>Other specialities</span>
           <div className={styles.othersLinks}>
             {others.map((t) => (
-              <Link key={t.slug} href={`/${t.slug}`} className={styles.otherLink}>
+              <Link key={t.slug} href={treatmentHref(t.slug)} className={styles.otherLink}>
                 {t.short} <ArrowRight width={13} height={13} />
               </Link>
             ))}

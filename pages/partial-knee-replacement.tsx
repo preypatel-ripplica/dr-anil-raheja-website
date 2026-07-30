@@ -1,14 +1,8 @@
-import type { Metadata } from "next";
-import TreatmentLayout from "@/components/TreatmentLayout/TreatmentLayout";
+import TreatmentPage from "@/pages/[treatment]";
 import { treatmentContent } from "@/lib/treatmentContent";
 
 const content = treatmentContent["partial-knee-replacement"];
 
-export const metadata: Metadata = {
-  title: content.title,
-  description: content.subtitle,
-};
-
 export default function Page() {
-  return <TreatmentLayout content={content} />;
+  return <TreatmentPage content={content} />;
 }

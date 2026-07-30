@@ -7,6 +7,7 @@ import BookCta from "@/components/BookCta/BookCta";
 import Reveal from "@/components/Motion/Reveal";
 import type { Article } from "@/lib/blog";
 import { getArticles } from "@/lib/cms";
+import { breadcrumbSchema, canonicalUrl, jsonLd } from "@/lib/seo";
 import { ArrowRight, Clock } from "@/components/Icons";
 import styles from "./blogs.module.css";
 
@@ -24,6 +25,18 @@ export default function BlogsPage({ articles }: { articles: Article[] }) {
         <meta
           name="description"
           content="Orthopedic health articles by Dr. Anil Raheja — joints, surgery and recovery."
+        />
+        <link rel="canonical" href={canonicalUrl("/blogs")} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: jsonLd(
+              breadcrumbSchema([
+                { name: "Home", path: "/" },
+                { name: "Blogs", path: "/blogs" },
+              ])
+            ),
+          }}
         />
       </Head>
       <PageHero

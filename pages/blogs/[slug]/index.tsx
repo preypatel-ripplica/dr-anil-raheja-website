@@ -4,7 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import type { Article, Block } from "@/lib/blog";
 import { getArticles } from "@/lib/cms";
-import { treatments } from "@/lib/site";
+import { treatments, treatmentHref } from "@/lib/site";
+import { articleSchema, breadcrumbSchema, canonicalUrl, jsonLd } from "@/lib/seo";
 import BookCta from "@/components/BookCta/BookCta";
 import Reveal from "@/components/Motion/Reveal";
 import ReadingProgress from "@/components/Article/ReadingProgress";
@@ -73,6 +74,20 @@ export default function ArticlePage({ article, related }: { article: Article; re
       <Head>
         <title>{article.seoTitle || article.title}</title>
         <meta name="description" content={article.metaDescription || article.excerpt} />
+        <link rel="canonical" href={canonicalUrl(`/blogs/${article.slug}`)} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: jsonLd([
+              articleSchema(article),
+              breadcrumbSchema([
+                { name: "Home", path: "/" },
+                { name: "Blogs", path: "/blogs" },
+                { name: article.title, path: `/blogs/${article.slug}` },
+              ]),
+            ]),
+          }}
+        />
       </Head>
       <ReadingProgress />
 
@@ -151,7 +166,7 @@ export default function ArticlePage({ article, related }: { article: Article; re
                   <span className={styles.tCtaLabel}>Related treatment</span>
                   <strong>{relatedTreatment.title}</strong>
                 </div>
-                <Link href={`/${relatedTreatment.slug}`} className="btn btn--primary">
+                <Link href={treatmentHref(relatedTreatment.slug)} className="btn btn--primary">
                   Read more <ArrowRight width={16} height={16} />
                 </Link>
               </div>

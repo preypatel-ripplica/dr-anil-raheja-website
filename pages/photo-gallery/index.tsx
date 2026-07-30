@@ -1,20 +1,35 @@
-import type { Metadata } from "next";
+import Head from "next/head";
 import PageHero from "@/components/PageHero/PageHero";
 import BookCta from "@/components/BookCta/BookCta";
 import MosaicGallery from "@/components/MosaicGallery/MosaicGallery";
 import Reveal from "@/components/Motion/Reveal";
 import { galleryPhotos } from "@/lib/content";
+import { breadcrumbSchema, canonicalUrl, jsonLd } from "@/lib/seo";
 import { Camera, MapPin } from "@/components/Icons";
 import styles from "./gallery.module.css";
-
-export const metadata: Metadata = {
-  title: "Photo Gallery",
-  description: "Moments from Dr. Anil Raheja's practice — clinics, surgeries and patient milestones.",
-};
 
 export default function PhotoGalleryPage() {
   return (
     <>
+      <Head>
+        <title>Photo Gallery | Dr. Anil Raheja</title>
+        <meta
+          name="description"
+          content="Moments from Dr. Anil Raheja's practice, including clinics, surgeries and patient milestones."
+        />
+        <link rel="canonical" href={canonicalUrl("/photo-gallery")} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: jsonLd(
+              breadcrumbSchema([
+                { name: "Home", path: "/" },
+                { name: "Photo Gallery", path: "/photo-gallery" },
+              ])
+            ),
+          }}
+        />
+      </Head>
       <PageHero
         eyebrow="Media"
         title="Inside the practice"

@@ -6,6 +6,7 @@ import VideoCard from "@/components/VideoCard/VideoCard";
 import Reveal from "@/components/Motion/Reveal";
 import { reviews, reviewsSummary } from "@/lib/content";
 import { getVideos, type VideoItem } from "@/lib/cms";
+import { breadcrumbSchema, canonicalUrl, jsonLd } from "@/lib/seo";
 import { Star, Quote } from "@/components/Icons";
 import styles from "./testimonials.module.css";
 
@@ -22,6 +23,18 @@ export default function TestimonialsPage({ featureVideos }: { featureVideos: Vid
         <meta
           name="description"
           content="What patients say about Dr. Anil Raheja — rated EXCELLENT from 212 Google reviews."
+        />
+        <link rel="canonical" href={canonicalUrl("/patient-testimonials")} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: jsonLd(
+              breadcrumbSchema([
+                { name: "Home", path: "/" },
+                { name: "Patient Testimonials", path: "/patient-testimonials" },
+              ])
+            ),
+          }}
         />
       </Head>
       <PageHero

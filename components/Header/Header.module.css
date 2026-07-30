@@ -58,13 +58,13 @@
   place-items: center;
   width: 46px;
   height: 46px;
-  border-radius: 14px;
-  background: linear-gradient(135deg, var(--green), var(--green-deep));
-  color: #fff;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.05rem;
-  letter-spacing: -0.02em;
+  flex-shrink: 0;
+}
+.brandMark img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 .brandText {
   display: flex;
@@ -264,7 +264,23 @@
 /* ---------------- responsive ---------------- */
 @media (max-width: 1120px) {
   .nav,
-  .cta {
+  .mainInner .cta {
+    /* .cta also carries the global .btn class (display: inline-flex);
+       bump specificity here so this override always wins regardless of
+       CSS bundle/source order. */
+    display: none;
+  }
+  .burger {
+    display: inline-flex;
+    margin-left: auto;
+  }
+  .topNote {
+    display: none;
+  }
+}
+@media (hover: none) and (pointer: coarse) {
+  .nav,
+  .mainInner .cta {
     display: none;
   }
   .burger {

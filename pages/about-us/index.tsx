@@ -1,18 +1,13 @@
-import type { Metadata } from "next";
+import Head from "next/head";
 import Image from "next/image";
 import PageHero from "@/components/PageHero/PageHero";
 import BookCta from "@/components/BookCta/BookCta";
 import Reveal from "@/components/Motion/Reveal";
 import CountUp from "@/components/Motion/CountUp";
 import { stats, contact } from "@/lib/site";
+import { breadcrumbSchema, canonicalUrl, jsonLd, physicianSchema } from "@/lib/seo";
 import { Check, Phone, Star } from "@/components/Icons";
 import styles from "./about.module.css";
-
-export const metadata: Metadata = {
-  title: "About Dr. Anil Raheja",
-  description:
-    "Dr. Anil Raheja — MS (Ortho), M.Ch (Ortho). Director Orthopedics at Apollo Spectra Hospital Karol Bagh & Jeewan Mala Hospital with 30 years of experience and 15,000+ surgeries.",
-};
 
 const expertise = [
   "Minimal invasive single-incision total hip replacement",
@@ -34,6 +29,26 @@ const memberships = [
 export default function AboutPage() {
   return (
     <>
+      <Head>
+        <title>About Dr. Anil Raheja</title>
+        <meta
+          name="description"
+          content="Dr. Anil Raheja, MS (Ortho), M.Ch (Ortho), Director Orthopedics at Apollo Spectra Hospital Karol Bagh and Jeewan Mala Hospital."
+        />
+        <link rel="canonical" href={canonicalUrl("/about-us")} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: jsonLd([
+              physicianSchema,
+              breadcrumbSchema([
+                { name: "Home", path: "/" },
+                { name: "About Us", path: "/about-us" },
+              ]),
+            ]),
+          }}
+        />
+      </Head>
       <PageHero
         eyebrow="About Us"
         title="About Dr. Anil Raheja"

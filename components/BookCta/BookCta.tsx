@@ -7,21 +7,21 @@ import Reveal from "@/components/Motion/Reveal";
 import styles from "./BookCta.module.css";
 
 /**
- * "Book Appointment" band shown across the site (the live site ends every
+ * Enquiry band shown across the site (the live site ends every
  * page with one). Front-end only — the integrator wires onSubmit later.
  */
 export default function BookCta({ defaultTreatment }: { defaultTreatment?: string }) {
   const [sent, setSent] = useState(false);
 
   return (
-    <section id="appointment" className={`section ${styles.wrap}`}>
+    <section id="make-enquiry" className={`section ${styles.wrap}`}>
       <div className={`container ${styles.grid}`}>
         <Reveal className={styles.info}>
-          <span className={styles.eyebrow}>Appointment</span>
-          <h2 className={styles.title}>Book an appointment</h2>
+          <span className={styles.eyebrow}>Enquiry</span>
+          <h2 className={styles.title}>Make an enquiry</h2>
           <p className={styles.lead}>
-            Send your details and our team will contact you to confirm your
-            appointment date and time.
+            Send your details and our team will contact you to understand your
+            concern and guide the next step.
           </p>
           <ul className={styles.points}>
             <li>
@@ -58,7 +58,7 @@ export default function BookCta({ defaultTreatment }: { defaultTreatment?: strin
                 <Check width={30} height={30} />
               </span>
               <h3>Request received</h3>
-              <p>Our team will call you shortly to confirm your appointment.</p>
+              <p>Our team will call you shortly about your enquiry.</p>
             </div>
           ) : (
             <form
@@ -68,7 +68,7 @@ export default function BookCta({ defaultTreatment }: { defaultTreatment?: strin
                 setSent(true);
               }}
             >
-              <h3 className={styles.formTitle}>Get appointment</h3>
+              <h3 className={styles.formTitle}>Make enquiry</h3>
               <div className={styles.field}>
                 <label htmlFor="bk-name">Full name</label>
                 <input id="bk-name" name="name" type="text" placeholder="Your name" required />
@@ -113,7 +113,7 @@ export default function BookCta({ defaultTreatment }: { defaultTreatment?: strin
                 </div>
               </div>
               <button type="submit" className="btn btn--primary" style={{ width: "100%" }}>
-                Get Appointment
+                Make Enquiry
               </button>
             </form>
           )}
