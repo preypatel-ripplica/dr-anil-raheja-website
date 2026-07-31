@@ -60,7 +60,7 @@ export default function Header() {
       {/* Main bar */}
       <div className={styles.mainbar}>
         <div className={`container ${styles.mainInner}`}>
-          <Link href="/" className={styles.brand} aria-label="Dr. Anil Raheja — Home">
+          <Link href="/" className={styles.brand} aria-label="Dr. Anil Raheja, Home">
             <span className={styles.brandMark}>AR</span>
             <span className={styles.brandText}>
               <strong>Dr. Anil Raheja</strong>

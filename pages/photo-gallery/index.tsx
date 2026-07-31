@@ -9,7 +9,7 @@ import styles from "./gallery.module.css";
 
 export const metadata: Metadata = {
   title: "Photo Gallery",
-  description: "Moments from Dr. Anil Raheja's practice — clinics, surgeries and patient milestones.",
+  description: "Moments from Dr. Anil Raheja's practice, clinics, surgeries and patient milestones.",
 };
 
 export default function PhotoGalleryPage() {
@@ -18,7 +18,7 @@ export default function PhotoGalleryPage() {
       <PageHero
         eyebrow="Media"
         title="Inside the practice"
-        subtitle="A look at the clinics, the team and the milestones — the everyday work behind 15,000+ surgeries."
+        subtitle="A look at the clinics, the team and the milestones, the everyday work behind 15,000+ surgeries."
         breadcrumb="Photo Gallery"
       />
 

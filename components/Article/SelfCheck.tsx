@@ -9,7 +9,7 @@ import styles from "./SelfCheck.module.css";
 
 /**
  * Interactive in-article self-check. The reader ticks statements that apply;
- * a live, tiered recommendation appears with a booking CTA. Guidance only —
+ * a live, tiered recommendation appears with a booking CTA. Guidance only , 
  * not a diagnosis. Front-end; CMS-ready.
  */
 export default function SelfCheck({

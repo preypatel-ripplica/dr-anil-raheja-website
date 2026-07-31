@@ -8,10 +8,10 @@ import navTreatments from "./nav-treatments.json";
 export const site = {
   name: "Dr. Anil Raheja",
   credentials: "MS (Ortho), M.Ch (Ortho)",
-  tagline: "Director Orthopedics — Apollo Spectra Hospital & Jeewan Mala Hospital",
-  title: "Hip Replacement Surgeon in Delhi | Dr. Anil Raheja — Direct Anterior Approach",
+  tagline: "Director Orthopedics, Apollo Spectra Hospital & Jeewan Mala Hospital",
+  title: "Hip Replacement Surgeon in Delhi | Dr. Anil Raheja, Direct Anterior Approach",
   description:
-    "Dr. Anil Raheja is a leading Hip Replacement Surgeon in Delhi with 30 years of experience and 15,000+ surgeries — specialising in the Direct Anterior Approach (DAA) and minimally invasive hip surgery, plus knee replacement, spine surgery, arthroscopy and arthritis care.",
+    "Dr. Anil Raheja is a leading Hip Replacement Surgeon in Delhi with 30 years of experience and 15,000+ surgeries, specialising in the Direct Anterior Approach (DAA) and minimally invasive hip surgery, plus knee replacement, spine surgery, arthroscopy and arthritis care.",
   url: "https://www.dranilraheja.com",
 };
 
@@ -110,7 +110,7 @@ export const treatments: Treatment[] = [
     title: "Hip Replacement Surgery",
     short: "Hip Replacement",
     excerpt:
-      "Primary, complex and revision hip replacement — with a special focus on the muscle-sparing Direct Anterior Approach (DAA) for less pain and faster recovery.",
+      "Primary, complex and revision hip replacement, with a special focus on the muscle-sparing Direct Anterior Approach (DAA) for less pain and faster recovery.",
     image: "/images/2-rin034ev3rcl0zmgzeyaj1290zhgft7s4lqwaot0kw.png",
   },
   {
@@ -118,7 +118,7 @@ export const treatments: Treatment[] = [
     title: "Knee Replacement Surgery",
     short: "Knee Replacement",
     excerpt:
-      "Recommended for arthritis or injury that stops the knee moving freely — total or partial replacement across the knee's three compartments.",
+      "Recommended for arthritis or injury that stops the knee moving freely, total or partial replacement across the knee's three compartments.",
     image: "/images/5-rin0je0bdjmwhyt078hteyafkng66b5z5arspmipr4.png",
   },
   {
@@ -126,7 +126,7 @@ export const treatments: Treatment[] = [
     title: "Spine Surgery",
     short: "Spine Surgery",
     excerpt:
-      "A major operation performed only when extreme need arises — for severe, persistent back pain after non-surgical options are exhausted.",
+      "A major operation performed only when extreme need arises, for severe, persistent back pain after non-surgical options are exhausted.",
     image: "/images/7-rin0voqasihiuwa7q4jk2gejqza95myqfnjbrwt9e0.png",
   },
   {
@@ -134,7 +134,7 @@ export const treatments: Treatment[] = [
     title: "Arthroscopic Surgery",
     short: "Arthroscopy",
     excerpt:
-      "Keyhole surgery for joint problems — knee and shoulder arthroscopy via a fiber-optic camera through a small keyhole incision.",
+      "Keyhole surgery for joint problems, knee and shoulder arthroscopy via a fiber-optic camera through a small keyhole incision.",
     image: "/images/9-rin1b64ld9o9vd4f5a53dhtvtjqtb7fyxjnccilbdg.png",
   },
   {
@@ -142,7 +142,7 @@ export const treatments: Treatment[] = [
     title: "Arthritis Treatment",
     short: "Arthritis Care",
     excerpt:
-      "Care for the slow wear and tear of joint cartilage — from early diagnosis and relief plans to surgery when medication no longer helps.",
+      "Care for the slow wear and tear of joint cartilage, from early diagnosis and relief plans to surgery when medication no longer helps.",
     image: "/images/11-rin1ll6745xys2nshblgrx3t17md9dsgnuozueepxk.png",
   },
   {
@@ -150,7 +150,7 @@ export const treatments: Treatment[] = [
     title: "Partial Knee Replacement",
     short: "Partial Knee",
     excerpt:
-      "Unicondylar knee replacement — a modern, joint-preserving option that resurfaces only the damaged compartment for a quicker recovery.",
+      "Unicondylar knee replacement, a modern, joint-preserving option that resurfaces only the damaged compartment for a quicker recovery.",
     image: "/images/6-rin0jnep9vy2caeho4ipikf0cyt8hm9qq4t5fijuw8.png",
   },
   {
@@ -158,7 +158,7 @@ export const treatments: Treatment[] = [
     title: "Knee Arthroscopy",
     short: "Knee Arthroscopy",
     excerpt:
-      "Keyhole surgery for the knee — treating meniscus tears, cartilage damage and ligament (ACL) injuries through small incisions.",
+      "Keyhole surgery for the knee, treating meniscus tears, cartilage damage and ligament (ACL) injuries through small incisions.",
     image: "/images/9-rin1b64ld9o9vd4f5a53dhtvtjqtb7fyxjnccilbdg.png",
   },
   {
@@ -166,7 +166,7 @@ export const treatments: Treatment[] = [
     title: "Shoulder Arthroscopy",
     short: "Shoulder Arthroscopy",
     excerpt:
-      "Keyhole surgery for the shoulder — treating rotator cuff tears, labral tears, impingement and instability.",
+      "Keyhole surgery for the shoulder, treating rotator cuff tears, labral tears, impingement and instability.",
     image: "/images/10-rin1bbrmi9wa1bkdedx320bnks748c1y92b68nmfuw.png",
   },
   {
@@ -174,7 +174,7 @@ export const treatments: Treatment[] = [
     title: "Sports Injury & Conservative Care",
     short: "Sports Injury",
     excerpt:
-      "Non-surgical treatment for sports and joint injuries — physiotherapy, bracing, PRP injections and guided rehabilitation.",
+      "Non-surgical treatment for sports and joint injuries, physiotherapy, bracing, PRP injections and guided rehabilitation.",
     image: "/images/Orthopaedics-1.jpg",
   },
   {
@@ -182,7 +182,7 @@ export const treatments: Treatment[] = [
     title: "Fracture & Trauma Treatment",
     short: "Fracture & Trauma",
     excerpt:
-      "Prompt, expert care for fractures and orthopedic trauma — from simple breaks to complex, multiple injuries.",
+      "Prompt, expert care for fractures and orthopedic trauma, from simple breaks to complex, multiple injuries.",
     image: "/images/Orthopaedics.jpg",
   },
 ];

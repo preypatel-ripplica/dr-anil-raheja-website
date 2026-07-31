@@ -23,7 +23,7 @@ export default function BlogsPage({ articles }: { articles: Article[] }) {
         <title>Blogs | Dr. Anil Raheja</title>
         <meta
           name="description"
-          content="Orthopedic health articles by Dr. Anil Raheja — joints, surgery and recovery."
+          content="Orthopedic health articles by Dr. Anil Raheja, joints, surgery and recovery."
         />
       </Head>
       <PageHero

@@ -186,6 +186,8 @@ async function mapTreatment(item: any): Promise<TreatmentContent | null> {
         image: await resolveImage(s.image),
         imageSide: s.imageSide === "left" ? "left" : "right",
       });
+    } else if (s.type === "cta") {
+      sections.push({ type: "cta", heading: s.heading || "", text: s.text || "" });
     }
   }
 

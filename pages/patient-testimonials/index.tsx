@@ -21,7 +21,7 @@ export default function TestimonialsPage({ featureVideos }: { featureVideos: Vid
         <title>Patient Testimonials | Dr. Anil Raheja</title>
         <meta
           name="description"
-          content="What patients say about Dr. Anil Raheja — rated EXCELLENT from 212 Google reviews."
+          content="What patients say about Dr. Anil Raheja, rated EXCELLENT from 212 Google reviews."
         />
       </Head>
       <PageHero

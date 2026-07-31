@@ -8,7 +8,7 @@ import styles from "./BookCta.module.css";
 
 /**
  * "Book Appointment" band shown across the site (the live site ends every
- * page with one). Front-end only — the integrator wires onSubmit later.
+ * page with one). Front-end only, the integrator wires onSubmit later.
  */
 export default function BookCta({ defaultTreatment }: { defaultTreatment?: string }) {
   const [sent, setSent] = useState(false);
@@ -106,7 +106,7 @@ export default function BookCta({ defaultTreatment }: { defaultTreatment?: strin
                     </option>
                     {clinics.map((c) => (
                       <option key={c.id} value={c.id}>
-                        {c.name} — {c.area}
+                        {c.name}, {c.area}
                       </option>
                     ))}
                   </select>

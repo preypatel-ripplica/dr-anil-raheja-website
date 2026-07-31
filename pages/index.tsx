@@ -48,7 +48,7 @@ export default function HomePage({
 }) {
   return (
     <>
-      {/* ============ HERO — calm, reassuring split ============ */}
+      {/* ============ HERO, calm, reassuring split ============ */}
       <section className={styles.hero}>
         <div className={`container ${styles.heroInner}`}>
           <Reveal className={styles.heroText}>
@@ -60,7 +60,7 @@ export default function HomePage({
               Dr. Anil Raheja is a leading Hip Replacement Surgeon in Delhi with 30 years
               of experience and over 15,000 successful surgeries. He specialises in the
               muscle-sparing Direct Anterior Approach (DAA) and minimally invasive hip
-              surgery — alongside knee replacement, spine surgery, arthroscopy and
+              surgery, alongside knee replacement, spine surgery, arthroscopy and
               arthritis care. Trusted, minimally invasive, recovery-focused.
             </p>
             <div className={styles.heroCtas}>
@@ -94,7 +94,7 @@ export default function HomePage({
             <div className={styles.heroPhoto}>
               <Image
                 src="/images/43566-3.png"
-                alt="Dr. Anil Raheja — Best Orthopedic Doctor in Delhi"
+                alt="Dr. Anil Raheja, Best Orthopedic Doctor in Delhi"
                 fill
                 sizes="(max-width: 900px) 90vw, 42vw"
                 priority
@@ -120,7 +120,7 @@ export default function HomePage({
         </div>
       </section>
 
-      {/* ============ STAT BAND — confident numbers ============ */}
+      {/* ============ STAT BAND, confident numbers ============ */}
       <section className={styles.stats}>
         <div className={`container ${styles.statsGrid}`}>
           <Reveal className={styles.stat}>
@@ -148,7 +148,7 @@ export default function HomePage({
         </div>
       </section>
 
-      {/* ============ SERVICES — clean cards ============ */}
+      {/* ============ SERVICES, clean cards ============ */}
       <section className={`section ${styles.services}`}>
         <div className="container">
           <Reveal className={styles.servicesHead}>
@@ -159,7 +159,7 @@ export default function HomePage({
               </h2>
             </div>
             <p>
-              A clear, patient-friendly process for every treatment — using advanced
+              A clear, patient-friendly process for every treatment, using advanced
               technology to deliver safe, effective and predictable outcomes.
             </p>
           </Reveal>
@@ -192,7 +192,7 @@ export default function HomePage({
                   <Phone width={22} height={22} />
                 </span>
                 <h3>Not sure which one?</h3>
-                <p>Call the helpline and describe your problem — we&apos;ll guide you to the right specialist.</p>
+                <p>Call the helpline and describe your problem, we&apos;ll guide you to the right specialist.</p>
                 <a href={`tel:${contact.phonePrimary}`} className={styles.helpNum}>
                   {contact.phoneDisplay}
                 </a>
@@ -232,7 +232,7 @@ export default function HomePage({
             </h2>
             <p>
               Orthopedics is the one department of medicine where you truly need a
-              specialist — and Dr. Anil Raheja has built a career on exactly that. As
+              specialist, and Dr. Anil Raheja has built a career on exactly that. As
               Director of Orthopedics at Apollo Spectra and Jeewan Mala Hospital, he
               specializes in minimally invasive joint replacement, spine surgery and
               arthroscopic procedures.
@@ -262,7 +262,7 @@ export default function HomePage({
                 </span>
                 <div>
                   <strong>Recovery-focused</strong>
-                  <span>Every plan is measured by one thing — getting you moving again.</span>
+                  <span>Every plan is measured by one thing, getting you moving again.</span>
                 </div>
               </li>
             </ul>
@@ -273,7 +273,7 @@ export default function HomePage({
         </div>
       </section>
 
-      {/* ============ PROCESS — calm steps on navy ============ */}
+      {/* ============ PROCESS, calm steps on navy ============ */}
       <section className={`section section--navy ${styles.process}`}>
         <div className="container">
           <Reveal className="section-head section-head--center">

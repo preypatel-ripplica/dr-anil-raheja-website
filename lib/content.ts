@@ -21,7 +21,7 @@ export const reviews: Review[] = [
   },
   {
     name: "Verified patient",
-    text: "Excellent is the only word that comes to my mind after visiting Dr Anil Raheja. His knowledge towards his work is 10 on 10 — my pain just vanished within 10 days as promised by him. I thank him from the bottom of my heart.",
+    text: "Excellent is the only word that comes to my mind after visiting Dr Anil Raheja. His knowledge towards his work is 10 on 10. My pain just vanished within 10 days as promised by him. I thank him from the bottom of my heart.",
   },
   {
     name: "Long-term patient",
@@ -74,7 +74,7 @@ export const blogPosts: BlogPost[] = [
     slug: "role-of-a-professional-orthopaedic-surgeon-in-thr",
     title: "Role of a Professional Orthopaedic Surgeon in THR",
     excerpt:
-      "What an experienced surgeon actually contributes to a total hip replacement — from implant selection to post-operative recovery.",
+      "What an experienced surgeon actually contributes to a total hip replacement, from implant selection to post-operative recovery.",
     image: "/images/B1-1.png",
     href: "https://www.dranilraheja.com/role-of-a-professional-orthopaedic-surgeon-in-thr/",
   },
@@ -82,7 +82,7 @@ export const blogPosts: BlogPost[] = [
     slug: "anterior-cruciate-ligament-injuries",
     title: "Anterior Cruciate Ligament Injuries",
     excerpt:
-      "The ACL is the knee's main restraint against forward slide of the tibia — and one of the most commonly injured ligaments in sport. Diagnosis, treatment and rehab explained.",
+      "The ACL is the knee's main restraint against forward slide of the tibia, and one of the most commonly injured ligaments in sport. Diagnosis, treatment and rehab explained.",
     image: "/images/B2-1.png",
     href: "https://www.dranilraheja.com/anterior-cruciate-ligament-injuries/",
   },
@@ -102,30 +102,30 @@ export type Faq = { q: string; a: string };
 export const hipFaqs: Faq[] = [
   {
     q: "Who is the best hip replacement surgeon in Delhi?",
-    a: "Dr. Anil Raheja is widely recognized as a leading hip replacement surgeon in Delhi, bringing over 30 years of surgical expertise and 15,000+ surgeries. An internationally trained arthroplasty surgeon, he specialises in Primary, Complex and Revision Hip Replacement, with a special interest in the muscle-sparing Direct Anterior Approach (DAA).",
+    a: "Dr. Anil Raheja is a leading hip replacement surgeon in Delhi with over 30 years of experience and more than 15,000 surgeries. He is internationally trained and performs primary, complex, and revision hip replacements, with a special focus on the muscle-sparing Direct Anterior Approach (DAA).",
   },
   {
     q: "What is the Direct Anterior Approach (DAA) in hip replacement?",
-    a: "The Direct Anterior Approach reaches the hip joint through a natural inter-muscular and inter-nervous plane, rather than cutting through muscles as conventional approaches do. Because important muscles around the hip are preserved, many appropriately selected patients experience less pain and a faster, earlier return to normal activities.",
+    a: "The Direct Anterior Approach reaches the hip through a natural gap between the muscles, instead of cutting through them the way conventional approaches do. Because the muscles around the hip are preserved, many patients feel less pain and get back to normal activities sooner.",
   },
   {
     q: "What are the advantages of Direct Anterior Hip Replacement?",
-    a: "For appropriately selected patients, potential advantages include a smaller incision with minimal muscle damage, less postoperative pain, reduced blood loss, a lower risk of hip dislocation, faster walking and rehabilitation, and better restoration of natural hip mechanics. A detailed clinical evaluation and imaging determine whether DAA is the safest approach for each individual.",
+    a: "For the right patient, the benefits can include a smaller incision, less muscle damage, less pain after surgery, less blood loss, a lower chance of the hip dislocating, faster walking and rehabilitation, and more natural hip movement. A proper examination and scans help decide whether the DAA is the safest choice for you.",
   },
   {
     q: "What does hip replacement surgery cost in Delhi?",
-    a: "Total hip replacement surgery cost in Delhi generally ranges from INR 3,00,000 to INR 4,50,000 for a unilateral (single side) procedure. The overall cost depends on the type of implant selected (ceramic vs. metal-on-polyethylene) and the patient's specific medical requirements.",
+    a: "Hip replacement surgery in Delhi usually costs between INR 3,00,000 and INR 4,50,000 for one side. The final cost depends on the type of implant used, such as ceramic or metal-on-polyethylene, and your specific medical needs.",
   },
   {
     q: "When is hip replacement recommended?",
-    a: "Hip replacement may be recommended for persistent hip pain despite medications and physiotherapy, difficulty walking or climbing stairs, pain that disturbs sleep, marked stiffness with restricted movement, or loss of independence in daily activities — commonly due to advanced osteoarthritis, avascular necrosis (AVN), rheumatoid arthritis, hip fractures or a failed previous replacement.",
+    a: "It may be recommended when hip pain continues despite medicines and physiotherapy, when walking or climbing stairs becomes difficult, when pain disturbs your sleep, or when stiffness limits daily life. Common reasons include advanced osteoarthritis, avascular necrosis (AVN), rheumatoid arthritis, hip fractures, or a previous hip replacement that has failed.",
   },
 ];
 
 export const generalFaqs: Faq[] = [
   {
     q: "Do I need surgery for my joint pain?",
-    a: "Not always. Many conditions respond to medication, physiotherapy and lifestyle changes. Surgery is recommended only when conservative treatment no longer relieves pain or restores function — Dr. Raheja always exhausts non-surgical options first.",
+    a: "Not always. Many conditions respond to medication, physiotherapy and lifestyle changes. Surgery is recommended only when conservative treatment no longer relieves pain or restores function. Dr. Raheja always exhausts non-surgical options first.",
   },
   {
     q: "How long is recovery after knee replacement?",
@@ -133,7 +133,7 @@ export const generalFaqs: Faq[] = [
   },
   {
     q: "What is minimally invasive surgery?",
-    a: "Techniques that use much smaller incisions — like arthroscopy (keyhole surgery with a camera) or minimal-incision hip replacement — which mean less pain, smaller scars and faster recovery.",
+    a: "Techniques that use much smaller incisions, like arthroscopy (keyhole surgery with a camera) or minimal-incision hip replacement, which mean less pain, smaller scars and faster recovery.",
   },
   {
     q: "Which insurance / payment options are accepted?",
@@ -144,7 +144,7 @@ export const generalFaqs: Faq[] = [
 export const kneeFaqs: Faq[] = [
   {
     q: "What is the difference between total and partial knee replacement?",
-    a: "In a total knee replacement all three compartments of the knee are resurfaced. In a partial (unicompartmental) knee replacement only the damaged compartment is replaced while the healthy portions and ligaments are preserved — an option for patients whose arthritis is limited to one compartment.",
+    a: "In a total knee replacement all three compartments of the knee are resurfaced. In a partial (unicompartmental) knee replacement only the damaged compartment is replaced while the healthy portions and ligaments are preserved. This is an option for patients whose arthritis is limited to one compartment.",
   },
   {
     q: "Am I a candidate for partial knee replacement?",
@@ -156,7 +156,7 @@ export const kneeFaqs: Faq[] = [
   },
   {
     q: "How long does a knee replacement last?",
-    a: "Modern implants with proven long-term performance are chosen to maximise durability, and most knee replacements last many years. Longevity depends on the implant, your activity level and body weight — all of which are considered when planning your surgery.",
+    a: "Modern implants with proven long-term performance are chosen to maximise durability, and most knee replacements last many years. Longevity depends on the implant, your activity level and body weight, all of which are considered when planning your surgery.",
   },
 ];
 
@@ -167,11 +167,11 @@ export const spineFaqs: Faq[] = [
   },
   {
     q: "What non-surgical options are tried first?",
-    a: "A spine specialist may recommend heat and ice therapy, physiotherapist-guided exercises to strengthen and stretch the back, activity modification, medication and, where appropriate, therapeutic massage — before any surgical option is considered.",
+    a: "A spine specialist may recommend heat and ice therapy, physiotherapist-guided exercises to strengthen and stretch the back, activity modification, medication and, where appropriate, therapeutic massage, before any surgical option is considered.",
   },
   {
     q: "Is spine surgery minimally invasive?",
-    a: "Where suitable, minimally invasive techniques are used — smaller incisions that mean less tissue disruption, reduced pain and a faster recovery. The right technique is chosen based on your diagnosis and imaging.",
+    a: "Where suitable, minimally invasive techniques are used, with smaller incisions that mean less tissue disruption, reduced pain and a faster recovery. The right technique is chosen based on your diagnosis and imaging.",
   },
 ];
 
@@ -182,18 +182,18 @@ export const arthroscopyFaqs: Faq[] = [
   },
   {
     q: "Can arthroscopy treat cartilage and meniscus injuries?",
-    a: "Yes. Arthroscopy is commonly used to repair or trim a torn meniscus, treat damaged cartilage, address torn ligaments, remove loose fragments and clear inflamed joint lining — restoring smooth, pain-free movement.",
+    a: "Yes. Arthroscopy is commonly used to repair or trim a torn meniscus, treat damaged cartilage, address torn ligaments, remove loose fragments and clear inflamed joint lining, restoring smooth, pain-free movement.",
   },
   {
     q: "What is recovery after arthroscopy like?",
-    a: "Recovery is generally faster than open surgery. Your doctor or therapist will guide a simple protocol — medication for comfort, temporary protection of the joint, prescribed strengthening exercises, and RICE (rest, ice, compression and elevation) to reduce swelling.",
+    a: "Recovery is generally faster than open surgery. Your doctor or therapist will guide a simple protocol: medication for comfort, temporary protection of the joint, prescribed strengthening exercises, and RICE (rest, ice, compression and elevation) to reduce swelling.",
   },
 ];
 
 export const arthritisFaqs: Faq[] = [
   {
     q: "Can arthritis be treated without surgery?",
-    a: "In most cases, yes — especially when caught early. Weight management, guided exercise, heat and cold therapy, and timely medication can bring significant relief. Surgery is considered only when pain is severe and conservative measures no longer help.",
+    a: "In most cases, yes, especially when caught early. Weight management, guided exercise, heat and cold therapy, and timely medication can bring significant relief. Surgery is considered only when pain is severe and conservative measures no longer help.",
   },
   {
     q: "Why does early diagnosis of arthritis matter?",
@@ -240,7 +240,7 @@ export const kneeArthroscopyFaqs: Faq[] = [
 export const shoulderArthroscopyFaqs: Faq[] = [
   {
     q: "What shoulder problems can arthroscopy treat?",
-    a: "Shoulder arthroscopy is used for rotator cuff tears, labral tears, shoulder impingement, recurrent dislocation and removal of loose bodies — restoring stability and pain-free movement.",
+    a: "Shoulder arthroscopy is used for rotator cuff tears, labral tears, shoulder impingement, recurrent dislocation and removal of loose bodies, restoring stability and pain-free movement.",
   },
   {
     q: "Will I need a sling after shoulder arthroscopy?",
@@ -255,7 +255,7 @@ export const shoulderArthroscopyFaqs: Faq[] = [
 export const sportsInjuryFaqs: Faq[] = [
   {
     q: "Do all sports injuries need surgery?",
-    a: "No. Many sports injuries respond well to conservative care — rest, physiotherapy, bracing, activity modification and treatments such as PRP injections. Surgery is considered only when non-surgical measures do not restore function.",
+    a: "No. Many sports injuries respond well to conservative care such as rest, physiotherapy, bracing, activity modification and treatments such as PRP injections. Surgery is considered only when non-surgical measures do not restore function.",
   },
   {
     q: "What is a PRP injection?",

@@ -82,14 +82,39 @@ function SectionView({ section, index }: { section: Section; index: number }) {
           </div>
         </Reveal>
       );
+    case "cta":
+      return (
+        <Reveal as="div" className={styles.ctaBlock}>
+          <div className={styles.ctaText}>
+            <h3>{section.heading}</h3>
+            <p>{section.text}</p>
+          </div>
+          <div className={styles.ctaActions}>
+            <Link href="#enquiry" className="btn btn--primary">
+              Book a consultation <ArrowRight width={16} height={16} />
+            </Link>
+            <a href={`tel:${contact.phonePrimary}`} className="btn btn--outline">
+              <Phone width={15} height={15} /> {contact.phoneDisplay}
+            </a>
+          </div>
+        </Reveal>
+      );
   }
 }
 
 export default function TreatmentLayout({ content }: { content: TreatmentContent }) {
   const current = treatments.find((t) => t.slug === content.slug);
   const others = treatments.filter((t) => t.slug !== content.slug);
+
+  // CTA blocks sit in the reading flow but are not numbered or listed in the
+  // index rail. Give every other section a running number and keep anchors,
+  // the index rail and the FAQ block all aligned to that count.
+  const numberedSections = content.sections.filter((s) => s.type !== "cta");
+  const numberFor = new Map<Section, number>();
+  numberedSections.forEach((s, i) => numberFor.set(s, i));
+
   const tocItems = [
-    ...content.sections.map((s) => ("heading" in s ? s.heading : "")),
+    ...numberedSections.map((s) => ("heading" in s ? s.heading : "")),
     ...(content.faqs?.length ? ["Frequently asked questions"] : []),
   ];
 
@@ -168,15 +193,15 @@ export default function TreatmentLayout({ content }: { content: TreatmentContent
 
           <div className={styles.content}>
             {content.sections.map((s, i) => (
-              <SectionView key={i} section={s} index={i} />
+              <SectionView key={i} section={s} index={numberFor.get(s) ?? -1} />
             ))}
 
             {content.faqs && content.faqs.length > 0 && (
               <Reveal as="article" className={styles.block}>
-                <div id={sectionId(content.sections.length)} className={styles.anchor} />
+                <div id={sectionId(numberedSections.length)} className={styles.anchor} />
                 <h2>
                   <span className={styles.blockNum}>
-                    {String(content.sections.length + 1).padStart(2, "0")}
+                    {String(numberedSections.length + 1).padStart(2, "0")}
                   </span>
                   Frequently asked questions
                 </h2>
@@ -206,7 +231,7 @@ export default function TreatmentLayout({ content }: { content: TreatmentContent
               <span className="grad-text">{(current?.short ?? content.title).toLowerCase()}</span>?
             </h2>
             <p className={styles.enquiryLead}>
-              Costs, recovery time, whether surgery is even needed in your case — send
+              Costs, recovery time, whether surgery is even needed in your case. Send
               your question and get a call back within one working day.
             </p>
           </Reveal>

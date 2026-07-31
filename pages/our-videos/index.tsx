@@ -30,13 +30,13 @@ export default function VideosPage({
         <title>Our Videos | Dr. Anil Raheja</title>
         <meta
           name="description"
-          content="Patient education videos and shorts from Dr. Anil Raheja — understand your orthopedic treatment before you walk in."
+          content="Patient education videos and shorts from Dr. Anil Raheja, understand your orthopedic treatment before you walk in."
         />
       </Head>
       <PageHero
         eyebrow="Media"
         title="Our Videos"
-        subtitle="Short, clear explainers on joints, surgery and recovery — straight from the operating surgeon."
+        subtitle="Short, clear explainers on joints, surgery and recovery, straight from the operating surgeon."
         breadcrumb="Our Videos"
       />
 

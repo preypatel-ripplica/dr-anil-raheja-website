@@ -7,7 +7,7 @@ import Reveal from "@/components/Motion/Reveal";
 import styles from "./SymptomGuide.module.css";
 
 // -----------------------------------------------------------------------------
-// Symptom Guide — 3-question guided quiz that points the visitor to the most
+// Symptom Guide, 3-question guided quiz that points the visitor to the most
 // relevant treatment page. Pure front-end triage for navigation (not medical
 // advice); data kept as plain objects for the CMS integrator.
 // -----------------------------------------------------------------------------
@@ -61,7 +61,7 @@ function recommend(answers: Record<string, string>): Result {
     return {
       slug: "hip-replacement-surgery",
       title: "Hip Replacement Surgery",
-      note: "Persistent hip pain, stiffness or limping are the classic signs evaluated for hip arthroplasty — from conservative care to minimally invasive replacement.",
+      note: "Persistent hip pain, stiffness or limping are the classic signs evaluated for hip arthroplasty, from conservative care to minimally invasive replacement.",
     };
   }
   if (area === "knee") {
@@ -69,27 +69,27 @@ function recommend(answers: Record<string, string>): Result {
       return {
         slug: "arthroscopic-surgery",
         title: "Arthroscopic Surgery",
-        note: "A knee that gives way often points to a ligament injury (like ACL) — usually assessed and treated arthroscopically through keyhole incisions.",
+        note: "A knee that gives way often points to a ligament injury (like ACL), usually assessed and treated arthroscopically through keyhole incisions.",
       };
     }
     return {
       slug: "knee-replacement-surgery",
       title: "Knee Replacement Surgery",
-      note: "Knee pain that limits free movement is assessed across the knee's three compartments — treatment ranges from partial to total replacement.",
+      note: "Knee pain that limits free movement is assessed across the knee's three compartments, treatment ranges from partial to total replacement.",
     };
   }
   if (area === "spine") {
     return {
       slug: "spine-surgery",
       title: "Spine Surgery",
-      note: "Back pain that persists beyond ~2 months of rest and medication deserves specialist evaluation — surgery is always the last option.",
+      note: "Back pain that persists beyond ~2 months of rest and medication deserves specialist evaluation, surgery is always the last option.",
     };
   }
   if (area === "multi" || feel === "stiffness" || feel === "swelling") {
     return {
       slug: "arthritis-treatment",
       title: "Arthritis Treatment",
-      note: "Morning stiffness, swelling or pain across joints are typical arthritis signs — early diagnosis prevents most of the damage.",
+      note: "Morning stiffness, swelling or pain across joints are typical arthritis signs, early diagnosis prevents most of the damage.",
     };
   }
   return {

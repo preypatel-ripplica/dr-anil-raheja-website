@@ -11,7 +11,7 @@ import styles from "./contact.module.css";
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Book an appointment with Dr. Anil Raheja — Vijay Nagar clinic, Apollo Spectra and Jeewan Mala Hospital, Karol Bagh.",
+    "Book an appointment with Dr. Anil Raheja, Vijay Nagar clinic, Apollo Spectra and Jeewan Mala Hospital, Karol Bagh.",
 };
 
 export default function ContactPage() {
@@ -20,7 +20,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Contact us"
         title="Talk to the clinic"
-        subtitle="Call, write, or plan your visit — we'll confirm your appointment date and time."
+        subtitle="Call, write, or plan your visit, we'll confirm your appointment date and time."
         breadcrumb="Contact us"
       />
 
