@@ -608,11 +608,113 @@
   color: var(--muted);
 }
 
+/* ==================== CLINICS FOCUS ==================== */
+.clinicsHead {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 32px;
+  align-items: end;
+  margin-bottom: 46px;
+}
+.clinicsHead p {
+  color: var(--muted);
+  padding-bottom: 6px;
+}
+.clinicGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+.clinicCard {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 26px 24px;
+}
+.clinicPinLg {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius);
+  background: var(--ice);
+  border: 1px solid var(--line);
+  color: var(--green-deep);
+  margin-bottom: 16px;
+}
+.clinicCard h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--ink);
+  line-height: 1.3;
+  margin-bottom: 4px;
+}
+.clinicArea {
+  color: var(--green-deep);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.clinicNote {
+  color: var(--muted);
+  font-size: 0.86rem;
+  margin-top: 4px;
+}
+.clinicMeta {
+  display: flex;
+  gap: 24px;
+  margin: 18px 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.clinicMeta dt {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin-bottom: 2px;
+}
+.clinicMeta dd {
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  color: var(--ink);
+}
+.clinicActions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: auto;
+}
+.clinicDir {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--green);
+}
+.clinicDir:hover {
+  color: var(--green-deep);
+}
+.clinicCall {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+.clinicCall:hover {
+  color: var(--ink);
+}
+
 /* ==================== RESPONSIVE ==================== */
 @media (max-width: 1080px) {
   .serviceGrid,
   .videoGrid,
-  .reviewGrid {
+  .reviewGrid,
+  .clinicGrid {
     grid-template-columns: repeat(2, 1fr);
   }
   .steps {
@@ -623,6 +725,7 @@
   .heroInner,
   .aboutGrid,
   .servicesHead,
+  .clinicsHead,
   .faqBlogGrid {
     grid-template-columns: 1fr;
     gap: 44px;
@@ -651,6 +754,7 @@
   .serviceGrid,
   .videoGrid,
   .reviewGrid,
+  .clinicGrid,
   .steps {
     grid-template-columns: 1fr;
   }

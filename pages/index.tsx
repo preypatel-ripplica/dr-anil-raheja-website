@@ -273,6 +273,65 @@ export default function HomePage({
         </div>
       </section>
 
+      {/* ============ CLINICS FOCUS ============ */}
+      <section className={`section ${styles.clinics}`}>
+        <div className="container">
+          <Reveal className={styles.clinicsHead}>
+            <div>
+              <span className="eyebrow">Our Clinics</span>
+              <h2>
+                Expert orthopedic care across <span className="grad-text">North Delhi</span>
+              </h2>
+            </div>
+            <p>
+              Dr. Anil Raheja consults at his own Raheja Ortho &amp; Gynae Clinic in Vijay
+              Nagar and at Apollo Spectra and Jeewan Mala Hospital in Karol Bagh. That puts
+              trusted hip replacement, knee replacement, spine and arthroscopy care within
+              easy reach for patients across Vijay Nagar, Model Town, GTB Nagar, Mukherjee
+              Nagar, Kingsway Camp and Ashok Vihar.
+            </p>
+          </Reveal>
+
+          <div className={styles.clinicGrid}>
+            {clinics.map((c, i) => (
+              <Reveal key={c.id} delay={i * 0.08} as="article" className={styles.clinicCard}>
+                <span className={styles.clinicPinLg}>
+                  <MapPin width={20} height={20} />
+                </span>
+                <h3>{c.name}</h3>
+                <p className={styles.clinicArea}>{c.area}</p>
+                {c.note && <p className={styles.clinicNote}>{c.note}</p>}
+                <dl className={styles.clinicMeta}>
+                  <div>
+                    <dt>Days</dt>
+                    <dd>{c.days}</dd>
+                  </div>
+                  <div>
+                    <dt>Timings</dt>
+                    <dd>{c.hours}</dd>
+                  </div>
+                </dl>
+                <div className={styles.clinicActions}>
+                  <a
+                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                      `${c.name} ${c.area}`
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.clinicDir}
+                  >
+                    Get directions <ArrowRight width={14} height={14} />
+                  </a>
+                  <a href={`tel:${contact.phonePrimary}`} className={styles.clinicCall}>
+                    <Phone width={14} height={14} /> Call
+                  </a>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ============ PROCESS, calm steps on navy ============ */}
       <section className={`section section--navy ${styles.process}`}>
         <div className="container">
