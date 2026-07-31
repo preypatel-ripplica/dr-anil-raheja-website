@@ -1,7 +1,9 @@
 import type { GetStaticPaths, GetStaticProps } from "next";
+import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
-import { articles, getArticle, articleSlugs, type Article, type Block } from "@/lib/blog";
+import type { Article, Block } from "@/lib/blog";
+import { getArticles } from "@/lib/cms";
 import { treatments } from "@/lib/site";
 import BookCta from "@/components/BookCta/BookCta";
 import Reveal from "@/components/Motion/Reveal";
@@ -39,28 +41,39 @@ function BlockView({ block }: { block: Block }) {
 const fmtDate = (iso: string) =>
   new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
 
-export const getStaticPaths: GetStaticPaths = () => ({
-  paths: articleSlugs.map((slug) => ({ params: { slug } })),
-  fallback: false,
-});
+export const getStaticPaths: GetStaticPaths = async () => {
+  const articles = await getArticles();
+  return {
+    paths: articles.map((a) => ({ params: { slug: a.slug } })),
+    fallback: false,
+  };
+};
 
-export const getStaticProps: GetStaticProps<{ article: Article }> = ({ params }) => {
-  const article = getArticle(String(params?.slug ?? ""));
+export const getStaticProps: GetStaticProps<{ article: Article; related: Article[] }> = async ({
+  params,
+}) => {
+  const articles = await getArticles();
+  const article = articles.find((a) => a.slug === String(params?.slug ?? ""));
 
   if (!article) {
     return { notFound: true };
   }
 
-  return { props: { article } };
+  const related = articles.filter((a) => a.slug !== article.slug).slice(0, 2);
+
+  return { props: { article, related } };
 };
 
-export default function ArticlePage({ article }: { article: Article }) {
+export default function ArticlePage({ article, related }: { article: Article; related: Article[] }) {
   const headings = article.body.filter((b) => b.type === "h") as Extract<Block, { type: "h" }>[];
-  const related = articles.filter((a) => a.slug !== article.slug).slice(0, 2);
   const relatedTreatment = treatments.find((t) => t.slug === article.related);
 
   return (
     <>
+      <Head>
+        <title>{article.seoTitle || article.title}</title>
+        <meta name="description" content={article.metaDescription || article.excerpt} />
+      </Head>
       <ReadingProgress />
 
       {/* header */}
@@ -126,9 +139,11 @@ export default function ArticlePage({ article }: { article: Article }) {
             ))}
 
             {/* interactive self-check */}
-            <Reveal className={styles.checkWrap}>
-              <SelfCheck data={article.selfCheck} relatedSlug={article.related} />
-            </Reveal>
+            {article.selfCheck && (
+              <Reveal className={styles.checkWrap}>
+                <SelfCheck data={article.selfCheck} relatedSlug={article.related} />
+              </Reveal>
+            )}
 
             {relatedTreatment && (
               <div className={styles.treatmentCta}>

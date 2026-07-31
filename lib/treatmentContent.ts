@@ -34,6 +34,8 @@ export type TreatmentContent = {
   facts: Fact[];
   sections: Section[];
   faqs?: Faq[];
+  seoTitle?: string;
+  metaDescription?: string;
 };
 
 export const treatmentContent: Record<string, TreatmentContent> = {

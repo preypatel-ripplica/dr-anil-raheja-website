@@ -7,6 +7,9 @@
 /.next/
 /out/
 
+# images downloaded from the CMS at build time
+/public/cms-images/
+
 # production
 /build
 
@@ -31,3 +34,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Generated CMS import JSON (not deployed)
+cms-import/
