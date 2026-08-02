@@ -206,7 +206,7 @@ export default function TreatmentLayout({ content }: { content: TreatmentContent
               <span className="grad-text">{(current?.short ?? content.title).toLowerCase()}</span>?
             </h2>
             <p className={styles.enquiryLead}>
-              Costs, recovery time, whether surgery is even needed in your case — send
+              Costs, recovery time, whether surgery is even needed in your case. Send
               your question and get a call back within one working day.
             </p>
           </Reveal>

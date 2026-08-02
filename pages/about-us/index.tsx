@@ -52,7 +52,7 @@ export default function AboutPage() {
       <PageHero
         eyebrow="About Us"
         title="About Dr. Anil Raheja"
-        subtitle="Best orthopedic surgeon in Delhi, India — 30 years of experience, 15,000+ surgeries."
+        subtitle="Best orthopedic surgeon in Delhi, India with 30 years of experience and 15,000+ surgeries."
         breadcrumb="About Us"
       />
 
@@ -62,7 +62,7 @@ export default function AboutPage() {
           <Reveal className={styles.introMedia}>
             <div className={styles.introFrame}>
               <Image
-                src="/images/43566-3.png"
+                src="/images/optimized/dr-anil-raheja-hero-900.png"
                 alt="Dr. Anil Raheja"
                 width={520}
                 height={600}
@@ -85,7 +85,7 @@ export default function AboutPage() {
             <p>
               Dr. Anil Raheja is an orthopedic surgeon specialized in treating knee and
               shoulder injuries. He is the Director of Orthopedics at Apollo Spectra
-              Hospital Karol Bagh &amp; Jeewan Mala Hospital — a highly skilled joint
+              Hospital Karol Bagh &amp; Jeewan Mala Hospital. He is a highly skilled joint
               replacement surgeon with an experience of over 15,000 surgeries.
             </p>
             <p>
@@ -97,7 +97,7 @@ export default function AboutPage() {
             </p>
             <p>
               His work is completely professional, delivered in time and within the
-              specified budget — customized to suit the needs of every patient. That
+              specified budget, customized to suit the needs of every patient. That
               approach has made him a life saver for many people suffering from
               orthopedic and joint-related injuries.
             </p>

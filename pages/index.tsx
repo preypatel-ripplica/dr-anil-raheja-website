@@ -6,7 +6,7 @@ import styles from "./page.module.css";
 import { appointmentUrl, treatments, contact, clinics, site, treatmentHref } from "@/lib/site";
 import { reviews, reviewsSummary, generalFaqs } from "@/lib/content";
 import { breadcrumbSchema, canonicalUrl, faqSchema, jsonLd, physicianSchema, websiteSchema } from "@/lib/seo";
-import type { Article } from "@/lib/blog";
+import { toArticleSummary, type ArticleSummary } from "@/lib/blog";
 import { getArticles, getVideos, type VideoItem } from "@/lib/cms";
 import BookCta from "@/components/BookCta/BookCta";
 import SymptomGuide from "@/components/SymptomGuide/SymptomGuide";
@@ -32,26 +32,30 @@ import {
 } from "@/components/Icons";
 
 const serviceIcons = [Joint, Bone, Spine, Tool, Pulse, Bone, Scan, Shield, Walk, Pulse];
+const heroMobileSrc = "/images/optimized/dr-anil-raheja-hero-640.png";
+const heroDesktopSrc = "/images/optimized/dr-anil-raheja-hero-900.png";
 
 export const getStaticProps: GetStaticProps<{
-  blogPosts: Article[];
+  blogPosts: ArticleSummary[];
   featureVideos: VideoItem[];
 }> = async () => {
   const [blogPosts, videos] = await Promise.all([getArticles(), getVideos()]);
-  return { props: { blogPosts, featureVideos: videos.featured } };
+  return { props: { blogPosts: blogPosts.map(toArticleSummary), featureVideos: videos.featured } };
 };
 
 export default function HomePage({
   blogPosts,
   featureVideos,
 }: {
-  blogPosts: Article[];
+  blogPosts: ArticleSummary[];
   featureVideos: VideoItem[];
 }) {
   return (
     <>
       <Head>
         <link rel="canonical" href={canonicalUrl("/")} />
+        <link rel="preload" as="image" href={heroMobileSrc} media="(max-width: 780px)" />
+        <link rel="preload" as="image" href={heroDesktopSrc} media="(min-width: 781px)" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -67,7 +71,7 @@ export default function HomePage({
       {/* ============ HERO — calm, reassuring split ============ */}
       <section className={styles.hero}>
         <div className={`container ${styles.heroInner}`}>
-          <Reveal className={styles.heroText}>
+          <div className={styles.heroText}>
             <span className="eyebrow">Hip Replacement Surgeon · Delhi</span>
             <h1 className={styles.heroTitle}>
               Get back to <span className="grad-text">pain-free</span> movement
@@ -76,7 +80,7 @@ export default function HomePage({
               Dr. Anil Raheja is a leading Hip Replacement Surgeon in Delhi with 30 years
               of experience and over 25,000 successful surgeries. He specialises in the
               muscle-sparing Direct Anterior Approach (DAA) and minimally invasive hip
-              surgery — alongside knee replacement, spine surgery, arthroscopy and
+              surgery, alongside knee replacement, spine surgery, arthroscopy and
               arthritis care. Trusted, minimally invasive, recovery-focused.
             </p>
             <div className={styles.heroCtas}>
@@ -104,18 +108,23 @@ export default function HomePage({
                 <span>Director Orthopedics, Apollo Spectra</span>
               </div>
             </div>
-          </Reveal>
+          </div>
 
-          <Reveal delay={0.12} className={styles.heroMedia}>
+          <div className={styles.heroMedia}>
             <div className={styles.heroPhoto}>
-              <Image
-                src="/images/43566-3.png"
-                alt="Dr. Anil Raheja — Best Orthopedic Doctor in Delhi"
-                fill
-                sizes="(max-width: 900px) 90vw, 42vw"
-                priority
-                className={styles.heroImg}
-              />
+              <picture className={styles.heroPicture}>
+                <source srcSet={heroMobileSrc} media="(max-width: 780px)" width={640} height={640} />
+                <img
+                  src={heroDesktopSrc}
+                  alt="Dr. Anil Raheja, Best Orthopedic Doctor in Delhi"
+                  width={900}
+                  height={900}
+                  loading="eager"
+                  decoding="sync"
+                  fetchPriority="high"
+                  className={styles.heroImg}
+                />
+              </picture>
             </div>
             <div className={styles.heroCard}>
               <span className={styles.heroCardNum}>
@@ -132,7 +141,7 @@ export default function HomePage({
                 <small>of experience</small>
               </div>
             </div>
-          </Reveal>
+          </div>
         </div>
       </section>
 
@@ -175,7 +184,7 @@ export default function HomePage({
               </h2>
             </div>
             <p>
-              A clear, patient-friendly process for every treatment — using advanced
+              A clear, patient-friendly process for every treatment, using advanced
               technology to deliver safe, effective and predictable outcomes.
             </p>
           </Reveal>
@@ -208,7 +217,7 @@ export default function HomePage({
                   <Phone width={22} height={22} />
                 </span>
                 <h3>Not sure which one?</h3>
-                <p>Call the helpline and describe your problem — we&apos;ll guide you to the right specialist.</p>
+                <p>Call the helpline and describe your problem. We&apos;ll guide you to the right specialist.</p>
                 <a href={`tel:${contact.phonePrimary}`} className={styles.helpNum}>
                   {contact.phoneDisplay}
                 </a>
@@ -227,7 +236,7 @@ export default function HomePage({
           <Reveal className={styles.aboutMedia}>
             <div className={styles.aboutFrame}>
               <Image
-                src="/images/Orthopaedics-1.jpg"
+                src="/images/optimized/orthopaedics-1-800.jpg"
                 alt="Dr. Anil Raheja in surgery"
                 width={560}
                 height={620}
@@ -248,7 +257,7 @@ export default function HomePage({
             </h2>
             <p>
               Orthopedics is the one department of medicine where you truly need a
-              specialist — and Dr. Anil Raheja has built a career on exactly that. As
+              specialist, and Dr. Anil Raheja has built a career on exactly that. As
               Director of Orthopedics at Apollo Spectra and Jeewan Mala Hospital, he
               specializes in minimally invasive joint replacement, spine surgery and
               arthroscopic procedures.
@@ -278,7 +287,7 @@ export default function HomePage({
                 </span>
                 <div>
                   <strong>Recovery-focused</strong>
-                  <span>Every plan is measured by one thing — getting you moving again.</span>
+                  <span>Every plan is measured by one thing: getting you moving again.</span>
                 </div>
               </li>
             </ul>
@@ -397,7 +406,11 @@ export default function HomePage({
             <div className={styles.blogList}>
               {blogPosts.map((post, i) => (
                 <Reveal key={post.slug} delay={i * 0.07} as="article" className={styles.blogRow}>
-                  <Link href={`/blogs/${post.slug}`} className={styles.blogThumb}>
+                  <Link
+                    href={`/blogs/${post.slug}`}
+                    className={styles.blogThumb}
+                    aria-label={`Read article: ${post.title}`}
+                  >
                     <Image src={post.image} alt="" fill sizes="120px" className={styles.cover} />
                   </Link>
                   <div>

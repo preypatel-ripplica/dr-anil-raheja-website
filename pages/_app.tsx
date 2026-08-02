@@ -1,12 +1,38 @@
 import type { AppProps } from "next/app";
+import { useEffect } from "react";
 import Head from "next/head";
+import Script from "next/script";
+import { useRouter } from "next/router";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import { logo, site } from "@/lib/site";
 import { absoluteUrl } from "@/lib/seo";
 import "./globals.css";
 
+const GA_MEASUREMENT_ID = "G-DNQW1XD1E0";
+
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
 export default function App({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+
+  useEffect(() => {
+    const handleRouteChange = (url: string) => {
+      window.gtag?.("config", GA_MEASUREMENT_ID, {
+        page_path: url,
+      });
+    };
+
+    router.events.on("routeChangeComplete", handleRouteChange);
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, [router.events]);
+
   return (
     <>
       <Head>
@@ -18,13 +44,25 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta property="og:type" content="website" />
         <meta property="og:url" content={site.url} />
         <meta property="og:site_name" content={site.name} />
-        <meta property="og:image" content={absoluteUrl("/images/43566-3.png")} />
+        <meta property="og:image" content={absoluteUrl("/images/optimized/dr-anil-raheja-hero-900.png")} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={site.title} />
         <meta name="twitter:description" content={site.description} />
-        <meta name="twitter:image" content={absoluteUrl("/images/43566-3.png")} />
+        <meta name="twitter:image" content={absoluteUrl("/images/optimized/dr-anil-raheja-hero-900.png")} />
         <link rel="icon" href={logo.icon} type="image/svg+xml" />
       </Head>
+      <Script
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${GA_MEASUREMENT_ID}');
+        `}
+      </Script>
       <Header />
       <main>
         <Component {...pageProps} />

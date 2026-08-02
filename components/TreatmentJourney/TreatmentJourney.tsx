@@ -38,7 +38,7 @@ const paths: Record<string, Path> = {
         options: [
           { label: "Pain even at rest", note: "Constant pain is a key sign the joint needs evaluation now." },
           { label: "Pain on walking", note: "We assess how far you can walk and what limits you." },
-          { label: "After a fall / fracture", note: "Bring any X-rays — timing matters after trauma." },
+          { label: "After a fall / fracture", note: "Bring any X-rays. Timing matters after trauma." },
           { label: "Advised replacement elsewhere", note: "A second opinion visit compares your options." },
         ],
       },
@@ -48,7 +48,7 @@ const paths: Record<string, Path> = {
         helper: "This becomes the visit focus.",
         options: [
           { label: "Do I really need surgery?", note: "We review what happens if you wait, and alternatives." },
-          { label: "Minimal invasive option?", note: "Smaller incisions, faster recovery — if suitable for you." },
+          { label: "Minimal invasive option?", note: "Smaller incisions, faster recovery, if suitable for you." },
           { label: "Cost & insurance", note: "₹1.5L–₹4.5L typical range; cashless eligibility explained." },
           { label: "Recovery timeline", note: "Hospital stay, walking aid, and return to routine." },
         ],
@@ -77,7 +77,7 @@ const paths: Record<string, Path> = {
         question: "What is your knee doing?",
         helper: "Choose the closest match.",
         options: [
-          { label: "Pain climbing stairs", note: "Classic early sign — often manageable without surgery." },
+          { label: "Pain climbing stairs", note: "Classic early sign, often manageable without surgery." },
           { label: "Pain on every step", note: "We check which of the three knee compartments is worn." },
           { label: "Knee gives way", note: "Instability may point to ligament injury, not arthritis." },
           { label: "Advised replacement elsewhere", note: "We compare partial vs. total and second-opinion it." },
@@ -111,7 +111,7 @@ const paths: Record<string, Path> = {
   },
   "spine-surgery": {
     title: "Plan your spine visit",
-    intro: "Surgery is the last option — the visit finds the safest first one.",
+    intro: "Surgery is the last option. The visit finds the safest first one.",
     steps: [
       {
         label: "Situation",
@@ -120,7 +120,7 @@ const paths: Record<string, Path> = {
         options: [
           { label: "Under 2 months", note: "Most back pain settles with rest and medication in this window." },
           { label: "Over 2 months", note: "Persistent pain deserves imaging and specialist review." },
-          { label: "Pain going down the leg", note: "May indicate a disc pressing a nerve — needs evaluation." },
+          { label: "Pain going down the leg", note: "May indicate a disc pressing a nerve and needs evaluation." },
           { label: "Advised surgery elsewhere", note: "Second opinion on whether surgery is truly needed." },
         ],
       },
@@ -130,7 +130,7 @@ const paths: Record<string, Path> = {
         helper: "Pick the main doubt.",
         options: [
           { label: "Can I avoid surgery?", note: "Heat/ice, therapy and medication options reviewed first." },
-          { label: "What's causing it?", note: "Osteoarthritis outgrowths vs. ruptured disc — imaging tells." },
+          { label: "What's causing it?", note: "Osteoarthritis outgrowths vs. ruptured disc. Imaging tells." },
           { label: "Is it getting worse?", note: "Warning signs that should never be ignored, explained." },
           { label: "Minimal invasive options", note: "Smaller spine procedures where indicated." },
         ],
@@ -152,7 +152,7 @@ const paths: Record<string, Path> = {
   },
   "arthroscopic-surgery": {
     title: "Plan your arthroscopy discussion",
-    intro: "Keyhole surgery suits specific problems — the visit confirms fit.",
+    intro: "Keyhole surgery suits specific problems. The visit confirms fit.",
     steps: [
       {
         label: "Situation",

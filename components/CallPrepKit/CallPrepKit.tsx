@@ -103,7 +103,7 @@ export default function CallPrepKit() {
           <h2>
             Know exactly <span className="mark-block">what to say</span>
           </h2>
-          <p>Three taps build your booking script — no medical vocabulary needed.</p>
+          <p>Three taps build your booking script, no medical vocabulary needed.</p>
         </Reveal>
 
         <Reveal delay={0.1} className={styles.kit}>

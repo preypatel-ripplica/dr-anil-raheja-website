@@ -75,7 +75,12 @@
   box-shadow: var(--shadow-lg);
   border: 6px solid #fff;
 }
+.heroPicture,
 .heroImg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: top;
 }
@@ -606,6 +611,20 @@
 .clinicItem span {
   font-size: 0.86rem;
   color: var(--muted);
+}
+
+@media (max-width: 780px) {
+  .stats,
+  .services,
+  .about,
+  .process,
+  .reviews,
+  .videos,
+  .faqBlog,
+  .clinicsStrip {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 900px;
+  }
 }
 
 /* ==================== RESPONSIVE ==================== */

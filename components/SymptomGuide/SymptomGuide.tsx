@@ -62,7 +62,7 @@ function recommend(answers: Record<string, string>): Result {
     return {
       slug: "hip-replacement-surgery",
       title: "Hip Replacement Surgery",
-      note: "Persistent hip pain, stiffness or limping are the classic signs evaluated for hip arthroplasty — from conservative care to minimally invasive replacement.",
+      note: "Persistent hip pain, stiffness or limping are the classic signs evaluated for hip arthroplasty, from conservative care to minimally invasive replacement.",
     };
   }
   if (area === "knee") {
@@ -70,27 +70,27 @@ function recommend(answers: Record<string, string>): Result {
       return {
         slug: "arthroscopic-surgery",
         title: "Arthroscopic Surgery",
-        note: "A knee that gives way often points to a ligament injury (like ACL) — usually assessed and treated arthroscopically through keyhole incisions.",
+        note: "A knee that gives way often points to a ligament injury (like ACL), usually assessed and treated arthroscopically through keyhole incisions.",
       };
     }
     return {
       slug: "knee-replacement-surgery",
       title: "Knee Replacement Surgery",
-      note: "Knee pain that limits free movement is assessed across the knee's three compartments — treatment ranges from partial to total replacement.",
+      note: "Knee pain that limits free movement is assessed across the knee's three compartments. Treatment ranges from partial to total replacement.",
     };
   }
   if (area === "spine") {
     return {
       slug: "spine-surgery",
       title: "Spine Surgery",
-      note: "Back pain that persists beyond ~2 months of rest and medication deserves specialist evaluation — surgery is always the last option.",
+      note: "Back pain that persists beyond ~2 months of rest and medication deserves specialist evaluation. Surgery is always the last option.",
     };
   }
   if (area === "multi" || feel === "stiffness" || feel === "swelling") {
     return {
       slug: "arthritis-treatment",
       title: "Arthritis Treatment",
-      note: "Morning stiffness, swelling or pain across joints are typical arthritis signs — early diagnosis prevents most of the damage.",
+      note: "Morning stiffness, swelling or pain across joints are typical arthritis signs. Early diagnosis prevents most of the damage.",
     };
   }
   return {
@@ -138,7 +138,14 @@ export default function SymptomGuide() {
         <Reveal delay={0.1} className={styles.card}>
           {/* progress */}
           <div className={styles.progressRow}>
-            <div className={styles.progressTrack} role="progressbar" aria-valuenow={Math.round(progress)} aria-valuemin={0} aria-valuemax={100}>
+            <div
+              className={styles.progressTrack}
+              role="progressbar"
+              aria-label="Symptom guide progress"
+              aria-valuenow={Math.round(progress)}
+              aria-valuemin={0}
+              aria-valuemax={100}
+            >
               <div className={styles.progressFill} style={{ width: `${progress}%` }} />
             </div>
             <span className={styles.progressLabel}>

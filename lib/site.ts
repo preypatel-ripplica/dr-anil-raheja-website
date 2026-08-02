@@ -8,8 +8,8 @@ import navTreatments from "./nav-treatments.json";
 export const site = {
   name: "Dr. Anil Raheja",
   credentials: "MS (Ortho), M.Ch (Ortho)",
-  tagline: "Director Orthopedics — Apollo Spectra Hospital & Jeewan Mala Hospital",
-  title: "Hip Replacement Surgeon in Delhi | Dr. Anil Raheja — Direct Anterior Approach",
+  tagline: "Director Orthopedics at Apollo Spectra Hospital & Jeewan Mala Hospital",
+  title: "Hip Replacement Surgeon in Delhi | Dr. Anil Raheja, Direct Anterior Approach",
   description:
     "Dr. Anil Raheja is a leading Hip Replacement Surgeon in Delhi with 30+ years of experience, 100k+ happy patients and 25,000+ surgeries, specialising in the Direct Anterior Approach (DAA) and minimally invasive hip surgery, plus knee replacement, spine surgery, arthroscopy and arthritis care.",
   url: "https://www.dranilraheja.com",
@@ -120,7 +120,7 @@ export const treatments: Treatment[] = [
     short: "Hip Replacement",
     excerpt:
       "Primary, complex and revision hip replacement with a special focus on the muscle-sparing Direct Anterior Approach (DAA).",
-    image: "/images/2-rin034ev3rcl0zmgzeyaj1290zhgft7s4lqwaot0kw.png",
+    image: "/images/optimized/hip-replacement-800.png",
   },
   {
     slug: "knee-replacement-surgery",
@@ -128,7 +128,7 @@ export const treatments: Treatment[] = [
     short: "Knee Replacement",
     excerpt:
       "Total and partial knee replacement for arthritis or injury that limits walking, movement and daily activities.",
-    image: "/images/5-rin0je0bdjmwhyt078hteyafkng66b5z5arspmipr4.png",
+    image: "/images/optimized/knee-replacement-800.png",
   },
   {
     slug: "spine-surgery",
@@ -136,7 +136,7 @@ export const treatments: Treatment[] = [
     short: "Spine Surgery",
     excerpt:
       "Evaluation and surgical care for selected spine conditions after non-surgical treatment options have been considered.",
-    image: "/images/7-rin0voqasihiuwa7q4jk2gejqza95myqfnjbrwt9e0.png",
+    image: "/images/optimized/spine-surgery-800.png",
   },
   {
     slug: "arthroscopic-surgery",
@@ -144,7 +144,7 @@ export const treatments: Treatment[] = [
     short: "Arthroscopy",
     excerpt:
       "Keyhole surgery for selected joint problems using a camera and fine instruments through small incisions.",
-    image: "/images/9-rin1b64ld9o9vd4f5a53dhtvtjqtb7fyxjnccilbdg.png",
+    image: "/images/optimized/arthroscopic-surgery-800.png",
   },
   {
     slug: "arthritis-treatment",
@@ -152,7 +152,7 @@ export const treatments: Treatment[] = [
     short: "Arthritis Care",
     excerpt:
       "Diagnosis and treatment for painful joint wear, from medication and lifestyle guidance to surgery when needed.",
-    image: "/images/11-rin1ll6745xys2nshblgrx3t17md9dsgnuozueepxk.png",
+    image: "/images/optimized/arthritis-treatment-800.png",
   },
   {
     slug: "partial-knee-replacement",
@@ -160,7 +160,7 @@ export const treatments: Treatment[] = [
     short: "Partial Knee",
     excerpt:
       "Unicondylar knee replacement for arthritis limited to one compartment, preserving healthy ligaments and bone where appropriate.",
-    image: "/images/6-rin0jnep9vy2caeho4ipikf0cyt8hm9qq4t5fijuw8.png",
+    image: "/images/optimized/partial-knee-800.png",
   },
   {
     slug: "sports-injury-conservative-care",
@@ -168,7 +168,7 @@ export const treatments: Treatment[] = [
     short: "Sports Injury",
     excerpt:
       "Assessment and non-surgical care for sprains, ligament injuries, tendon pain and activity-related joint problems.",
-    image: "/images/Orthopaedics-1.jpg",
+    image: "/images/optimized/orthopaedics-1-800.jpg",
   },
   {
     slug: "fracture-trauma-treatment",
@@ -176,6 +176,6 @@ export const treatments: Treatment[] = [
     short: "Fracture & Trauma",
     excerpt:
       "Prompt assessment and treatment for simple, displaced and complex fractures, followed by structured rehabilitation.",
-    image: "/images/ffcf7431-82e0-415e-901e-f91cdd3a67f4-1.png",
+    image: "/images/optimized/fracture-trauma-800.png",
   },
 ];

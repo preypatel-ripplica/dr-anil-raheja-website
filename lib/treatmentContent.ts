@@ -43,8 +43,8 @@ export const treatmentContent: Record<string, TreatmentContent> = {
     slug: "hip-replacement-surgery",
     title: "Hip Replacement Surgeon in Delhi",
     subtitle:
-      "Expert hip replacement surgery with the Direct Anterior Approach (DAA) — an advanced muscle-sparing technique for less pain and a faster recovery.",
-    heroImage: "/images/2-rin034ev3rcl0zmgzeyaj1290zhgft7s4lqwaot0kw.png",
+      "Expert hip replacement surgery with the Direct Anterior Approach (DAA), an advanced muscle-sparing technique for less pain and a faster recovery.",
+    heroImage: "/images/optimized/hip-replacement-800.png",
     facts: [
       { label: "Special interest", value: "Direct Anterior (DAA)" },
       { label: "Incision", value: "8–10 cm (single)" },
@@ -57,7 +57,7 @@ export const treatmentContent: Record<string, TreatmentContent> = {
         heading: "Expert hip replacement in Delhi",
         paragraphs: [
           "Living with hip pain can make even simple activities like walking, climbing stairs, getting into a car, or sleeping uncomfortable. When medications, physiotherapy, and injections no longer provide lasting relief, hip replacement surgery offers a reliable solution to restore mobility and improve quality of life.",
-          "Dr. Anil Raheja is an internationally trained arthroplasty surgeon with 30+ years of experience in joint replacement surgery. He specialises in Primary, Complex and Revision Hip Replacement, with a special interest in the Direct Anterior Approach (DAA) — an advanced muscle-sparing technique that allows many patients to experience less pain, faster recovery, and an earlier return to normal activities.",
+          "Dr. Anil Raheja is an internationally trained arthroplasty surgeon with 30+ years of experience in joint replacement surgery. He specialises in Primary, Complex and Revision Hip Replacement, with a special interest in the Direct Anterior Approach (DAA), an advanced muscle-sparing technique that allows many patients to experience less pain, faster recovery, and an earlier return to normal activities.",
         ],
       },
       {
@@ -75,11 +75,11 @@ export const treatmentContent: Record<string, TreatmentContent> = {
       {
         type: "imageText",
         heading: "Direct Anterior Hip Replacement (DAA)",
-        image: "/images/4-rin03uqcf4calkun34o2hnycn7y6ift7b2jazz9lvk.png",
+        image: "/images/optimized/hip-daa-800.png",
         imageSide: "right",
         paragraphs: [
           "Unlike conventional hip replacement approaches that require cutting through muscles, the Direct Anterior Approach reaches the hip joint through a natural inter-muscular and inter-nervous plane, preserving important muscles around the hip.",
-          "The procedure is performed through a single incision of about 8–10 cm (approximately 9 cm), which — combined with the muscle-sparing technique — supports less pain and a faster early recovery.",
+          "The procedure is performed through a single incision of about 8–10 cm (approximately 9 cm), which, combined with the muscle-sparing technique, supports less pain and a faster early recovery.",
         ],
       },
       {
@@ -131,11 +131,11 @@ export const treatmentContent: Record<string, TreatmentContent> = {
       {
         type: "imageText",
         heading: "Precision hip replacement",
-        image: "/images/3-rin03a1w8rja4s6k9jrml74zwdi3fea1h3rpj0tp9k.png",
+        image: "/images/optimized/hip-precision-800.png",
         imageSide: "left",
         paragraphs: [
           "Every hip replacement is individually planned based on your anatomy, bone quality, activity level and lifestyle. High-quality implants with proven long-term clinical performance are selected to maximise durability, stability and function.",
-          "The objective is not merely to replace a damaged joint — but to restore confidence in walking, relieve pain, and help patients return to an active, independent life.",
+          "The objective is not merely to replace a damaged joint, but to restore confidence in walking, relieve pain, and help patients return to an active, independent life.",
         ],
       },
       {
@@ -162,8 +162,8 @@ export const treatmentContent: Record<string, TreatmentContent> = {
     slug: "knee-replacement-surgery",
     title: "Knee Replacement Surgery in Delhi",
     subtitle:
-      "For arthritis or injury that stops the knee moving freely — total and partial replacement with a planned path back to walking.",
-    heroImage: "/images/5-rin0je0bdjmwhyt078hteyafkng66b5z5arspmipr4.png",
+      "For arthritis or injury that stops the knee moving freely, total and partial replacement with a planned path back to walking.",
+    heroImage: "/images/optimized/knee-replacement-800.png",
     facts: [
       { label: "Hospital stay", value: "3–5 days" },
       { label: "Walking aid", value: "First few weeks" },
@@ -181,17 +181,17 @@ export const treatmentContent: Record<string, TreatmentContent> = {
       {
         type: "imageText",
         heading: "Total vs. partial knee replacement",
-        image: "/images/6-rin0jnep9vy2caeho4ipikf0cyt8hm9qq4t5fijuw8.png",
+        image: "/images/optimized/partial-knee-800.png",
         imageSide: "right",
         paragraphs: [
-          "In a total knee replacement all three compartments of the knee are replaced. In a partial knee replacement only the affected portion is replaced, keeping the healthy portions intact — osteoarthritis patients often have only one compartment affected.",
+          "In a total knee replacement all three compartments of the knee are replaced. In a partial knee replacement only the affected portion is replaced, keeping the healthy portions intact. Osteoarthritis patients often have only one compartment affected.",
         ],
       },
       {
         type: "text",
-        heading: "Partial (unicondylar) knee replacement — a modern option",
+        heading: "Partial (unicondylar) knee replacement, a modern option",
         paragraphs: [
-          "Partial knee replacement — also called unicondylar or unicompartmental knee replacement — is a modern, joint-preserving option that resurfaces only the damaged compartment of the knee, while the healthy bone, cartilage and ligaments are kept intact. For patients whose arthritis is limited to a single compartment, it is a smaller, more targeted procedure than a total knee replacement.",
+          "Partial knee replacement, also called unicondylar or unicompartmental knee replacement, is a modern, joint-preserving option that resurfaces only the damaged compartment of the knee, while the healthy bone, cartilage and ligaments are kept intact. For patients whose arthritis is limited to a single compartment, it is a smaller, more targeted procedure than a total knee replacement.",
           "Because more of the natural knee is preserved, many patients report a more natural-feeling knee and a quicker return to everyday activities.",
         ],
       },
@@ -230,7 +230,7 @@ export const treatmentContent: Record<string, TreatmentContent> = {
         type: "text",
         heading: "Life after knee replacement",
         paragraphs: [
-          "Most patients return to comfortable, independent daily activity after a knee replacement — walking, travelling and enjoying low-impact activities such as cycling and swimming. Every precaution is taken to keep the procedure safe, and surgery is offered at a reasonable cost.",
+          "Most patients return to comfortable, independent daily activity after a knee replacement, walking, travelling and enjoying low-impact activities such as cycling and swimming. Every precaution is taken to keep the procedure safe, and surgery is offered at a reasonable cost.",
         ],
       },
     ],
@@ -241,8 +241,8 @@ export const treatmentContent: Record<string, TreatmentContent> = {
     slug: "spine-surgery",
     title: "Spine Surgery Specialist in Delhi",
     subtitle:
-      "Surgery is the last option for severe back pain — explored only after rest, medication and therapy have had their chance.",
-    heroImage: "/images/7-rin0voqasihiuwa7q4jk2gejqza95myqfnjbrwt9e0.png",
+      "Surgery is the last option for severe back pain, explored only after rest, medication and therapy have had their chance.",
+    heroImage: "/images/optimized/spine-surgery-800.png",
     facts: [
       { label: "First line", value: "Rest & medication" },
       { label: "Review point", value: "~2 months of pain" },
@@ -254,7 +254,7 @@ export const treatmentContent: Record<string, TreatmentContent> = {
         type: "text",
         heading: "When does back pain need surgery?",
         paragraphs: [
-          "Spinal surgery is a major operation performed only when extreme need arises. Severe back pain is the major symptom, with spine movement becoming very difficult. Simple back pain heals with proper rest and medication within about two months — if pain persists beyond that, surgical evaluation is warranted.",
+          "Spinal surgery is a major operation performed only when extreme need arises. Severe back pain is the major symptom, with spine movement becoming very difficult. Simple back pain heals with proper rest and medication within about two months. If pain persists beyond that, surgical evaluation is warranted.",
         ],
       },
       {
@@ -262,7 +262,7 @@ export const treatmentContent: Record<string, TreatmentContent> = {
         heading: "Non-surgical options first",
         intro: "A spine specialist may recommend these before considering surgery:",
         items: [
-          "Heat and ice packs — alternate them and see which gives better relief for lower back pain.",
+          "Heat and ice packs: alternate them and see which gives better relief for lower back pain.",
           "Simple exercises recommended by a physical therapist to strengthen and stretch the back.",
           "Therapeutic massage by a specialist to relieve muscular back pain.",
         ],
@@ -270,10 +270,10 @@ export const treatmentContent: Record<string, TreatmentContent> = {
       {
         type: "imageText",
         heading: "Conditions that need spine surgery",
-        image: "/images/8-rin0vy4oouuobakpd9y20xy5vr80xjzn3ot3l5ot6k.png",
+        image: "/images/optimized/spine-condition-800.png",
         imageSide: "right",
         paragraphs: [
-          "Osteoarthritis can cause bone outgrowths on the spine that narrow the space for nerves through the spinal openings. Ruptured discs — the cushions separating the bones of the spine — may press tightly against a spinal nerve, requiring surgical decompression.",
+          "Osteoarthritis can cause bone outgrowths on the spine that narrow the space for nerves through the spinal openings. Ruptured discs, the cushions separating the bones of the spine, may press tightly against a spinal nerve, requiring surgical decompression.",
         ],
       },
     ],
@@ -284,8 +284,8 @@ export const treatmentContent: Record<string, TreatmentContent> = {
     slug: "arthroscopic-surgery",
     title: "Arthroscopic Surgeon in Delhi",
     subtitle:
-      "Keyhole surgery for joints — a fiber-optic camera through a small keyhole incision, for faster diagnosis and recovery.",
-    heroImage: "/images/9-rin1b64ld9o9vd4f5a53dhtvtjqtb7fyxjnccilbdg.png",
+      "Keyhole surgery for joints, using a fiber-optic camera through a small keyhole incision for faster diagnosis and recovery.",
+    heroImage: "/images/optimized/arthroscopic-surgery-800.png",
     facts: [
       { label: "Technique", value: "Keyhole surgery" },
       { label: "Joints", value: "Knee · hip · shoulder · more" },
@@ -297,15 +297,15 @@ export const treatmentContent: Record<string, TreatmentContent> = {
         type: "text",
         heading: "What is arthroscopy?",
         paragraphs: [
-          "Arthroscopy — often called keyhole surgery — is a procedure apt for diagnosing and treating joint problems. The surgeon inserts a narrow tube through a small keyhole incision, connected to a fiber-optic video camera. The instrument's small lens and lighting system give a clear view inside the joint.",
+          "Arthroscopy, often called keyhole surgery, is a procedure apt for diagnosing and treating joint problems. The surgeon inserts a narrow tube through a small keyhole incision, connected to a fiber-optic video camera. The instrument's small lens and lighting system give a clear view inside the joint.",
         ],
       },
       {
         type: "list",
         heading: "What it treats",
-        intro: "Arthroscopy is performed on the knee, shoulder, hip, ankle, wrist and elbow — to diagnose and treat:",
+        intro: "Arthroscopy is performed on the knee, shoulder, hip, ankle, wrist and elbow to diagnose and treat:",
         items: [
-          "Torn meniscus — the cartilage cushion of the knee",
+          "Torn meniscus, the cartilage cushion of the knee",
           "Damaged or worn joint cartilage",
           "Torn or unstable ligaments",
           "Inflamed joint linings",
@@ -318,15 +318,15 @@ export const treatmentContent: Record<string, TreatmentContent> = {
         heading: "Common indications by joint",
         intro: "Some of the most common reasons arthroscopy is recommended:",
         items: [
-          "Knee — meniscus tears, cartilage damage and ligament (ACL) injuries",
-          "Shoulder — rotator cuff tears, labral tears and impingement",
-          "Ankle — cartilage injuries, impingement and loose bodies",
+          "Knee: meniscus tears, cartilage damage and ligament (ACL) injuries",
+          "Shoulder: rotator cuff tears, labral tears and impingement",
+          "Ankle: cartilage injuries, impingement and loose bodies",
         ],
       },
       {
         type: "imageText",
         heading: "After the surgery",
-        image: "/images/10-rin1bbrmi9wa1bkdedx320bnks748c1y92b68nmfuw.png",
+        image: "/images/optimized/shoulder-arthroscopy-800.png",
         imageSide: "right",
         paragraphs: [
           "Your doctor or therapist will guide recovery with a simple protocol:",
@@ -336,10 +336,10 @@ export const treatmentContent: Record<string, TreatmentContent> = {
         type: "list",
         heading: "Recovery protocol",
         items: [
-          "Medication — to heal quickly and relieve pain.",
-          "Protection — temporary slings or crutches keep the operated joint still.",
-          "Exercise — simple prescribed movements strengthen muscles for a quick recovery.",
-          "RICE — rest, ice, compression and elevation to relieve the joint and reduce swelling.",
+          "Medication to heal quickly and relieve pain.",
+          "Protection with temporary slings or crutches to keep the operated joint still.",
+          "Exercise, with simple prescribed movements that strengthen muscles for a quick recovery.",
+          "RICE: rest, ice, compression and elevation to relieve the joint and reduce swelling.",
         ],
       },
     ],
@@ -350,8 +350,8 @@ export const treatmentContent: Record<string, TreatmentContent> = {
     slug: "arthritis-treatment",
     title: "Arthritis Treatment in Delhi",
     subtitle:
-      "From early diagnosis to joint-preserving care — managing the wear and tear of cartilage before it manages you.",
-    heroImage: "/images/11-rin1ll6745xys2nshblgrx3t17md9dsgnuozueepxk.png",
+      "From early diagnosis to joint-preserving care, managing the wear and tear of cartilage before it manages you.",
+    heroImage: "/images/optimized/arthritis-treatment-800.png",
     facts: [
       { label: "Diagnosis", value: "Exam · X-ray · MRI" },
       { label: "First line", value: "Lifestyle + medication" },
@@ -363,7 +363,7 @@ export const treatmentContent: Record<string, TreatmentContent> = {
         type: "text",
         heading: "What is arthritis?",
         paragraphs: [
-          "Arthritis happens when there is slow wear and tear of the cartilage surrounding the joints. Cartilage is the portion of the joint that allows it to move freely — when it breaks down, bones rub together, creating severe pain and inflammation.",
+          "Arthritis happens when there is slow wear and tear of the cartilage surrounding the joints. Cartilage is the portion of the joint that allows it to move freely. When it breaks down, bones rub together, creating severe pain and inflammation.",
           "Dr. Anil Raheja is a leading arthritis specialist in Delhi, providing rheumatoid arthritis treatment at affordable cost.",
         ],
       },
@@ -381,7 +381,7 @@ export const treatmentContent: Record<string, TreatmentContent> = {
       {
         type: "imageText",
         heading: "Diagnosis",
-        image: "/images/12-rin1lwg9e6dovovjtht7ve6ccravgp0u059qm77hdo.png",
+        image: "/images/optimized/arthritis-diagnosis-800.png",
         imageSide: "right",
         paragraphs: [
           "A specialist may diagnose arthritis from a physical examination of the affected joint. For a better picture, X-rays or MRI scanning may be done. In some cases urine, blood or joint fluid is tested to identify the type of arthritis.",
@@ -391,14 +391,14 @@ export const treatmentContent: Record<string, TreatmentContent> = {
         type: "text",
         heading: "Getting relief from arthritis",
         paragraphs: [
-          "Early diagnosis can prevent and minimise the pain that arises. Simple steps — weight management, guided exercise, heat/cold therapy and timely medication — can bring significant relief when started early.",
+          "Early diagnosis can prevent and minimise the pain that arises. Simple steps like weight management, guided exercise, heat/cold therapy and timely medication can bring significant relief when started early.",
         ],
       },
       {
         type: "text",
         heading: "When surgery is needed",
         paragraphs: [
-          "If pain is severe and medication or other remedies show no relief, the doctor may recommend surgery — replacing the joint or correcting the damage that has occurred over time.",
+          "If pain is severe and medication or other remedies show no relief, the doctor may recommend surgery, replacing the joint or correcting the damage that has occurred over time.",
         ],
       },
     ],
@@ -415,7 +415,7 @@ export const treatmentContent: Record<string, TreatmentContent> = {
     title: "Partial Knee Replacement in Delhi",
     subtitle:
       "Unicondylar knee replacement for arthritis limited to one compartment of the knee, with preservation of healthy bone, cartilage and ligaments where possible.",
-    heroImage: "/images/6-rin0jnep9vy2caeho4ipikf0cyt8hm9qq4t5fijuw8.png",
+    heroImage: "/images/optimized/partial-knee-800.png",
     facts: [
       { label: "Also called", value: "Unicondylar" },
       { label: "Approach", value: "Joint-preserving" },
@@ -471,8 +471,8 @@ export const treatmentContent: Record<string, TreatmentContent> = {
     slug: "knee-arthroscopy",
     title: "Knee Arthroscopy in Delhi",
     subtitle:
-      "Keyhole surgery for the knee — diagnosing and treating meniscus, cartilage and ligament problems through small incisions.",
-    heroImage: "/images/9-rin1b64ld9o9vd4f5a53dhtvtjqtb7fyxjnccilbdg.png",
+      "Keyhole surgery for the knee, diagnosing and treating meniscus, cartilage and ligament problems through small incisions.",
+    heroImage: "/images/optimized/arthroscopic-surgery-800.png",
     facts: [
       { label: "Technique", value: "Keyhole surgery" },
       { label: "Camera", value: "Fibre-optic arthroscope" },
@@ -484,7 +484,7 @@ export const treatmentContent: Record<string, TreatmentContent> = {
         type: "text",
         heading: "What is knee arthroscopy?",
         paragraphs: [
-          "Knee arthroscopy is a keyhole procedure in which a fibre-optic camera is inserted through a small incision to give a clear view inside the knee. Fine instruments are used through further small incisions to treat the problem — with minimal disruption to surrounding tissue.",
+          "Knee arthroscopy is a keyhole procedure in which a fibre-optic camera is inserted through a small incision to give a clear view inside the knee. Fine instruments are used through further small incisions to treat the problem with minimal disruption to surrounding tissue.",
         ],
       },
       {
@@ -492,7 +492,7 @@ export const treatmentContent: Record<string, TreatmentContent> = {
         heading: "What it treats",
         intro: "Knee arthroscopy is commonly used for:",
         items: [
-          "Torn meniscus — the cartilage cushion of the knee",
+          "Torn meniscus, the cartilage cushion of the knee",
           "Damaged or worn joint cartilage",
           "Ligament injuries, including the ACL",
           "Loose fragments of bone or cartilage",
@@ -516,8 +516,8 @@ export const treatmentContent: Record<string, TreatmentContent> = {
     slug: "shoulder-arthroscopy",
     title: "Shoulder Arthroscopy in Delhi",
     subtitle:
-      "Keyhole surgery for the shoulder — treating rotator cuff tears, labral tears, impingement and instability.",
-    heroImage: "/images/10-rin1bbrmi9wa1bkdedx320bnks748c1y92b68nmfuw.png",
+      "Keyhole surgery for the shoulder, treating rotator cuff tears, labral tears, impingement and instability.",
+    heroImage: "/images/optimized/shoulder-arthroscopy-800.png",
     facts: [
       { label: "Technique", value: "Keyhole surgery" },
       { label: "Camera", value: "Fibre-optic arthroscope" },
@@ -529,7 +529,7 @@ export const treatmentContent: Record<string, TreatmentContent> = {
         type: "text",
         heading: "What is shoulder arthroscopy?",
         paragraphs: [
-          "Shoulder arthroscopy is a keyhole procedure that uses a fibre-optic camera and fine instruments, passed through small incisions, to diagnose and treat problems inside the shoulder joint — with less disruption than open surgery.",
+          "Shoulder arthroscopy is a keyhole procedure that uses a fibre-optic camera and fine instruments, passed through small incisions, to diagnose and treat problems inside the shoulder joint with less disruption than open surgery.",
         ],
       },
       {
@@ -547,7 +547,7 @@ export const treatmentContent: Record<string, TreatmentContent> = {
       {
         type: "imageText",
         heading: "Recovery after shoulder arthroscopy",
-        image: "/images/arthroscopic-surgery.png",
+        image: "/images/optimized/arthroscopic-surgery-photo-900.jpg",
         imageSide: "right",
         paragraphs: [
           "A sling is often used for a short period to protect the shoulder while it heals. A structured physiotherapy programme then gradually restores movement and strength, with a return to activities guided by your surgeon.",
@@ -562,7 +562,7 @@ export const treatmentContent: Record<string, TreatmentContent> = {
     title: "Sports Injury & Conservative Care in Delhi",
     subtitle:
       "Assessment and non-surgical treatment for sports injuries, tendon pain, ligament sprains and activity-related joint problems.",
-    heroImage: "/images/Orthopaedics-1.jpg",
+    heroImage: "/images/optimized/orthopaedics-1-800.jpg",
     facts: [
       { label: "First approach", value: "Non-surgical" },
       { label: "Options", value: "PRP · physiotherapy" },
@@ -617,7 +617,7 @@ export const treatmentContent: Record<string, TreatmentContent> = {
     title: "Fracture & Trauma Treatment in Delhi",
     subtitle:
       "Prompt assessment and treatment for simple, displaced and complex fractures, with rehabilitation focused on safe return of function.",
-    heroImage: "/images/ffcf7431-82e0-415e-901e-f91cdd3a67f4-1.png",
+    heroImage: "/images/optimized/fracture-trauma-800.png",
     facts: [
       { label: "Covers", value: "Simple to complex" },
       { label: "Priority", value: "Prompt assessment" },

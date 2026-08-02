@@ -45,11 +45,19 @@ export default function Header() {
             {site.credentials} · 30+ years · 25,000+ surgeries
           </span>
           <div className={styles.topContact}>
-            <a href={`tel:${contact.phonePrimary}`} className={styles.topItem}>
+            <a
+              href={`tel:${contact.phonePrimary}`}
+              className={styles.topItem}
+              aria-label={`Call ${contact.phoneDisplay}`}
+            >
               <Phone width={14} height={14} />
               <span>{contact.phoneDisplay}</span>
             </a>
-            <a href={`mailto:${contact.email}`} className={styles.topItem}>
+            <a
+              href={`mailto:${contact.email}`}
+              className={styles.topItem}
+              aria-label={`Email ${contact.email}`}
+            >
               <Mail width={14} height={14} />
               <span>{contact.email}</span>
             </a>
@@ -60,7 +68,7 @@ export default function Header() {
       {/* Main bar */}
       <div className={styles.mainbar}>
         <div className={`container ${styles.mainInner}`}>
-          <Link href="/" className={styles.brand} aria-label="Dr. Anil Raheja — Home">
+          <Link href="/" className={styles.brand} aria-label="Dr. Anil Raheja Home">
             <span className={styles.brandMark}>
               <img src={logo.icon} alt="" />
             </span>

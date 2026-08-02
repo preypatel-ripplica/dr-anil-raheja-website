@@ -106,7 +106,7 @@ export default function BookCta({ defaultTreatment }: { defaultTreatment?: strin
                     </option>
                     {clinics.map((c) => (
                       <option key={c.id} value={c.id}>
-                        {c.name} — {c.area}
+                        {c.name}, {c.area}
                       </option>
                     ))}
                   </select>

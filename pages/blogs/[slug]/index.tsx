@@ -2,7 +2,7 @@ import type { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
-import type { Article, Block } from "@/lib/blog";
+import { toArticleSummary, type Article, type ArticleSummary, type Block } from "@/lib/blog";
 import { getArticles } from "@/lib/cms";
 import { treatments, treatmentHref } from "@/lib/site";
 import { articleSchema, breadcrumbSchema, canonicalUrl, jsonLd } from "@/lib/seo";
@@ -50,7 +50,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps<{ article: Article; related: Article[] }> = async ({
+export const getStaticProps: GetStaticProps<{ article: Article; related: ArticleSummary[] }> = async ({
   params,
 }) => {
   const articles = await getArticles();
@@ -60,12 +60,12 @@ export const getStaticProps: GetStaticProps<{ article: Article; related: Article
     return { notFound: true };
   }
 
-  const related = articles.filter((a) => a.slug !== article.slug).slice(0, 2);
+  const related = articles.filter((a) => a.slug !== article.slug).slice(0, 2).map(toArticleSummary);
 
   return { props: { article, related } };
 };
 
-export default function ArticlePage({ article, related }: { article: Article; related: Article[] }) {
+export default function ArticlePage({ article, related }: { article: Article; related: ArticleSummary[] }) {
   const headings = article.body.filter((b) => b.type === "h") as Extract<Block, { type: "h" }>[];
   const relatedTreatment = treatments.find((t) => t.slug === article.related);
 
@@ -193,7 +193,11 @@ export default function ArticlePage({ article, related }: { article: Article; re
           <div className={styles.relatedGrid}>
             {related.map((r, i) => (
               <Reveal key={r.slug} delay={i * 0.08} as="article" className={styles.relatedCard}>
-                <Link href={`/blogs/${r.slug}`} className={styles.relatedImg}>
+                <Link
+                  href={`/blogs/${r.slug}`}
+                  className={styles.relatedImg}
+                  aria-label={`Read article: ${r.title}`}
+                >
                   <Image src={r.image} alt="" fill sizes="(max-width: 700px) 100vw, 50vw" className={styles.cover} />
                 </Link>
                 <div className={styles.relatedBody}>

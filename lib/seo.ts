@@ -46,7 +46,7 @@ export const physicianSchema = {
   "@id": absoluteUrl("/#physician"),
   name: site.name,
   url: site.url,
-  image: absoluteUrl("/images/43566-3.png"),
+  image: absoluteUrl("/images/optimized/dr-anil-raheja-hero-900.png"),
   logo: absoluteUrl(logo.icon),
   description: site.description,
   medicalSpecialty: ["Orthopedic", "Orthopedic Surgery"],

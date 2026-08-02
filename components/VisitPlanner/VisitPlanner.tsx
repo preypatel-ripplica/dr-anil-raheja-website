@@ -23,7 +23,7 @@ export default function VisitPlanner() {
           <h2>
             Three clinics, <span className="accent">one doctor</span>
           </h2>
-          <p>Pick the location that suits you — we&apos;ll take it from there.</p>
+          <p>Pick the location that suits you. We&apos;ll take it from there.</p>
         </Reveal>
 
         <Reveal delay={0.1} className={styles.planner}>
@@ -69,7 +69,7 @@ export default function VisitPlanner() {
               <div className={styles.chosen}>
                 <MapPin width={16} height={16} />
                 <span>
-                  <strong>{clinic.name}</strong> — {clinic.area} · {clinic.days}, {clinic.hours}
+                  <strong>{clinic.name}</strong>, {clinic.area} · {clinic.days}, {clinic.hours}
                 </span>
                 <button type="button" onClick={() => setClinic(null)}>
                   Change

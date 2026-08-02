@@ -5,17 +5,17 @@ import Link from "next/link";
 import PageHero from "@/components/PageHero/PageHero";
 import BookCta from "@/components/BookCta/BookCta";
 import Reveal from "@/components/Motion/Reveal";
-import type { Article } from "@/lib/blog";
+import { toArticleSummary, type ArticleSummary } from "@/lib/blog";
 import { getArticles } from "@/lib/cms";
 import { breadcrumbSchema, canonicalUrl, jsonLd } from "@/lib/seo";
 import { ArrowRight, Clock } from "@/components/Icons";
 import styles from "./blogs.module.css";
 
-export const getStaticProps: GetStaticProps<{ articles: Article[] }> = async () => ({
-  props: { articles: await getArticles() },
+export const getStaticProps: GetStaticProps<{ articles: ArticleSummary[] }> = async () => ({
+  props: { articles: (await getArticles()).map(toArticleSummary) },
 });
 
-export default function BlogsPage({ articles }: { articles: Article[] }) {
+export default function BlogsPage({ articles }: { articles: ArticleSummary[] }) {
   const [featured, ...rest] = articles;
 
   return (
@@ -24,7 +24,7 @@ export default function BlogsPage({ articles }: { articles: Article[] }) {
         <title>Blogs | Dr. Anil Raheja</title>
         <meta
           name="description"
-          content="Orthopedic health articles by Dr. Anil Raheja — joints, surgery and recovery."
+          content="Orthopedic health articles by Dr. Anil Raheja covering joints, surgery and recovery."
         />
         <link rel="canonical" href={canonicalUrl("/blogs")} />
         <script
@@ -73,7 +73,11 @@ export default function BlogsPage({ articles }: { articles: Article[] }) {
           <div className={styles.grid}>
             {rest.map((post, i) => (
               <Reveal key={post.slug} delay={i * 0.08} as="article" className={styles.card}>
-                <Link href={`/blogs/${post.slug}`} className={styles.img}>
+                <Link
+                  href={`/blogs/${post.slug}`}
+                  className={styles.img}
+                  aria-label={`Read article: ${post.title}`}
+                >
                   <Image src={post.image} alt={post.title} fill sizes="(max-width: 900px) 100vw, 33vw" className={styles.cover} />
                 </Link>
                 <div className={styles.body}>

@@ -188,7 +188,7 @@ export async function getArticles(): Promise<Article[]> {
       slug: e.slug,
       title: e.title,
       excerpt: e.excerpt || "",
-      image: await resolveImage(e.hero_image || e.heroImage || e.image, "/images/B1-1.png"),
+      image: await resolveImage(e.hero_image || e.heroImage || e.image, "/images/optimized/blog-thr-1200.jpg"),
       category: e.category || "",
       date: e.date || e.publishedAt || e.published || item.published_at || "",
       readMins: Number(e.readMins || e.readingTime) || 5,
