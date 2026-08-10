@@ -10,6 +10,7 @@ import { getArticles } from "@/lib/cms";
 import { breadcrumbSchema, canonicalUrl, jsonLd } from "@/lib/seo";
 import { ArrowRight, Clock } from "@/components/Icons";
 import styles from "./blogs.module.css";
+import { useI18n } from "@/lib/i18n-context";
 
 export const getStaticProps: GetStaticProps<{ articles: ArticleSummary[] }> = async () => ({
   props: { articles: (await getArticles()).map(toArticleSummary) },
@@ -17,6 +18,7 @@ export const getStaticProps: GetStaticProps<{ articles: ArticleSummary[] }> = as
 
 export default function BlogsPage({ articles }: { articles: ArticleSummary[] }) {
   const [featured, ...rest] = articles;
+  const { localizeHref } = useI18n();
 
   return (
     <>
@@ -50,7 +52,7 @@ export default function BlogsPage({ articles }: { articles: ArticleSummary[] }) 
           {/* featured */}
           {featured && (
             <Reveal>
-              <Link href={`/blogs/${featured.slug}`} className={styles.featured}>
+              <Link href={localizeHref(`/blogs/${featured.slug}`)} className={styles.featured}>
                 <div className={styles.featuredImg}>
                   <Image src={featured.image} alt={featured.title} fill sizes="(max-width: 900px) 100vw, 55vw" className={styles.cover} />
                 </div>
@@ -74,7 +76,7 @@ export default function BlogsPage({ articles }: { articles: ArticleSummary[] }) 
             {rest.map((post, i) => (
               <Reveal key={post.slug} delay={i * 0.08} as="article" className={styles.card}>
                 <Link
-                  href={`/blogs/${post.slug}`}
+                  href={localizeHref(`/blogs/${post.slug}`)}
                   className={styles.img}
                   aria-label={`Read article: ${post.title}`}
                 >
@@ -83,10 +85,10 @@ export default function BlogsPage({ articles }: { articles: ArticleSummary[] }) 
                 <div className={styles.body}>
                   <span className={styles.tagSm}>{post.category}</span>
                   <h3>
-                    <Link href={`/blogs/${post.slug}`}>{post.title}</Link>
+                    <Link href={localizeHref(`/blogs/${post.slug}`)}>{post.title}</Link>
                   </h3>
                   <p>{post.excerpt}</p>
-                  <Link href={`/blogs/${post.slug}`} className={styles.readMoreSm}>
+                  <Link href={localizeHref(`/blogs/${post.slug}`)} className={styles.readMoreSm}>
                     Read More <ArrowRight width={15} height={15} />
                   </Link>
                 </div>

@@ -124,6 +124,13 @@
   padding: 5px 12px;
   border-radius: var(--radius);
 }
+.clinicHours bdi,
+.chosen bdi,
+.confirm bdi {
+  direction: ltr;
+  unicode-bidi: isolate;
+  white-space: nowrap;
+}
 .clinicGo {
   display: inline-flex;
   align-items: center;

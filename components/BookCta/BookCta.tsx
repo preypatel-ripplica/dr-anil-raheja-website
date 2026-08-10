@@ -40,7 +40,7 @@ export default function BookCta({ defaultTreatment }: { defaultTreatment?: strin
             </span>
             <div>
               <small>Helpline number</small>
-              <a href={`tel:${contact.phonePrimary}`}>{contact.phoneDisplay}</a>
+              <a href={`tel:${contact.phonePrimary}`}><bdi dir="ltr" data-no-translate>{contact.phoneDisplay}</bdi></a>
             </div>
           </div>
           <div className={styles.hours}>

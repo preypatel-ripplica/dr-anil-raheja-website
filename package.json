@@ -7,7 +7,9 @@
     "dev": "node scripts/generate-nav.mjs && next dev",
     "build": "node scripts/generate-nav.mjs && next build",
     "start": "python3 -m http.server 3000 --directory out",
-    "lint": "next lint"
+    "lint": "next lint",
+    "translate": "node scripts/translate.mjs",
+    "translate:dry-run": "node scripts/translate.mjs --dry-run"
   },
   "dependencies": {
     "next": "14.2.15",

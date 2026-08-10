@@ -5,12 +5,14 @@ import { clinics, contact, type Clinic } from "@/lib/site";
 import { MapPin, Clock, Phone, Check, ArrowRight } from "@/components/Icons";
 import Reveal from "@/components/Motion/Reveal";
 import styles from "./VisitPlanner.module.css";
+import { useI18n } from "@/lib/i18n-context";
 
 /**
  * Plan Your Visit — pick a clinic, see its hours, leave your details.
  * Front-end only; submission handler to be wired by the CMS/backend developer.
  */
 export default function VisitPlanner() {
+  const { t } = useI18n();
   const [clinic, setClinic] = useState<Clinic | null>(null);
   const [sent, setSent] = useState(false);
   const step = sent ? 3 : clinic ? 2 : 1;
@@ -19,11 +21,11 @@ export default function VisitPlanner() {
     <section className={`section ${styles.wrap}`}>
       <div className="container">
         <Reveal className="section-head">
-          <span className="eyebrow">Plan your visit</span>
+          <span className="eyebrow">{t("Plan your visit")}</span>
           <h2>
-            Three clinics, <span className="accent">one doctor</span>
+            {t("Three clinics, ")}<span className="accent">{t("one doctor")}</span>
           </h2>
-          <p>Pick the location that suits you. We&apos;ll take it from there.</p>
+          <p>{t("Pick the location that suits you. We&apos;ll take it from there.")}</p>
         </Reveal>
 
         <Reveal delay={0.1} className={styles.planner}>
@@ -37,7 +39,7 @@ export default function VisitPlanner() {
                 }`}
               >
                 <span className={styles.railDot}>{step > i + 1 || sent ? <Check width={13} height={13} /> : i + 1}</span>
-                {label}
+                {t(label)}
               </li>
             ))}
           </ol>
@@ -51,12 +53,12 @@ export default function VisitPlanner() {
                       <MapPin width={19} height={19} />
                     </span>
                     <strong>{c.name}</strong>
-                    <span className={styles.clinicArea}>{c.area}</span>
+                    <span className={styles.clinicArea}>{t(c.area)}</span>
                     <span className={styles.clinicHours}>
-                      <Clock width={13} height={13} /> {c.days} · {c.hours}
+                      <Clock width={13} height={13} /> <bdi dir="ltr" data-no-translate>{t(c.days)} · {t(c.hours)}</bdi>
                     </span>
                     <span className={styles.clinicGo}>
-                      Select <ArrowRight width={14} height={14} />
+                      {t("Select")} <ArrowRight width={14} height={14} />
                     </span>
                   </button>
                 ))}
@@ -69,10 +71,10 @@ export default function VisitPlanner() {
               <div className={styles.chosen}>
                 <MapPin width={16} height={16} />
                 <span>
-                  <strong>{clinic.name}</strong>, {clinic.area} · {clinic.days}, {clinic.hours}
+                  <strong>{clinic.name}</strong>, {t(clinic.area)} · <bdi dir="ltr" data-no-translate>{t(clinic.days)}, {t(clinic.hours)}</bdi>
                 </span>
                 <button type="button" onClick={() => setClinic(null)}>
-                  Change
+                  {t("Change")}
                 </button>
               </div>
               <form
@@ -82,14 +84,14 @@ export default function VisitPlanner() {
                   setSent(true);
                 }}
               >
-                <input type="text" name="name" placeholder="Full name" required aria-label="Full name" />
-                <input type="tel" name="phone" placeholder="Phone number" required aria-label="Phone number" />
+                <input type="text" name="name" placeholder={t("Full name")} required aria-label={t("Full name")} />
+                <input type="tel" name="phone" placeholder={t("Phone number")} required aria-label={t("Phone number")} />
                 <button type="submit" className="btn btn--primary">
-                  Request visit <ArrowRight width={16} height={16} />
+                  {t("Request visit")} <ArrowRight width={16} height={16} />
                 </button>
               </form>
               <p className={styles.altNote}>
-                Prefer to call? <a href={`tel:${contact.phonePrimary}`}>{contact.phoneDisplay}</a>
+                {t("Prefer to call?")} <a href={`tel:${contact.phonePrimary}`} data-no-translate>{contact.phoneDisplay}</a>
               </p>
             </div>
           )}
@@ -99,10 +101,10 @@ export default function VisitPlanner() {
               <span className={styles.confirmIcon}>
                 <Check width={26} height={26} />
               </span>
-              <h3>Visit requested</h3>
+              <h3>{t("Visit requested")}</h3>
               <p>
-                We&apos;ll call to confirm your slot at <strong>{clinic.name}</strong> ({clinic.area}).
-                OPD hours there: {clinic.days}, {clinic.hours}.
+                {t("We&apos;ll call to confirm your slot at ")}<strong>{clinic.name}</strong> ({t(clinic.area)}).
+                {` ${t("OPD hours there:")} `}<bdi dir="ltr" data-no-translate>{t(clinic.days)}, {t(clinic.hours)}</bdi>.
               </p>
             </div>
           )}

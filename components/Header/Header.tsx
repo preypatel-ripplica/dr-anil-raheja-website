@@ -1,9 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { appointmentUrl, nav, contact, site, logo } from "@/lib/site";
+import { LOCALES, localizePath, stripLocaleFromPath, type Locale } from "@/lib/i18n";
+import { useI18n } from "@/lib/i18n-context";
 import { Phone, Mail, Chevron, Menu, Close, ArrowRight } from "@/components/Icons";
 import styles from "./Header.module.css";
 
@@ -13,6 +15,8 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [openGroup, setOpenGroup] = useState<string | null>(null);
+  const languageRef = useRef<HTMLDetailsElement>(null);
+  const { locale, t, localizeHref } = useI18n();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 16);
@@ -27,6 +31,24 @@ export default function Header() {
   }, [pathname]);
 
   useEffect(() => {
+    const close = () => languageRef.current?.removeAttribute("open");
+    const onPointerDown = (event: PointerEvent) => {
+      if (event.target instanceof Node && !languageRef.current?.contains(event.target)) close();
+    };
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") close();
+    };
+    document.addEventListener("pointerdown", onPointerDown);
+    document.addEventListener("keydown", onKeyDown);
+    router.events.on("routeChangeStart", close);
+    return () => {
+      document.removeEventListener("pointerdown", onPointerDown);
+      document.removeEventListener("keydown", onKeyDown);
+      router.events.off("routeChangeStart", close);
+    };
+  }, [router.events]);
+
+  useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
@@ -34,14 +56,16 @@ export default function Header() {
   }, [open]);
 
   const isActive = (href: string) =>
-    href !== "#" && (pathname === href || (href !== "/" && pathname.startsWith(href)));
+    href !== "#" && (stripLocaleFromPath(pathname) === href || (href !== "/" && stripLocaleFromPath(pathname).startsWith(href)));
+
+  const languagePath = (code: string) => localizePath(stripLocaleFromPath(pathname), code as Locale);
 
   return (
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
       {/* Top utility bar */}
       <div className={styles.topbar}>
         <div className={`container ${styles.topInner}`}>
-          <span className={styles.topNote}>
+            <span className={styles.topNote}>
             {site.credentials} · 30+ years · 25,000+ surgeries
           </span>
           <div className={styles.topContact}>
@@ -51,7 +75,7 @@ export default function Header() {
               aria-label={`Call ${contact.phoneDisplay}`}
             >
               <Phone width={14} height={14} />
-              <span>{contact.phoneDisplay}</span>
+              <bdi dir="ltr" data-no-translate>{contact.phoneDisplay}</bdi>
             </a>
             <a
               href={`mailto:${contact.email}`}
@@ -59,7 +83,7 @@ export default function Header() {
               aria-label={`Email ${contact.email}`}
             >
               <Mail width={14} height={14} />
-              <span>{contact.email}</span>
+              <bdi dir="ltr" data-no-translate>{contact.email}</bdi>
             </a>
           </div>
         </div>
@@ -68,13 +92,13 @@ export default function Header() {
       {/* Main bar */}
       <div className={styles.mainbar}>
         <div className={`container ${styles.mainInner}`}>
-          <Link href="/" className={styles.brand} aria-label="Dr. Anil Raheja Home">
+          <Link href={localizeHref("/")} className={styles.brand} aria-label="Dr. Anil Raheja Home">
             <span className={styles.brandMark}>
               <img src={logo.icon} alt="" />
             </span>
             <span className={styles.brandText}>
               <strong>Dr. Anil Raheja</strong>
-              <small>Orthopedic Surgeon</small>
+            <small>{t("Orthopedic Surgeon")}</small>
             </span>
           </Link>
 
@@ -84,14 +108,14 @@ export default function Header() {
                 item.children ? (
                   <li key={item.label} className={styles.hasChildren}>
                     <button type="button" className={styles.navLink}>
-                      {item.label}
+                      {t(item.label)}
                       <Chevron width={15} height={15} className={styles.caret} />
                     </button>
                     <ul className={styles.dropdown}>
                       {item.children.map((c) => (
                         <li key={c.href}>
-                          <Link href={c.href} className={isActive(c.href) ? styles.activeSub : ""}>
-                            {c.label}
+                          <Link href={localizeHref(c.href)} className={isActive(c.href) ? styles.activeSub : ""}>
+                            {t(c.label)}
                           </Link>
                         </li>
                       ))}
@@ -100,10 +124,10 @@ export default function Header() {
                 ) : (
                   <li key={item.href}>
                     <Link
-                      href={item.href}
+                      href={localizeHref(item.href)}
                       className={`${styles.navLink} ${isActive(item.href) ? styles.active : ""}`}
                     >
-                      {item.label}
+                      {t(item.label)}
                     </Link>
                   </li>
                 )
@@ -111,8 +135,22 @@ export default function Header() {
             </ul>
           </nav>
 
+          <details ref={languageRef} className={styles.language}>
+            <summary aria-label="Choose language">
+              <span>{LOCALES.find((item) => item.code === locale)?.nativeLabel}</span>
+              <Chevron width={16} height={16} aria-hidden="true" />
+            </summary>
+            <div className={styles.languageMenu}>
+              {LOCALES.map((item) => (
+                <a key={item.code} href={languagePath(item.code)} hrefLang={item.code} onClick={() => languageRef.current?.removeAttribute("open")}>
+                  {item.nativeLabel}
+                </a>
+              ))}
+            </div>
+          </details>
+
           <a href={appointmentUrl} target="_blank" rel="noopener noreferrer" className={`btn btn--primary ${styles.cta}`}>
-            Book Appointment
+            {t("Book Appointment")}
           </a>
 
           <button
@@ -146,7 +184,7 @@ export default function Header() {
                     aria-expanded={openGroup === item.label}
                     onClick={() => setOpenGroup((g) => (g === item.label ? null : item.label))}
                   >
-                    {item.label}
+                    {t(item.label)}
                     <Chevron
                       width={18}
                       height={18}
@@ -160,7 +198,7 @@ export default function Header() {
                     <ul className={styles.mobileSub}>
                       {item.children.map((c) => (
                         <li key={c.href}>
-                          <Link href={c.href}>{c.label}</Link>
+                          <Link href={localizeHref(c.href)}>{t(c.label)}</Link>
                         </li>
                       ))}
                     </ul>
@@ -168,8 +206,8 @@ export default function Header() {
                 </li>
               ) : (
                 <li key={item.href}>
-                  <Link href={item.href} className={isActive(item.href) ? styles.active : ""}>
-                    {item.label}
+                  <Link href={localizeHref(item.href)} className={isActive(item.href) ? styles.active : ""}>
+                    {t(item.label)}
                   </Link>
                 </li>
               )
@@ -182,7 +220,7 @@ export default function Header() {
             className="btn btn--primary"
             style={{ width: "100%", marginTop: 20 }}
           >
-            Book Appointment <ArrowRight width={18} height={18} />
+            {t("Book Appointment")} <ArrowRight width={18} height={18} />
           </a>
         </nav>
       </div>

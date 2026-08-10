@@ -6,6 +6,7 @@ import type { SelfCheck } from "@/lib/blog";
 import { contact, treatmentHref } from "@/lib/site";
 import { Check, ArrowRight, Phone } from "@/components/Icons";
 import styles from "./SelfCheck.module.css";
+import { useI18n } from "@/lib/i18n-context";
 
 /**
  * Interactive in-article self-check. The reader ticks statements that apply;
@@ -19,6 +20,7 @@ export default function SelfCheck({
   data: SelfCheck;
   relatedSlug: string;
 }) {
+  const { localizeHref } = useI18n();
   const [ticked, setTicked] = useState<boolean[]>(() => data.items.map(() => false));
   const [revealed, setRevealed] = useState(false);
   const count = ticked.filter(Boolean).length;
@@ -61,7 +63,7 @@ export default function SelfCheck({
           <strong>{level.title}</strong>
           <p>{level.note}</p>
           <div className={styles.resultCtas}>
-            <Link href={treatmentHref(relatedSlug)} className="btn btn--navy">
+            <Link href={localizeHref(treatmentHref(relatedSlug))} className="btn btn--navy">
               Read the treatment <ArrowRight width={15} height={15} />
             </Link>
             <a href={`tel:${contact.phonePrimary}`} className="btn btn--outline">

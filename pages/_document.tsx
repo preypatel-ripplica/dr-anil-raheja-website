@@ -1,8 +1,11 @@
-import { Html, Head, Main, NextScript } from "next/document";
+import { Html, Head, Main, NextScript, type DocumentContext } from "next/document";
+import { getLocaleMeta, isLocale } from "@/lib/i18n";
 
-export default function Document() {
+type DocumentProps = { locale: string; dir: "ltr" | "rtl" };
+
+function Document({ locale, dir }: DocumentProps) {
   return (
-    <Html lang="en">
+    <Html lang={locale} dir={dir}>
       <Head />
       <body>
         <Main />
@@ -11,3 +14,13 @@ export default function Document() {
     </Html>
   );
 }
+
+Document.getInitialProps = async (ctx: DocumentContext) => {
+  const initialProps = await ctx.defaultGetInitialProps(ctx);
+  const localeSegment = ctx.pathname.split("/")[1];
+  const locale = isLocale(localeSegment) ? localeSegment : "en";
+  const meta = getLocaleMeta(locale);
+  return { ...initialProps, locale: meta.code, dir: meta.dir };
+};
+
+export default Document;

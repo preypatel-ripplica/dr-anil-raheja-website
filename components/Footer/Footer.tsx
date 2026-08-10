@@ -2,8 +2,10 @@ import Link from "next/link";
 import { appointmentUrl, site, contact, clinics, treatments, logo, treatmentHref } from "@/lib/site";
 import { Phone, Mail, MapPin, Clock, Youtube, ArrowRight } from "@/components/Icons";
 import styles from "./Footer.module.css";
+import { useI18n } from "@/lib/i18n-context";
 
 export default function Footer() {
+  const { t, localizeHref } = useI18n();
   return (
     <footer className={styles.footer}>
       <div className={`container ${styles.grid}`}>
@@ -19,9 +21,7 @@ export default function Footer() {
             </span>
           </div>
           <p className={styles.blurb}>
-            Renowned orthopedic surgeon in Delhi with 30 years of experience and
-            15,000+ surgeries. Director Orthopedics at Apollo Spectra Hospital
-            Karol Bagh &amp; Jeewan Mala Hospital.
+            {t("Renowned orthopedic surgeon in Delhi with 30 years of experience and 15,000+ surgeries. Director Orthopedics at Apollo Spectra Hospital Karol Bagh &amp; Jeewan Mala Hospital.")}
           </p>
           <a
             href={contact.youtube}
@@ -36,12 +36,12 @@ export default function Footer() {
 
         {/* Treatments */}
         <div>
-          <h4 className={styles.heading}>Our Treatments</h4>
+            <h4 className={styles.heading}>{t("Our Treatments")}</h4>
           <ul className={styles.links}>
-            {treatments.map((t) => (
-              <li key={t.slug}>
-                <Link href={treatmentHref(t.slug)}>
-                  <ArrowRight width={13} height={13} /> {t.title}
+            {treatments.map((treatment) => (
+              <li key={treatment.slug}>
+                <Link href={localizeHref(treatmentHref(treatment.slug))}>
+                  <ArrowRight width={13} height={13} /> {t(treatment.title)}
                 </Link>
               </li>
             ))}
@@ -50,15 +50,15 @@ export default function Footer() {
 
         {/* OPD timings */}
         <div>
-          <h4 className={styles.heading}>OPD Timings</h4>
+          <h4 className={styles.heading}>{t("OPD Timings")}</h4>
           <ul className={styles.timings}>
             {clinics.map((c) => (
               <li key={c.id}>
                 <Clock width={15} height={15} className={styles.icon} />
                 <div>
-                  <strong>{c.name}</strong>
-                  <span>
-                    {c.area} · {c.days} · {c.hours}
+                    <strong>{t(c.name)}</strong>
+                    <span>
+                    {t(c.area)} · {t(c.days)} · {c.hours}
                   </span>
                 </div>
               </li>
@@ -68,7 +68,7 @@ export default function Footer() {
 
         {/* Contact */}
         <div>
-          <h4 className={styles.heading}>Contact</h4>
+          <h4 className={styles.heading}>{t("Contact")}</h4>
           <ul className={styles.contactList}>
             <li>
               <MapPin width={15} height={15} className={styles.icon} />
@@ -76,15 +76,15 @@ export default function Footer() {
             </li>
             <li>
               <Phone width={15} height={15} className={styles.icon} />
-              <a href={`tel:${contact.phonePrimary}`}>{contact.phoneDisplay}</a>
+              <a href={`tel:${contact.phonePrimary}`}><bdi dir="ltr" data-no-translate>{contact.phoneDisplay}</bdi></a>
             </li>
             <li>
               <Mail width={15} height={15} className={styles.icon} />
-              <a href={`mailto:${contact.email}`}>{contact.email}</a>
+              <a href={`mailto:${contact.email}`}><bdi dir="ltr" data-no-translate>{contact.email}</bdi></a>
             </li>
           </ul>
           <a href={appointmentUrl} target="_blank" rel="noopener noreferrer" className={`btn btn--primary ${styles.footBtn}`}>
-            Book an Appointment
+            {t("Book an Appointment")}
           </a>
         </div>
       </div>
@@ -95,7 +95,7 @@ export default function Footer() {
             © {new Date().getFullYear()} {site.name}. All Rights Reserved.
           </p>
           <p>
-            <Link href="/contact-us">Privacy Policy</Link>
+            <Link href={localizeHref("/contact-us")}>{t("Privacy Policy")}</Link>
           </p>
         </div>
       </div>

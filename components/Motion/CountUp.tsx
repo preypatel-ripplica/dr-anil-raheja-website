@@ -47,7 +47,7 @@ export default function CountUp({
   }, [value, duration]);
 
   return (
-    <span ref={ref}>
+    <span ref={ref} data-no-translate>
       {display.toLocaleString("en-IN")}
       {suffix}
     </span>

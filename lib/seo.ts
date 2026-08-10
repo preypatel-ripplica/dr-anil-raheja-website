@@ -2,10 +2,20 @@ import { clinics, contact, logo, site, treatmentHref } from "@/lib/site";
 import type { Faq } from "@/lib/content";
 import type { Article } from "@/lib/blog";
 import type { TreatmentContent } from "@/lib/treatmentContent";
+import { DEFAULT_LOCALE, localizePath, type Locale } from "@/lib/i18n";
+
+let activeSeoLocale: Locale = DEFAULT_LOCALE;
+export const setSeoLocale = (locale: Locale) => { activeSeoLocale = locale; };
 
 export const absoluteUrl = (path = "/") => {
   if (/^https?:\/\//i.test(path)) return path;
-  return `${site.url}${path.startsWith("/") ? path : `/${path}`}`;
+  const localizedPath = localizePath(path.startsWith("/") ? path : `/${path}`, activeSeoLocale);
+  return `${site.url}${localizedPath}`;
+};
+
+export const absoluteUrlForLocale = (path = "/", locale: Locale = DEFAULT_LOCALE) => {
+  if (/^https?:\/\//i.test(path)) return path;
+  return `${site.url}${localizePath(path.startsWith("/") ? path : `/${path}`, locale)}`;
 };
 
 export const canonicalUrl = absoluteUrl;

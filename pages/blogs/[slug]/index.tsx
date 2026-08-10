@@ -12,6 +12,7 @@ import ReadingProgress from "@/components/Article/ReadingProgress";
 import SelfCheck from "@/components/Article/SelfCheck";
 import { ArrowRight, Clock, Calendar } from "@/components/Icons";
 import styles from "./article.module.css";
+import { useI18n } from "@/lib/i18n-context";
 
 const slugify = (s: string) =>
   s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
@@ -66,6 +67,7 @@ export const getStaticProps: GetStaticProps<{ article: Article; related: Article
 };
 
 export default function ArticlePage({ article, related }: { article: Article; related: ArticleSummary[] }) {
+  const { localizeHref } = useI18n();
   const headings = article.body.filter((b) => b.type === "h") as Extract<Block, { type: "h" }>[];
   const relatedTreatment = treatments.find((t) => t.slug === article.related);
 
@@ -96,9 +98,9 @@ export default function ArticlePage({ article, related }: { article: Article; re
         <div className={`container ${styles.headInner}`}>
           <Reveal>
             <nav className={styles.crumbs} aria-label="Breadcrumb">
-              <Link href="/">Home</Link>
+              <Link href={localizeHref("/")}>Home</Link>
               <span>/</span>
-              <Link href="/blogs">Blogs</Link>
+              <Link href={localizeHref("/blogs")}>Blogs</Link>
               <span>/</span>
               <span aria-current="page">{article.category}</span>
             </nav>
@@ -166,7 +168,7 @@ export default function ArticlePage({ article, related }: { article: Article; re
                   <span className={styles.tCtaLabel}>Related treatment</span>
                   <strong>{relatedTreatment.title}</strong>
                 </div>
-                <Link href={treatmentHref(relatedTreatment.slug)} className="btn btn--primary">
+                <Link href={localizeHref(treatmentHref(relatedTreatment.slug))} className="btn btn--primary">
                   Read more <ArrowRight width={16} height={16} />
                 </Link>
               </div>
@@ -194,7 +196,7 @@ export default function ArticlePage({ article, related }: { article: Article; re
             {related.map((r, i) => (
               <Reveal key={r.slug} delay={i * 0.08} as="article" className={styles.relatedCard}>
                 <Link
-                  href={`/blogs/${r.slug}`}
+                  href={localizeHref(`/blogs/${r.slug}`)}
                   className={styles.relatedImg}
                   aria-label={`Read article: ${r.title}`}
                 >
@@ -203,7 +205,7 @@ export default function ArticlePage({ article, related }: { article: Article; re
                 <div className={styles.relatedBody}>
                   <span className={styles.relatedCat}>{r.category}</span>
                   <h3>
-                    <Link href={`/blogs/${r.slug}`}>{r.title}</Link>
+                    <Link href={localizeHref(`/blogs/${r.slug}`)}>{r.title}</Link>
                   </h3>
                   <p>{r.excerpt.length > 100 ? r.excerpt.slice(0, 97).trimEnd() + "…" : r.excerpt}</p>
                 </div>

@@ -8,8 +8,10 @@ import { appointmentUrl, contact, clinics } from "@/lib/site";
 import { breadcrumbSchema, canonicalUrl, jsonLd, physicianSchema } from "@/lib/seo";
 import { Phone, Mail, MapPin, Clock } from "@/components/Icons";
 import styles from "./contact.module.css";
+import { useI18n } from "@/lib/i18n-context";
 
 export default function ContactPage() {
+  const { t } = useI18n();
   return (
     <>
       <Head>
@@ -69,7 +71,7 @@ export default function ContactPage() {
               <h3>Main clinic</h3>
               <p className={styles.muted}>{contact.address}</p>
               <p className={styles.hours}>
-                <Clock width={13} height={13} /> {clinics[0].days} · {clinics[0].hours}
+                <Clock width={13} height={13} /> <bdi dir="ltr" data-no-translate>{t(clinics[0].days)} · {t(clinics[0].hours)}</bdi>
               </p>
             </Reveal>
           </div>

@@ -6,7 +6,9 @@ import { useRouter } from "next/router";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import { logo, site } from "@/lib/site";
-import { absoluteUrl } from "@/lib/seo";
+import { absoluteUrl, setSeoLocale } from "@/lib/seo";
+import { getLocaleMeta, isLocale, type Locale } from "@/lib/i18n";
+import { I18nProvider } from "@/lib/i18n-context";
 import "./globals.css";
 
 const GA_MEASUREMENT_ID = "G-DNQW1XD1E0";
@@ -19,6 +21,10 @@ declare global {
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
+  const routeLocale = router.asPath.split(/[/?#]/)[1];
+  const locale = (isLocale(routeLocale || "") ? routeLocale : "en") as Locale;
+  const localeMeta = getLocaleMeta(locale);
+  setSeoLocale(locale);
 
   useEffect(() => {
     const handleRouteChange = (url: string) => {
@@ -33,8 +39,14 @@ export default function App({ Component, pageProps }: AppProps) {
     };
   }, [router.events]);
 
+  useEffect(() => {
+    document.documentElement.lang = localeMeta.code;
+    document.documentElement.dir = localeMeta.dir;
+  }, [localeMeta.code, localeMeta.dir]);
+
   return (
-    <>
+    <I18nProvider locale={locale}>
+      <>
       <Head>
         <title>{site.title}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -68,6 +80,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <Component {...pageProps} />
       </main>
       <Footer />
-    </>
+      </>
+    </I18nProvider>
   );
 }
