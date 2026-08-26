@@ -1,7 +1,8 @@
 import type { GetStaticPaths, GetStaticProps } from "next";
-import TreatmentPage from "../[treatment]";
-import { getTreatments, getTreatment } from "@/lib/cms";
+import TreatmentPage from "@/components/TreatmentPage/TreatmentPage";
+import { getTreatments, getTreatment, getTreatmentSummaries } from "@/lib/cms";
 import type { TreatmentContent } from "@/lib/treatmentContent";
+import type { Treatment } from "@/lib/site";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const treatments = await getTreatments();
@@ -11,11 +12,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps<{ content: TreatmentContent }> = async ({ params }) => {
+export const getStaticProps: GetStaticProps<{ content: TreatmentContent; treatments: Treatment[] }> = async ({ params }) => {
   const slug = typeof params?.treatment === "string" ? params.treatment : "";
-  const content = await getTreatment(slug);
+  const [content, treatments] = await Promise.all([getTreatment(slug), getTreatmentSummaries()]);
   if (!content) return { notFound: true };
-  return { props: { content } };
+  return { props: { content, treatments } };
 };
 
 export default TreatmentPage;

@@ -4,8 +4,8 @@
   "private": true,
   "description": "Static export of dranilraheja.com — orthopedic surgeon site in Next.js Pages Router with interactive patient tools. See DESIGN_TASTE.md.",
   "scripts": {
-    "dev": "node scripts/generate-nav.mjs && next dev",
-    "build": "node scripts/generate-nav.mjs && next build",
+    "dev": "node scripts/generate-nav.mjs && node scripts/generate-sitemap.mjs && next dev",
+    "build": "node scripts/generate-nav.mjs && node scripts/generate-sitemap.mjs && next build",
     "start": "python3 -m http.server 3000 --directory out",
     "lint": "next lint",
     "translate": "node scripts/translate.mjs",

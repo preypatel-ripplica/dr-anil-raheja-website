@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { contact } from "@/lib/site";
 import { ArrowRight, Phone, Check } from "@/components/Icons";
+import type { TreatmentPlanner } from "@/lib/treatmentContent";
 import styles from "./TreatmentJourney.module.css";
 
 // -----------------------------------------------------------------------------
@@ -18,7 +19,7 @@ type StepDef = {
   options: { label: string; note: string }[];
 };
 
-type Path = {
+type Path = TreatmentPlanner & {
   title: string;
   intro: string;
   steps: StepDef[];
@@ -234,8 +235,8 @@ const paths: Record<string, Path> = {
   },
 };
 
-export default function TreatmentJourney({ slug }: { slug: string }) {
-  const path = paths[slug] ?? paths["knee-replacement-surgery"];
+export default function TreatmentJourney({ slug, planner }: { slug: string; planner?: TreatmentPlanner }) {
+  const path = planner ?? paths[slug] ?? paths["knee-replacement-surgery"];
   const [active, setActive] = useState(0);
   const [answers, setAnswers] = useState<Record<number, string>>({});
   const [done, setDone] = useState(false);

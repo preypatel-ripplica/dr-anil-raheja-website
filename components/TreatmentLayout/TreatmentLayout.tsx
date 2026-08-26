@@ -5,31 +5,27 @@ import EnquiryForm from "@/components/EnquiryForm/EnquiryForm";
 import TreatmentJourney from "@/components/TreatmentJourney/TreatmentJourney";
 import Faq from "@/components/Faq/Faq";
 import Reveal from "@/components/Motion/Reveal";
-import { treatments, contact, treatmentHref } from "@/lib/site";
+import { contact, treatmentHref, type Treatment } from "@/lib/site";
 import type { TreatmentContent, Section } from "@/lib/treatmentContent";
 import { Check, Phone, ArrowRight } from "@/components/Icons";
 import styles from "./TreatmentLayout.module.css";
 
 // ---------------------------------------------------------------------------
-// "Case file" treatment page: dark spec header with facts, a sticky numbered
-// index rail on the left, and editorial content sections on the right.
+// "Case file" treatment page: dark spec header with facts, a sticky index rail
+// on the left, and editorial content sections on the right.
 // Deliberately distinct from the Tripti sites' sidebar layout.
 // ---------------------------------------------------------------------------
 
 const sectionId = (i: number) => `s-${String(i + 1).padStart(2, "0")}`;
 
 function SectionView({ section, index }: { section: Section; index: number }) {
-  const num = String(index + 1).padStart(2, "0");
   const id = sectionId(index);
   switch (section.type) {
     case "text":
       return (
         <Reveal as="article" className={styles.block}>
           <div id={id} className={styles.anchor} />
-          <h2>
-            <span className={styles.blockNum}>{num}</span>
-            {section.heading}
-          </h2>
+          <h2>{section.heading}</h2>
           {section.paragraphs.map((p, i) => (
             <p key={i}>{p}</p>
           ))}
@@ -39,10 +35,7 @@ function SectionView({ section, index }: { section: Section; index: number }) {
       return (
         <Reveal as="article" className={styles.block}>
           <div id={id} className={styles.anchor} />
-          <h2>
-            <span className={styles.blockNum}>{num}</span>
-            {section.heading}
-          </h2>
+          <h2>{section.heading}</h2>
           {section.intro && <p>{section.intro}</p>}
           <ul className={styles.checkList}>
             {section.items.map((item) => (
@@ -56,14 +49,29 @@ function SectionView({ section, index }: { section: Section; index: number }) {
           </ul>
         </Reveal>
       );
+    case "image":
+      return (
+        <Reveal as="article" className={`${styles.block} ${styles.figureBlock}`}>
+          <div id={id} className={styles.anchor} />
+          <figure>
+            <div className={styles.figureMedia}>
+              <Image
+                src={section.image}
+                alt={section.alt || section.heading || ""}
+                width={960}
+                height={540}
+                className={styles.figureImg}
+              />
+            </div>
+            {section.heading && <figcaption>{section.heading}</figcaption>}
+          </figure>
+        </Reveal>
+      );
     case "imageText":
       return (
         <Reveal as="article" className={styles.block}>
           <div id={id} className={styles.anchor} />
-          <h2>
-            <span className={styles.blockNum}>{num}</span>
-            {section.heading}
-          </h2>
+          <h2>{section.heading}</h2>
           <div className={`${styles.split} ${section.imageSide === "left" ? styles.splitLeft : ""}`}>
             <div>
               {section.paragraphs.map((p, i) => (
@@ -85,13 +93,19 @@ function SectionView({ section, index }: { section: Section; index: number }) {
   }
 }
 
-export default function TreatmentLayout({ content }: { content: TreatmentContent }) {
+export default function TreatmentLayout({ content, treatments }: { content: TreatmentContent; treatments: Treatment[] }) {
   const current = treatments.find((t) => t.slug === content.slug);
   const others = treatments.filter((t) => t.slug !== content.slug);
-  const tocItems = [
-    ...content.sections.map((s) => ("heading" in s ? s.heading : "")),
+  const currentShort = current?.short || content.short || content.title;
+  const tocItems = content.sections.reduce<{ label: string; index: number }[]>((items, section, index) => {
+    const label = "heading" in section ? section.heading || "" : "";
+    if (label && !items.some((item) => item.label === label)) items.push({ label, index });
+    return items;
+  }, []);
+  const tocLinks = [
+    ...tocItems,
     ...(content.faqs?.length ? ["Frequently asked questions"] : []),
-  ];
+  ].map((item, i) => (typeof item === "string" ? { label: item, index: content.sections.length } : item));
 
   return (
     <>
@@ -105,7 +119,7 @@ export default function TreatmentLayout({ content }: { content: TreatmentContent
               <span>/</span>
               <span>Specialities</span>
               <span>/</span>
-              <span aria-current="page">{current?.short}</span>
+              <span aria-current="page">{currentShort}</span>
             </nav>
             <h1>{content.title}</h1>
             <p>{content.subtitle}</p>
@@ -121,7 +135,7 @@ export default function TreatmentLayout({ content }: { content: TreatmentContent
           <Reveal delay={0.12} className={styles.caseMedia}>
             <Image
               src={content.heroImage}
-              alt={content.title}
+              alt={content.heroAlt || content.bannerAlt || content.title}
               width={640}
               height={420}
               className={styles.caseImg}
@@ -148,10 +162,9 @@ export default function TreatmentLayout({ content }: { content: TreatmentContent
           <aside className={styles.rail}>
             <span className={styles.railTitle}>On this page</span>
             <ol className={styles.toc}>
-              {tocItems.map((label, i) => (
+              {tocLinks.map(({ label, index }) => (
                 <li key={label}>
-                  <a href={`#${sectionId(i)}`}>
-                    <span>{String(i + 1).padStart(2, "0")}</span>
+                  <a href={`#${sectionId(index)}`}>
                     {label}
                   </a>
                 </li>
@@ -174,12 +187,7 @@ export default function TreatmentLayout({ content }: { content: TreatmentContent
             {content.faqs && content.faqs.length > 0 && (
               <Reveal as="article" className={styles.block}>
                 <div id={sectionId(content.sections.length)} className={styles.anchor} />
-                <h2>
-                  <span className={styles.blockNum}>
-                    {String(content.sections.length + 1).padStart(2, "0")}
-                  </span>
-                  Frequently asked questions
-                </h2>
+                <h2>Frequently asked questions</h2>
                 <Faq items={content.faqs} />
               </Reveal>
             )}
@@ -191,7 +199,7 @@ export default function TreatmentLayout({ content }: { content: TreatmentContent
       <section className={`section section--mint section--ruled ${styles.journey}`}>
         <div className="container">
           <Reveal>
-            <TreatmentJourney slug={content.slug} />
+            <TreatmentJourney slug={content.slug} planner={content.treatmentPlanner} />
           </Reveal>
         </div>
       </section>
@@ -203,7 +211,7 @@ export default function TreatmentLayout({ content }: { content: TreatmentContent
             <span className="eyebrow">Ask the surgeon</span>
             <h2>
               Questions about{" "}
-              <span className="grad-text">{(current?.short ?? content.title).toLowerCase()}</span>?
+              <span className="grad-text">{currentShort.toLowerCase()}</span>?
             </h2>
             <p className={styles.enquiryLead}>
               Costs, recovery time, whether surgery is even needed in your case. Send
@@ -211,24 +219,26 @@ export default function TreatmentLayout({ content }: { content: TreatmentContent
             </p>
           </Reveal>
           <Reveal delay={0.1}>
-            <EnquiryForm treatment={current?.short ?? content.title} />
+            <EnquiryForm treatment={currentShort} />
           </Reveal>
         </div>
       </section>
 
       {/* ======================= OTHER TREATMENTS STRIP ======================= */}
-      <section className={styles.othersStrip}>
-        <div className={`container ${styles.othersInner}`}>
-          <span className={styles.othersLabel}>Other specialities</span>
-          <div className={styles.othersLinks}>
-            {others.map((t) => (
-              <Link key={t.slug} href={treatmentHref(t.slug)} className={styles.otherLink}>
-                {t.short} <ArrowRight width={13} height={13} />
-              </Link>
-            ))}
+      {others.length > 0 && (
+        <section className={styles.othersStrip}>
+          <div className={`container ${styles.othersInner}`}>
+            <span className={styles.othersLabel}>Other specialities</span>
+            <div className={styles.othersLinks}>
+              {others.map((t) => (
+                <Link key={t.slug} href={treatmentHref(t.slug)} className={styles.otherLink}>
+                  {t.short} <ArrowRight width={13} height={13} />
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       <BookCta defaultTreatment={content.slug} />
     </>

@@ -5,8 +5,9 @@ import Image from "next/image";
 import { toArticleSummary, type Article, type ArticleSummary, type Block } from "@/lib/blog";
 import { getArticles } from "@/lib/cms";
 import { treatments, treatmentHref } from "@/lib/site";
-import { articleSchema, breadcrumbSchema, canonicalUrl, jsonLd } from "@/lib/seo";
+import { articleSchema, breadcrumbSchema, canonicalUrl, faqSchema, jsonLd } from "@/lib/seo";
 import BookCta from "@/components/BookCta/BookCta";
+import Faq from "@/components/Faq/Faq";
 import Reveal from "@/components/Motion/Reveal";
 import ReadingProgress from "@/components/Article/ReadingProgress";
 import SelfCheck from "@/components/Article/SelfCheck";
@@ -87,6 +88,7 @@ export default function ArticlePage({ article, related }: { article: Article; re
                 { name: "Blogs", path: "/blogs" },
                 { name: article.title, path: `/blogs/${article.slug}` },
               ]),
+              faqSchema(article.faqs),
             ]),
           }}
         />
@@ -154,6 +156,13 @@ export default function ArticlePage({ article, related }: { article: Article; re
             {article.body.map((b, i) => (
               <BlockView key={i} block={b} />
             ))}
+
+            {article.faqs && article.faqs.length > 0 && (
+              <section className={styles.faqWrap} aria-labelledby="blog-faq-heading">
+                <h2 id="blog-faq-heading">Frequently asked questions</h2>
+                <Faq items={article.faqs} />
+              </section>
+            )}
 
             {/* interactive self-check */}
             {article.selfCheck && (

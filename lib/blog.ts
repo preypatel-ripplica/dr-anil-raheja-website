@@ -4,6 +4,8 @@
 // CMS-ready: swap `articles` for a CMS query later.
 // -----------------------------------------------------------------------------
 
+import type { Faq } from "@/lib/content";
+
 export type Block =
   | { type: "lead"; text: string }
   | { type: "p"; text: string }
@@ -29,6 +31,7 @@ export type Article = {
   source: string;
   body: Block[];
   related: string; // treatment slug this article maps to
+  faqs?: Faq[];
   selfCheck?: SelfCheck; // optional: CMS entries may omit the checklist
   seoTitle?: string;
   metaDescription?: string;

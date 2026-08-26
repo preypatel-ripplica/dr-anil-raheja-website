@@ -2,25 +2,29 @@ import fs from "fs";
 import path from "path";
 import { articles as localArticles, type Article, type Block } from "@/lib/blog";
 import {
-  treatmentContent as localTreatments,
   type TreatmentContent,
   type Section,
+  type TreatmentPlanner,
 } from "@/lib/treatmentContent";
 import { featureVideos as localFeatured, shorts as localShorts } from "@/lib/content";
+import type { Treatment } from "@/lib/site";
 
 // -----------------------------------------------------------------------------
 // Build-time CMS client — the CMS is the single source of truth.
 // Only entries that exist in the CMS are rendered; nothing falls back to the
 // hardcoded lib/ data. Runs only inside getStaticProps/getStaticPaths (Node).
 //
-// Toggle: set USE_CMS=false in .env.local to serve everything from the local
-// hardcoded lib/ data instead of the CMS (no other changes needed).
+// Treatment pages must come from the CMS. If the CMS is unavailable or the
+// treatment collection is empty, build/dev should fail instead of rendering old
+// local content.
 // -----------------------------------------------------------------------------
 
 const USE_CMS = process.env.USE_CMS !== "false";
 const CMS_API_URL = process.env.CMS_API_URL;
-const CMS_API_TOKEN = process.env.CMS_API_TOKEN;
-const HIDDEN_TREATMENTS = new Set(["knee-arthroscopy", "shoulder-arthroscopy"]);
+const CMS_API_TOKEN = process.env.CMS_ACCESS_TOKEN || process.env.CMS_API_TOKEN;
+const TREATMENTS_COLLECTION_SLUG = "treatment-new";
+const BLOGS_COLLECTION_SLUG = "blogs-new";
+const HIDDEN_TREATMENTS = new Set<string>();
 
 function apiBase(): string {
   if (!CMS_API_URL) return "";
@@ -174,11 +178,52 @@ function normalizeBlocks(raw: any[]): Block[] {
   return blocks;
 }
 
+function normalizeArticleBlocks(entry: any): Block[] {
+  if (Array.isArray(entry.body) && entry.body.length) return normalizeBlocks(entry.body);
+
+  const blocks: Block[] = [];
+  const intro = entry.content?.intro || entry.intro;
+  if (intro) blocks.push({ type: "lead", text: intro });
+
+  for (const block of entry.content?.blocks || []) {
+    if (!block) continue;
+    const heading = block.heading || block.title || "";
+    if (heading) blocks.push({ type: "h", text: heading });
+
+    for (const paragraph of block.paragraphs || []) {
+      if (paragraph) blocks.push({ type: "p", text: paragraph });
+    }
+
+    const listItems = block.list?.items || block.items || [];
+    if (listItems.length) blocks.push({ type: "list", items: listItems.filter(Boolean) });
+  }
+
+  return blocks;
+}
+
+function relatedTreatmentSlug(entry: any): string {
+  if (entry.related) return entry.related;
+  const firstTreatmentHref = entry.internalLinks?.treatments?.find((link: any) => link?.href)?.href || "";
+  const slug = firstTreatmentHref.split("/").filter(Boolean).pop();
+  return slug || "";
+}
+
+function normalizeFaqs(raw: any[]): { q: string; a: string }[] {
+  return (raw || [])
+    .map((faq) => {
+      const question = faq?.q || faq?.question || "";
+      const answer = faq?.a || faq?.answer || "";
+      const text = Array.isArray(answer) ? answer.filter(Boolean).join("\n\n") : answer;
+      return question && text ? { q: question, a: text } : null;
+    })
+    .filter(Boolean) as { q: string; a: string }[];
+}
+
 /** Blog articles — CMS entries only, newest first. */
 export async function getArticles(): Promise<Article[]> {
   if (!USE_CMS) return jsonClean(localArticles);
-  const entries = await fetchCollection("blogs");
-  if (!entries.length) return jsonClean(localArticles);
+  const entries = await fetchCollection(BLOGS_COLLECTION_SLUG);
+  if (!entries.length) throw new Error(`CMS collection "${BLOGS_COLLECTION_SLUG}" is empty or unavailable`);
   const articles: Article[] = [];
 
   for (const item of entries) {
@@ -191,17 +236,19 @@ export async function getArticles(): Promise<Article[]> {
       image: await resolveImage(e.hero_image || e.heroImage || e.image, "/images/optimized/blog-thr-1200.jpg"),
       category: e.category || "",
       date: e.date || e.publishedAt || e.published || item.published_at || "",
-      readMins: Number(e.readMins || e.readingTime) || 5,
-      source: e.source || "",
-      related: e.related || "",
-      body: normalizeBlocks(e.body),
+      readMins: Number(e.readMins || e.readingTime || String(e.readTime || "").match(/\d+/)?.[0]) || 5,
+      source: e.source || e.canonicalPath || "",
+      related: relatedTreatmentSlug(e),
+      body: normalizeArticleBlocks(e),
+      faqs: normalizeFaqs(e.faqs),
       selfCheck: e.selfCheck?.items?.length ? e.selfCheck : undefined,
       seoTitle: e.seoTitle || e.title,
       metaDescription: e.metaDescription || e.excerpt || "",
     });
   }
 
-  return jsonClean((articles.length ? articles : localArticles).sort((x, y) => (y.date || "").localeCompare(x.date || "")));
+  if (!articles.length) throw new Error(`CMS collection "${BLOGS_COLLECTION_SLUG}" has no valid blog entries`);
+  return jsonClean(articles.sort((x, y) => (y.date || "").localeCompare(x.date || "")));
 }
 
 // ----------------------------- treatments ------------------------------------
@@ -211,16 +258,36 @@ async function mapTreatment(item: any): Promise<TreatmentContent | null> {
   if (!e?.slug || !e?.title) return null;
 
   const sections: Section[] = [];
-  for (const s of e.sections || []) {
+  const contentImage = await resolveImage(e.content_image || e.contentImage);
+  const rawSections = e.sections || e.content?.blocks || [];
+  for (const s of rawSections) {
     if (!s || typeof s.type !== "string") continue;
-    if (s.type === "text") {
-      sections.push({ type: "text", heading: s.heading || "", paragraphs: s.paragraphs || [] });
+    if (s.type === "image") {
+      if (contentImage) {
+        sections.push({
+          type: "image",
+          heading: s.heading || "",
+          image: contentImage,
+          alt: e.content_image?.alt_text || e.contentImage?.alt_text || e.title,
+        });
+      }
+    } else if (s.type === "section" || s.type === "text") {
+      if (s.list?.items?.length) {
+        sections.push({
+          type: "list",
+          heading: s.heading || "",
+          intro: (s.paragraphs || []).join("\n\n"),
+          items: s.list.items || [],
+        });
+      } else {
+        sections.push({ type: "text", heading: s.heading || "", paragraphs: s.paragraphs || [] });
+      }
     } else if (s.type === "list") {
       sections.push({
         type: "list",
         heading: s.heading || "",
         ...(s.intro ? { intro: s.intro } : {}),
-        items: s.items || [],
+        items: s.items || s.list?.items || [],
       });
     } else if (s.type === "imageText") {
       sections.push({
@@ -233,35 +300,70 @@ async function mapTreatment(item: any): Promise<TreatmentContent | null> {
     }
   }
 
+  const planner = e.treatmentPlanner as TreatmentPlanner | undefined;
+
   return {
+    id: e.id,
     slug: e.slug,
+    short: e.short,
+    order: Number(e.order) || 0,
     title: e.title,
-    subtitle: e.subtitle || "",
-    heroImage: await resolveImage(e.hero_image),
+    description: e.description,
+    canonicalPath: e.canonicalPath,
+    category: e.category,
+    readTime: e.readTime,
+    excerpt: e.excerpt,
+    author: e.author,
+    authorImage: await resolveImage(e.authorImage, e.authorImage || ""),
+    publishedAt: e.publishedAt,
+    publishedLabel: e.publishedLabel,
+    subtitle: e.subtitle || e.heroSubtitle || e.excerpt || e.description || "",
+    heroImage: await resolveImage(e.hero_image || e.heroImage),
+    heroAlt: e.hero_image?.alt_text || e.heroAlt || e.bannerAlt,
+    contentImage,
+    contentImageAlt: e.content_image?.alt_text || e.contentImage?.alt_text,
+    cardAlt: e.cardAlt,
+    bannerAlt: e.bannerAlt,
+    tags: e.tags || [],
     facts: (e.facts || []).filter((f: any) => f?.label && f?.value),
     sections,
-    faqs: e.faqs || [],
+    faqs: normalizeFaqs(e.faqs),
+    treatmentPlanner: planner?.steps?.length ? planner : undefined,
     seoTitle: e.seoTitle || e.title,
-    metaDescription: e.metaDescription || e.subtitle || "",
+    metaDescription: e.metaDescription || e.description || e.heroSubtitle || e.subtitle || "",
+    keywords: e.keywords,
   };
 }
 
-/** Treatment pages keyed by slug, falling back to local content for static export. */
+/** Treatment pages keyed by slug. CMS is required; no local fallback. */
 export async function getTreatments(): Promise<Record<string, TreatmentContent>> {
-  if (!USE_CMS) return jsonClean(visibleTreatments(localTreatments));
-  const entries = await fetchCollection("treatments");
-  if (!entries.length) return jsonClean(visibleTreatments(localTreatments));
+  if (!USE_CMS) throw new Error("USE_CMS=false is not allowed for treatments.");
+  if (!CMS_API_URL || !CMS_API_TOKEN) throw new Error("CMS_API_URL and CMS_ACCESS_TOKEN are required for treatments.");
+  const entries = await fetchCollection(TREATMENTS_COLLECTION_SLUG);
+  if (!entries.length) throw new Error(`CMS collection "${TREATMENTS_COLLECTION_SLUG}" has no treatment entries.`);
   const result: Record<string, TreatmentContent> = {};
   for (const item of entries) {
     const t = await mapTreatment(item);
     if (t && !HIDDEN_TREATMENTS.has(t.slug)) result[t.slug] = t;
   }
-  return jsonClean(Object.keys(result).length ? result : visibleTreatments(localTreatments));
+  if (!Object.keys(result).length) throw new Error(`CMS collection "${TREATMENTS_COLLECTION_SLUG}" did not contain valid treatment entries.`);
+  return jsonClean(visibleTreatments(result));
 }
 
 /** Returns null when the treatment has no CMS entry — the page then 404s. */
 export async function getTreatment(slug: string): Promise<TreatmentContent | null> {
   return (await getTreatments())[slug] ?? null;
+}
+
+export async function getTreatmentSummaries(): Promise<Treatment[]> {
+  const treatments = Object.values(await getTreatments()).sort((a, b) => (a.order || 0) - (b.order || 0));
+  return treatments.map((t) => ({
+    slug: t.slug,
+    title: t.title,
+    short: t.short || t.title.replace(/\s+in\s+Delhi\s*$/i, ""),
+    excerpt: t.excerpt || t.description || t.subtitle,
+    image: t.heroImage,
+  }));
 }
 
 // ------------------------------- videos --------------------------------------

@@ -9,8 +9,8 @@ import ContactPage from "@/pages/contact-us";
 import VideosPage from "@/pages/our-videos";
 import TestimonialsPage from "@/pages/patient-testimonials";
 import GalleryPage from "@/pages/photo-gallery";
-import TreatmentPage from "@/pages/[treatment]";
-import { getArticles, getTreatments, getTreatment, getVideos } from "@/lib/cms";
+import TreatmentPage from "@/components/TreatmentPage/TreatmentPage";
+import { getArticles, getTreatments, getTreatment, getTreatmentSummaries, getVideos } from "@/lib/cms";
 import { toArticleSummary } from "@/lib/blog";
 import { I18nProvider } from "@/lib/i18n-context";
 import { type Locale } from "@/lib/i18n";
@@ -25,10 +25,7 @@ export async function getLocalizedPaths(locale: Locale) {
   return [
     ...fixedRoutes.map((path) => ({ params: { path } })),
     ...articles.map((article) => ({ params: { path: ["blogs", article.slug] } })),
-    ...Object.keys(treatments).flatMap((slug) => [
-      { params: { path: [slug] } },
-      { params: { path: ["treatment", slug] } },
-    ]),
+    ...Object.keys(treatments).map((slug) => ({ params: { path: ["treatment", slug] } })),
   ].map((item) => ({ ...item, params: { ...item.params, locale } }));
 }
 
@@ -36,8 +33,8 @@ export async function getLocalizedProps(locale: Locale, context: GetStaticPropsC
   const path = Array.isArray(context.params?.path) ? context.params.path : [];
   const route = path.join("/");
   if (!route) {
-    const [articles, videos] = await Promise.all([getArticles(), getVideos()]);
-    return { props: { locale, page: "home", pageProps: { blogPosts: articles.map(toArticleSummary), featureVideos: videos.featured }, seoPath: "/" } };
+    const [articles, videos, treatments] = await Promise.all([getArticles(), getVideos(), getTreatmentSummaries()]);
+    return { props: { locale, page: "home", pageProps: { blogPosts: articles.map(toArticleSummary), featureVideos: videos.featured, treatments }, seoPath: "/" } };
   }
   if (route === "about-us") return { props: { locale, page: "about", seoPath: "/about-us" } };
   if (route === "blogs") {
@@ -59,9 +56,9 @@ export async function getLocalizedProps(locale: Locale, context: GetStaticPropsC
   if (route === "photo-gallery") return { props: { locale, page: "gallery", seoPath: "/photo-gallery" } };
 
   const slug = path[path.length - 1];
-  const content = await getTreatment(slug);
+  const [content, treatments] = await Promise.all([getTreatment(slug), getTreatmentSummaries()]);
   if (!content) return { notFound: true };
-  return { props: { locale, page: "treatment", pageProps: { content }, seoPath: `/${slug}` } };
+  return { props: { locale, page: "treatment", pageProps: { content, treatments }, seoPath: `/treatment/${slug}` } };
 }
 
 export default function LocalizedPage({ locale, page, pageProps, seoPath }: any) {

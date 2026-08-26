@@ -1,92 +1,922 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.dranilraheja.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/hi</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/ar</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/ru</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/" />
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.dranilraheja.com/about-us</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/about-us" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/about-us" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/about-us" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/about-us" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/about-us" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/hi/about-us</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/about-us" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/about-us" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/about-us" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/about-us" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/about-us" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/ar/about-us</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/about-us" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/about-us" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/about-us" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/about-us" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/about-us" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/ru/about-us</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/about-us" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/about-us" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/about-us" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/about-us" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/about-us" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.dranilraheja.com/contact-us</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/contact-us" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/contact-us" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/contact-us" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/contact-us" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/contact-us" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.dranilraheja.com/treatment/hip-replacement-surgery</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.dranilraheja.com/treatment/knee-replacement-surgery</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.dranilraheja.com/treatment/spine-surgery</loc>
+    <loc>https://www.dranilraheja.com/hi/contact-us</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/contact-us" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/contact-us" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/contact-us" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/contact-us" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/contact-us" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.dranilraheja.com/treatment/arthroscopic-surgery</loc>
+    <loc>https://www.dranilraheja.com/ar/contact-us</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/contact-us" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/contact-us" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/contact-us" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/contact-us" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/contact-us" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.dranilraheja.com/treatment/arthritis-treatment</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.dranilraheja.com/treatment/partial-knee-replacement</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.dranilraheja.com/treatment/sports-injury-conservative-care</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.dranilraheja.com/treatment/fracture-trauma-treatment</loc>
+    <loc>https://www.dranilraheja.com/ru/contact-us</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/contact-us" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/contact-us" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/contact-us" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/contact-us" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/contact-us" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.dranilraheja.com/blogs</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/blogs" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/blogs" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/blogs" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/blogs" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/blogs" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.dranilraheja.com/blogs/role-of-a-professional-orthopaedic-surgeon-in-thr</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://www.dranilraheja.com/hi/blogs</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/blogs" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/blogs" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/blogs" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/blogs" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/blogs" />
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.dranilraheja.com/blogs/anterior-cruciate-ligament-injuries</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://www.dranilraheja.com/ar/blogs</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/blogs" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/blogs" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/blogs" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/blogs" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/blogs" />
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.dranilraheja.com/blogs/surviving-winters-with-arthritis</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://www.dranilraheja.com/ru/blogs</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/blogs" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/blogs" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/blogs" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/blogs" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/blogs" />
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.dranilraheja.com/photo-gallery</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/photo-gallery" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/photo-gallery" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/photo-gallery" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/photo-gallery" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/photo-gallery" />
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/hi/photo-gallery</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/photo-gallery" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/photo-gallery" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/photo-gallery" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/photo-gallery" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/photo-gallery" />
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/ar/photo-gallery</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/photo-gallery" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/photo-gallery" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/photo-gallery" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/photo-gallery" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/photo-gallery" />
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/ru/photo-gallery</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/photo-gallery" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/photo-gallery" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/photo-gallery" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/photo-gallery" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/photo-gallery" />
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://www.dranilraheja.com/our-videos</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/our-videos" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/our-videos" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/our-videos" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/our-videos" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/our-videos" />
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/hi/our-videos</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/our-videos" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/our-videos" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/our-videos" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/our-videos" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/our-videos" />
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/ar/our-videos</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/our-videos" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/our-videos" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/our-videos" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/our-videos" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/our-videos" />
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/ru/our-videos</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/our-videos" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/our-videos" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/our-videos" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/our-videos" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/our-videos" />
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://www.dranilraheja.com/patient-testimonials</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/patient-testimonials" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/patient-testimonials" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/patient-testimonials" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/patient-testimonials" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/patient-testimonials" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/hi/patient-testimonials</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/patient-testimonials" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/patient-testimonials" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/patient-testimonials" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/patient-testimonials" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/patient-testimonials" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/ar/patient-testimonials</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/patient-testimonials" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/patient-testimonials" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/patient-testimonials" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/patient-testimonials" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/patient-testimonials" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/ru/patient-testimonials</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/patient-testimonials" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/patient-testimonials" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/patient-testimonials" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/patient-testimonials" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/patient-testimonials" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/treatment/hip-replacement-surgery</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/treatment/hip-replacement-surgery" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/treatment/hip-replacement-surgery" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/treatment/hip-replacement-surgery" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/treatment/hip-replacement-surgery" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/treatment/hip-replacement-surgery" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/hi/treatment/hip-replacement-surgery</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/treatment/hip-replacement-surgery" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/treatment/hip-replacement-surgery" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/treatment/hip-replacement-surgery" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/treatment/hip-replacement-surgery" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/treatment/hip-replacement-surgery" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/ar/treatment/hip-replacement-surgery</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/treatment/hip-replacement-surgery" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/treatment/hip-replacement-surgery" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/treatment/hip-replacement-surgery" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/treatment/hip-replacement-surgery" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/treatment/hip-replacement-surgery" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/ru/treatment/hip-replacement-surgery</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/treatment/hip-replacement-surgery" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/treatment/hip-replacement-surgery" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/treatment/hip-replacement-surgery" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/treatment/hip-replacement-surgery" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/treatment/hip-replacement-surgery" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/treatment/knee-replacement-surgery</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/treatment/knee-replacement-surgery" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/treatment/knee-replacement-surgery" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/treatment/knee-replacement-surgery" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/treatment/knee-replacement-surgery" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/treatment/knee-replacement-surgery" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/hi/treatment/knee-replacement-surgery</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/treatment/knee-replacement-surgery" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/treatment/knee-replacement-surgery" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/treatment/knee-replacement-surgery" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/treatment/knee-replacement-surgery" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/treatment/knee-replacement-surgery" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/ar/treatment/knee-replacement-surgery</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/treatment/knee-replacement-surgery" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/treatment/knee-replacement-surgery" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/treatment/knee-replacement-surgery" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/treatment/knee-replacement-surgery" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/treatment/knee-replacement-surgery" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/ru/treatment/knee-replacement-surgery</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/treatment/knee-replacement-surgery" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/treatment/knee-replacement-surgery" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/treatment/knee-replacement-surgery" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/treatment/knee-replacement-surgery" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/treatment/knee-replacement-surgery" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/treatment/partial-knee-replacement</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/treatment/partial-knee-replacement" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/treatment/partial-knee-replacement" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/treatment/partial-knee-replacement" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/treatment/partial-knee-replacement" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/treatment/partial-knee-replacement" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/hi/treatment/partial-knee-replacement</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/treatment/partial-knee-replacement" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/treatment/partial-knee-replacement" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/treatment/partial-knee-replacement" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/treatment/partial-knee-replacement" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/treatment/partial-knee-replacement" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/ar/treatment/partial-knee-replacement</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/treatment/partial-knee-replacement" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/treatment/partial-knee-replacement" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/treatment/partial-knee-replacement" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/treatment/partial-knee-replacement" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/treatment/partial-knee-replacement" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/ru/treatment/partial-knee-replacement</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/treatment/partial-knee-replacement" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/treatment/partial-knee-replacement" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/treatment/partial-knee-replacement" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/treatment/partial-knee-replacement" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/treatment/partial-knee-replacement" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/treatment/knee-arthroscopy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/treatment/knee-arthroscopy" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/treatment/knee-arthroscopy" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/treatment/knee-arthroscopy" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/treatment/knee-arthroscopy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/treatment/knee-arthroscopy" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/hi/treatment/knee-arthroscopy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/treatment/knee-arthroscopy" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/treatment/knee-arthroscopy" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/treatment/knee-arthroscopy" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/treatment/knee-arthroscopy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/treatment/knee-arthroscopy" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/ar/treatment/knee-arthroscopy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/treatment/knee-arthroscopy" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/treatment/knee-arthroscopy" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/treatment/knee-arthroscopy" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/treatment/knee-arthroscopy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/treatment/knee-arthroscopy" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/ru/treatment/knee-arthroscopy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/treatment/knee-arthroscopy" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/treatment/knee-arthroscopy" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/treatment/knee-arthroscopy" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/treatment/knee-arthroscopy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/treatment/knee-arthroscopy" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/treatment/sports-injury-conservative-care</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/treatment/sports-injury-conservative-care" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/treatment/sports-injury-conservative-care" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/treatment/sports-injury-conservative-care" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/treatment/sports-injury-conservative-care" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/treatment/sports-injury-conservative-care" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/hi/treatment/sports-injury-conservative-care</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/treatment/sports-injury-conservative-care" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/treatment/sports-injury-conservative-care" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/treatment/sports-injury-conservative-care" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/treatment/sports-injury-conservative-care" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/treatment/sports-injury-conservative-care" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/ar/treatment/sports-injury-conservative-care</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/treatment/sports-injury-conservative-care" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/treatment/sports-injury-conservative-care" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/treatment/sports-injury-conservative-care" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/treatment/sports-injury-conservative-care" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/treatment/sports-injury-conservative-care" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/ru/treatment/sports-injury-conservative-care</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/treatment/sports-injury-conservative-care" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/treatment/sports-injury-conservative-care" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/treatment/sports-injury-conservative-care" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/treatment/sports-injury-conservative-care" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/treatment/sports-injury-conservative-care" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/treatment/arthritis-treatment</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/treatment/arthritis-treatment" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/treatment/arthritis-treatment" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/treatment/arthritis-treatment" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/treatment/arthritis-treatment" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/treatment/arthritis-treatment" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/hi/treatment/arthritis-treatment</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/treatment/arthritis-treatment" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/treatment/arthritis-treatment" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/treatment/arthritis-treatment" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/treatment/arthritis-treatment" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/treatment/arthritis-treatment" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/ar/treatment/arthritis-treatment</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/treatment/arthritis-treatment" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/treatment/arthritis-treatment" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/treatment/arthritis-treatment" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/treatment/arthritis-treatment" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/treatment/arthritis-treatment" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/ru/treatment/arthritis-treatment</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/treatment/arthritis-treatment" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/treatment/arthritis-treatment" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/treatment/arthritis-treatment" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/treatment/arthritis-treatment" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/treatment/arthritis-treatment" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/blogs/fracture-recovery-what-determines-how-fast-you-heal</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/blogs/fracture-recovery-what-determines-how-fast-you-heal" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/blogs/fracture-recovery-what-determines-how-fast-you-heal" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/blogs/fracture-recovery-what-determines-how-fast-you-heal" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/blogs/fracture-recovery-what-determines-how-fast-you-heal" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/blogs/fracture-recovery-what-determines-how-fast-you-heal" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/hi/blogs/fracture-recovery-what-determines-how-fast-you-heal</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/blogs/fracture-recovery-what-determines-how-fast-you-heal" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/blogs/fracture-recovery-what-determines-how-fast-you-heal" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/blogs/fracture-recovery-what-determines-how-fast-you-heal" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/blogs/fracture-recovery-what-determines-how-fast-you-heal" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/blogs/fracture-recovery-what-determines-how-fast-you-heal" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/ar/blogs/fracture-recovery-what-determines-how-fast-you-heal</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/blogs/fracture-recovery-what-determines-how-fast-you-heal" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/blogs/fracture-recovery-what-determines-how-fast-you-heal" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/blogs/fracture-recovery-what-determines-how-fast-you-heal" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/blogs/fracture-recovery-what-determines-how-fast-you-heal" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/blogs/fracture-recovery-what-determines-how-fast-you-heal" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/ru/blogs/fracture-recovery-what-determines-how-fast-you-heal</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/blogs/fracture-recovery-what-determines-how-fast-you-heal" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/blogs/fracture-recovery-what-determines-how-fast-you-heal" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/blogs/fracture-recovery-what-determines-how-fast-you-heal" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/blogs/fracture-recovery-what-determines-how-fast-you-heal" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/blogs/fracture-recovery-what-determines-how-fast-you-heal" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/blogs/hip-fracture-elderly-early-surgery</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/blogs/hip-fracture-elderly-early-surgery" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/blogs/hip-fracture-elderly-early-surgery" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/blogs/hip-fracture-elderly-early-surgery" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/blogs/hip-fracture-elderly-early-surgery" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/blogs/hip-fracture-elderly-early-surgery" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/hi/blogs/hip-fracture-elderly-early-surgery</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/blogs/hip-fracture-elderly-early-surgery" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/blogs/hip-fracture-elderly-early-surgery" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/blogs/hip-fracture-elderly-early-surgery" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/blogs/hip-fracture-elderly-early-surgery" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/blogs/hip-fracture-elderly-early-surgery" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/ar/blogs/hip-fracture-elderly-early-surgery</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/blogs/hip-fracture-elderly-early-surgery" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/blogs/hip-fracture-elderly-early-surgery" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/blogs/hip-fracture-elderly-early-surgery" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/blogs/hip-fracture-elderly-early-surgery" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/blogs/hip-fracture-elderly-early-surgery" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/ru/blogs/hip-fracture-elderly-early-surgery</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/blogs/hip-fracture-elderly-early-surgery" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/blogs/hip-fracture-elderly-early-surgery" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/blogs/hip-fracture-elderly-early-surgery" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/blogs/hip-fracture-elderly-early-surgery" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/blogs/hip-fracture-elderly-early-surgery" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/blogs/lower-back-pain-when-is-it-spine-surgery</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/blogs/lower-back-pain-when-is-it-spine-surgery" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/blogs/lower-back-pain-when-is-it-spine-surgery" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/blogs/lower-back-pain-when-is-it-spine-surgery" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/blogs/lower-back-pain-when-is-it-spine-surgery" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/blogs/lower-back-pain-when-is-it-spine-surgery" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/hi/blogs/lower-back-pain-when-is-it-spine-surgery</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/blogs/lower-back-pain-when-is-it-spine-surgery" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/blogs/lower-back-pain-when-is-it-spine-surgery" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/blogs/lower-back-pain-when-is-it-spine-surgery" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/blogs/lower-back-pain-when-is-it-spine-surgery" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/blogs/lower-back-pain-when-is-it-spine-surgery" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/ar/blogs/lower-back-pain-when-is-it-spine-surgery</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/blogs/lower-back-pain-when-is-it-spine-surgery" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/blogs/lower-back-pain-when-is-it-spine-surgery" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/blogs/lower-back-pain-when-is-it-spine-surgery" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/blogs/lower-back-pain-when-is-it-spine-surgery" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/blogs/lower-back-pain-when-is-it-spine-surgery" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/ru/blogs/lower-back-pain-when-is-it-spine-surgery</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/blogs/lower-back-pain-when-is-it-spine-surgery" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/blogs/lower-back-pain-when-is-it-spine-surgery" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/blogs/lower-back-pain-when-is-it-spine-surgery" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/blogs/lower-back-pain-when-is-it-spine-surgery" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/blogs/lower-back-pain-when-is-it-spine-surgery" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/blogs/prp-injection-for-knee-pain-and-sports-injury</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/blogs/prp-injection-for-knee-pain-and-sports-injury" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/blogs/prp-injection-for-knee-pain-and-sports-injury" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/blogs/prp-injection-for-knee-pain-and-sports-injury" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/blogs/prp-injection-for-knee-pain-and-sports-injury" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/blogs/prp-injection-for-knee-pain-and-sports-injury" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/hi/blogs/prp-injection-for-knee-pain-and-sports-injury</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/blogs/prp-injection-for-knee-pain-and-sports-injury" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/blogs/prp-injection-for-knee-pain-and-sports-injury" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/blogs/prp-injection-for-knee-pain-and-sports-injury" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/blogs/prp-injection-for-knee-pain-and-sports-injury" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/blogs/prp-injection-for-knee-pain-and-sports-injury" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/ar/blogs/prp-injection-for-knee-pain-and-sports-injury</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/blogs/prp-injection-for-knee-pain-and-sports-injury" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/blogs/prp-injection-for-knee-pain-and-sports-injury" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/blogs/prp-injection-for-knee-pain-and-sports-injury" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/blogs/prp-injection-for-knee-pain-and-sports-injury" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/blogs/prp-injection-for-knee-pain-and-sports-injury" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/ru/blogs/prp-injection-for-knee-pain-and-sports-injury</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/blogs/prp-injection-for-knee-pain-and-sports-injury" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/blogs/prp-injection-for-knee-pain-and-sports-injury" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/blogs/prp-injection-for-knee-pain-and-sports-injury" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/blogs/prp-injection-for-knee-pain-and-sports-injury" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/blogs/prp-injection-for-knee-pain-and-sports-injury" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/blogs/knee-pain-xray-or-mri</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/blogs/knee-pain-xray-or-mri" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/blogs/knee-pain-xray-or-mri" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/blogs/knee-pain-xray-or-mri" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/blogs/knee-pain-xray-or-mri" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/blogs/knee-pain-xray-or-mri" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/hi/blogs/knee-pain-xray-or-mri</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/blogs/knee-pain-xray-or-mri" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/blogs/knee-pain-xray-or-mri" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/blogs/knee-pain-xray-or-mri" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/blogs/knee-pain-xray-or-mri" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/blogs/knee-pain-xray-or-mri" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/ar/blogs/knee-pain-xray-or-mri</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/blogs/knee-pain-xray-or-mri" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/blogs/knee-pain-xray-or-mri" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/blogs/knee-pain-xray-or-mri" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/blogs/knee-pain-xray-or-mri" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/blogs/knee-pain-xray-or-mri" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/ru/blogs/knee-pain-xray-or-mri</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/blogs/knee-pain-xray-or-mri" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/blogs/knee-pain-xray-or-mri" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/blogs/knee-pain-xray-or-mri" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/blogs/knee-pain-xray-or-mri" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/blogs/knee-pain-xray-or-mri" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/blogs/hip-replacement-recovery-timeline</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/blogs/hip-replacement-recovery-timeline" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/blogs/hip-replacement-recovery-timeline" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/blogs/hip-replacement-recovery-timeline" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/blogs/hip-replacement-recovery-timeline" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/blogs/hip-replacement-recovery-timeline" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/hi/blogs/hip-replacement-recovery-timeline</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/blogs/hip-replacement-recovery-timeline" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/blogs/hip-replacement-recovery-timeline" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/blogs/hip-replacement-recovery-timeline" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/blogs/hip-replacement-recovery-timeline" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/blogs/hip-replacement-recovery-timeline" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/ar/blogs/hip-replacement-recovery-timeline</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/blogs/hip-replacement-recovery-timeline" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/blogs/hip-replacement-recovery-timeline" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/blogs/hip-replacement-recovery-timeline" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/blogs/hip-replacement-recovery-timeline" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/blogs/hip-replacement-recovery-timeline" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/ru/blogs/hip-replacement-recovery-timeline</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/blogs/hip-replacement-recovery-timeline" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/blogs/hip-replacement-recovery-timeline" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/blogs/hip-replacement-recovery-timeline" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/blogs/hip-replacement-recovery-timeline" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/blogs/hip-replacement-recovery-timeline" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/blogs/knee-replacement-recovery-timeline</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/blogs/knee-replacement-recovery-timeline" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/blogs/knee-replacement-recovery-timeline" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/blogs/knee-replacement-recovery-timeline" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/blogs/knee-replacement-recovery-timeline" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/blogs/knee-replacement-recovery-timeline" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/hi/blogs/knee-replacement-recovery-timeline</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/blogs/knee-replacement-recovery-timeline" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/blogs/knee-replacement-recovery-timeline" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/blogs/knee-replacement-recovery-timeline" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/blogs/knee-replacement-recovery-timeline" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/blogs/knee-replacement-recovery-timeline" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/ar/blogs/knee-replacement-recovery-timeline</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/blogs/knee-replacement-recovery-timeline" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/blogs/knee-replacement-recovery-timeline" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/blogs/knee-replacement-recovery-timeline" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/blogs/knee-replacement-recovery-timeline" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/blogs/knee-replacement-recovery-timeline" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/ru/blogs/knee-replacement-recovery-timeline</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/blogs/knee-replacement-recovery-timeline" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/blogs/knee-replacement-recovery-timeline" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/blogs/knee-replacement-recovery-timeline" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/blogs/knee-replacement-recovery-timeline" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/blogs/knee-replacement-recovery-timeline" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/blogs/role-of-a-professional-orthopaedic-surgeon-in-thr</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/blogs/role-of-a-professional-orthopaedic-surgeon-in-thr" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/blogs/role-of-a-professional-orthopaedic-surgeon-in-thr" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/blogs/role-of-a-professional-orthopaedic-surgeon-in-thr" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/blogs/role-of-a-professional-orthopaedic-surgeon-in-thr" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/blogs/role-of-a-professional-orthopaedic-surgeon-in-thr" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/hi/blogs/role-of-a-professional-orthopaedic-surgeon-in-thr</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/blogs/role-of-a-professional-orthopaedic-surgeon-in-thr" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/blogs/role-of-a-professional-orthopaedic-surgeon-in-thr" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/blogs/role-of-a-professional-orthopaedic-surgeon-in-thr" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/blogs/role-of-a-professional-orthopaedic-surgeon-in-thr" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/blogs/role-of-a-professional-orthopaedic-surgeon-in-thr" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/ar/blogs/role-of-a-professional-orthopaedic-surgeon-in-thr</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/blogs/role-of-a-professional-orthopaedic-surgeon-in-thr" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/blogs/role-of-a-professional-orthopaedic-surgeon-in-thr" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/blogs/role-of-a-professional-orthopaedic-surgeon-in-thr" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/blogs/role-of-a-professional-orthopaedic-surgeon-in-thr" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/blogs/role-of-a-professional-orthopaedic-surgeon-in-thr" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/ru/blogs/role-of-a-professional-orthopaedic-surgeon-in-thr</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/blogs/role-of-a-professional-orthopaedic-surgeon-in-thr" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/blogs/role-of-a-professional-orthopaedic-surgeon-in-thr" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/blogs/role-of-a-professional-orthopaedic-surgeon-in-thr" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/blogs/role-of-a-professional-orthopaedic-surgeon-in-thr" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/blogs/role-of-a-professional-orthopaedic-surgeon-in-thr" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/blogs/anterior-cruciate-ligament-injuries</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/blogs/anterior-cruciate-ligament-injuries" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/blogs/anterior-cruciate-ligament-injuries" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/blogs/anterior-cruciate-ligament-injuries" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/blogs/anterior-cruciate-ligament-injuries" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/blogs/anterior-cruciate-ligament-injuries" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/hi/blogs/anterior-cruciate-ligament-injuries</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/blogs/anterior-cruciate-ligament-injuries" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/blogs/anterior-cruciate-ligament-injuries" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/blogs/anterior-cruciate-ligament-injuries" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/blogs/anterior-cruciate-ligament-injuries" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/blogs/anterior-cruciate-ligament-injuries" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/ar/blogs/anterior-cruciate-ligament-injuries</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/blogs/anterior-cruciate-ligament-injuries" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/blogs/anterior-cruciate-ligament-injuries" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/blogs/anterior-cruciate-ligament-injuries" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/blogs/anterior-cruciate-ligament-injuries" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/blogs/anterior-cruciate-ligament-injuries" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/ru/blogs/anterior-cruciate-ligament-injuries</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/blogs/anterior-cruciate-ligament-injuries" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/blogs/anterior-cruciate-ligament-injuries" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/blogs/anterior-cruciate-ligament-injuries" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/blogs/anterior-cruciate-ligament-injuries" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/blogs/anterior-cruciate-ligament-injuries" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/blogs/surviving-winters-with-arthritis</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/blogs/surviving-winters-with-arthritis" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/blogs/surviving-winters-with-arthritis" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/blogs/surviving-winters-with-arthritis" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/blogs/surviving-winters-with-arthritis" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/blogs/surviving-winters-with-arthritis" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/hi/blogs/surviving-winters-with-arthritis</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/blogs/surviving-winters-with-arthritis" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/blogs/surviving-winters-with-arthritis" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/blogs/surviving-winters-with-arthritis" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/blogs/surviving-winters-with-arthritis" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/blogs/surviving-winters-with-arthritis" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/ar/blogs/surviving-winters-with-arthritis</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/blogs/surviving-winters-with-arthritis" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/blogs/surviving-winters-with-arthritis" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/blogs/surviving-winters-with-arthritis" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/blogs/surviving-winters-with-arthritis" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/blogs/surviving-winters-with-arthritis" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.dranilraheja.com/ru/blogs/surviving-winters-with-arthritis</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dranilraheja.com/blogs/surviving-winters-with-arthritis" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.dranilraheja.com/hi/blogs/surviving-winters-with-arthritis" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.dranilraheja.com/ar/blogs/surviving-winters-with-arthritis" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.dranilraheja.com/ru/blogs/surviving-winters-with-arthritis" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dranilraheja.com/blogs/surviving-winters-with-arthritis" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

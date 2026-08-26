@@ -176,6 +176,14 @@
   margin: 40px 0;
 }
 
+.faqWrap {
+  margin: 46px 0 38px;
+}
+
+.faqWrap :global(h2) {
+  margin-top: 0;
+}
+
 .treatmentCta {
   display: flex;
   align-items: center;

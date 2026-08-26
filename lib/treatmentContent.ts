@@ -21,21 +21,57 @@ import {
 export type Section =
   | { type: "text"; heading: string; paragraphs: string[] }
   | { type: "list"; heading: string; intro?: string; items: string[] }
+  | { type: "image"; heading?: string; image: string; alt?: string }
   | { type: "imageText"; heading: string; paragraphs: string[]; image: string; imageSide?: "left" | "right" };
 
 /** Spec-sheet facts shown in the treatment "case file" header. */
 export type Fact = { label: string; value: string };
 
-export type TreatmentContent = {
-  slug: string;
+export type TreatmentPlannerStep = {
+  label: string;
+  question: string;
+  helper: string;
+  options: { label: string; note: string }[];
+};
+
+export type TreatmentPlanner = {
   title: string;
+  intro: string;
+  steps: TreatmentPlannerStep[];
+  bring: string[];
+  outcomes: string[];
+};
+
+export type TreatmentContent = {
+  id?: string;
+  slug: string;
+  short?: string;
+  order?: number;
+  title: string;
+  description?: string;
+  canonicalPath?: string;
+  category?: string;
+  readTime?: string;
+  excerpt?: string;
+  author?: string;
+  authorImage?: string;
+  publishedAt?: string;
+  publishedLabel?: string;
   subtitle: string;
   heroImage: string;
+  heroAlt?: string;
+  contentImage?: string;
+  contentImageAlt?: string;
+  cardAlt?: string;
+  bannerAlt?: string;
+  tags?: string[];
   facts: Fact[];
   sections: Section[];
   faqs?: Faq[];
+  treatmentPlanner?: TreatmentPlanner;
   seoTitle?: string;
   metaDescription?: string;
+  keywords?: string;
 };
 
 export const treatmentContent: Record<string, TreatmentContent> = {

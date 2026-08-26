@@ -1,34 +1,26 @@
 [
   {
-    "label": "Hip Replacement Surgery",
+    "label": "Hip Replacement",
     "href": "/treatment/hip-replacement-surgery"
   },
   {
-    "label": "Knee Replacement Surgery",
+    "label": "Knee Replacement",
     "href": "/treatment/knee-replacement-surgery"
   },
   {
-    "label": "Spine Surgery",
-    "href": "/treatment/spine-surgery"
-  },
-  {
-    "label": "Arthroscopic Surgery",
-    "href": "/treatment/arthroscopic-surgery"
-  },
-  {
-    "label": "Arthritis Treatment",
-    "href": "/treatment/arthritis-treatment"
-  },
-  {
-    "label": "Partial Knee Replacement",
+    "label": "Partial Knee",
     "href": "/treatment/partial-knee-replacement"
   },
   {
-    "label": "Sports Injury & Conservative Care",
+    "label": "Knee Arthroscopy",
+    "href": "/treatment/knee-arthroscopy"
+  },
+  {
+    "label": "Sports Injury",
     "href": "/treatment/sports-injury-conservative-care"
   },
   {
-    "label": "Fracture & Trauma Treatment",
-    "href": "/treatment/fracture-trauma-treatment"
+    "label": "Arthritis Care",
+    "href": "/treatment/arthritis-treatment"
   }
 ]

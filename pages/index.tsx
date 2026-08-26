@@ -3,11 +3,11 @@ import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./page.module.css";
-import { appointmentUrl, treatments, contact, clinics, site, treatmentHref } from "@/lib/site";
+import { appointmentUrl, contact, clinics, site, treatmentHref, type Treatment } from "@/lib/site";
 import { reviews, reviewsSummary, generalFaqs } from "@/lib/content";
 import { breadcrumbSchema, canonicalUrl, faqSchema, jsonLd, physicianSchema, websiteSchema } from "@/lib/seo";
 import { toArticleSummary, type ArticleSummary } from "@/lib/blog";
-import { getArticles, getVideos, type VideoItem } from "@/lib/cms";
+import { getArticles, getTreatmentSummaries, getVideos, type VideoItem } from "@/lib/cms";
 import BookCta from "@/components/BookCta/BookCta";
 import SymptomGuide from "@/components/SymptomGuide/SymptomGuide";
 import VideoCard from "@/components/VideoCard/VideoCard";
@@ -38,17 +38,20 @@ const heroDesktopSrc = "/images/optimized/dr-anil-raheja-hero-900.png";
 export const getStaticProps: GetStaticProps<{
   blogPosts: ArticleSummary[];
   featureVideos: VideoItem[];
+  treatments: Treatment[];
 }> = async () => {
-  const [blogPosts, videos] = await Promise.all([getArticles(), getVideos()]);
-  return { props: { blogPosts: blogPosts.map(toArticleSummary), featureVideos: videos.featured } };
+  const [blogPosts, videos, treatments] = await Promise.all([getArticles(), getVideos(), getTreatmentSummaries()]);
+  return { props: { blogPosts: blogPosts.map(toArticleSummary), featureVideos: videos.featured, treatments } };
 };
 
 export default function HomePage({
   blogPosts,
   featureVideos,
+  treatments,
 }: {
   blogPosts: ArticleSummary[];
   featureVideos: VideoItem[];
+  treatments: Treatment[];
 }) {
   return (
     <>
