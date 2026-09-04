@@ -14,8 +14,8 @@ const hiddenTreatments = new Set();
 async function main() {
   loadEnv();
   if (process.env.USE_CMS === "false") throw new Error("USE_CMS=false is not allowed for treatment navigation");
-  if (!process.env.CMS_API_URL || !(process.env.CMS_ACCESS_TOKEN || process.env.CMS_API_TOKEN)) {
-    throw new Error("CMS_API_URL and CMS_ACCESS_TOKEN are required for treatment navigation");
+  if (!process.env.CMS_API_URL || !process.env.CMS_API_TOKEN) {
+    throw new Error("CMS_API_URL and CMS_API_TOKEN are required for treatment navigation");
   }
   let items = [];
   const entries = await getCollectionEntries(treatmentsCollectionSlug);

@@ -27,7 +27,7 @@ function apiBase() {
 
 export async function cmsPost(endpoint, body = {}) {
   const { CMS_API_URL } = process.env;
-  const token = process.env.CMS_ACCESS_TOKEN || process.env.CMS_API_TOKEN;
+  const token = process.env.CMS_API_TOKEN;
   if (!CMS_API_URL || !token) return null;
   try {
     const res = await fetch(`${apiBase()}/api/${endpoint}`, {
@@ -51,15 +51,7 @@ function entriesFrom(data) {
 }
 
 export async function getCollectionEntries(slug) {
-  const user = await cmsPost("user.me");
-  const userId = user?.user_id ?? user?.id;
-  const collections = await cmsPost("collection.list", userId ? { user_id: userId } : {});
-  const collection = Array.isArray(collections)
-    ? collections.find((c) => c.slug === slug || c.collection_slug === slug || c.name === slug)
-    : null;
-  const collectionId = collection?.collection_id ?? collection?.id;
-  if (!collectionId) throw new Error(`CMS collection "${slug}" not found or CMS request failed`);
-
-  const data = await cmsPost("entry.list", { collection_id: collectionId });
+  const data = await cmsPost("content.entries.list", { collection_slug: slug, page_size: 100 });
+  if (!data) throw new Error(`CMS collection "${slug}" not found or CMS request failed`);
   return entriesFrom(data);
 }

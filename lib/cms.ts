@@ -21,7 +21,7 @@ import type { Treatment } from "@/lib/site";
 
 const USE_CMS = process.env.USE_CMS !== "false";
 const CMS_API_URL = process.env.CMS_API_URL;
-const CMS_API_TOKEN = process.env.CMS_ACCESS_TOKEN || process.env.CMS_API_TOKEN;
+const CMS_API_TOKEN = process.env.CMS_API_TOKEN;
 const TREATMENTS_COLLECTION_SLUG = "treatment-new";
 const BLOGS_COLLECTION_SLUG = "blogs-new";
 const HIDDEN_TREATMENTS = new Set<string>();
@@ -37,13 +37,8 @@ function apiBase(): string {
 
 async function cmsPost(endpoint: string, body: object): Promise<any | null> {
   if (!CMS_API_URL || !CMS_API_TOKEN) return null;
-  const endpointMap: Record<string, string> = {
-    "content.entries.list": "entry.list",
-    "content.media.get": "media.list",
-  };
-  const apiEndpoint = endpointMap[endpoint] ?? endpoint;
   try {
-    const res = await fetch(`${apiBase()}/api/${apiEndpoint}`, {
+    const res = await fetch(`${apiBase()}/api/${endpoint}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -60,30 +55,10 @@ async function cmsPost(endpoint: string, body: object): Promise<any | null> {
 }
 
 const collectionCache = new Map<string, any[]>();
-const cmsCollectionsCache = new Map<string, any[]>();
-
-async function getCmsUser(): Promise<any | null> {
-  return cmsPost("user.me", {});
-}
-
-async function getCmsCollections(): Promise<any[]> {
-  if (cmsCollectionsCache.has("all")) return cmsCollectionsCache.get("all")!;
-  const user = await getCmsUser();
-  const userId = user?.user_id ?? user?.id;
-  const collections = await cmsPost("collection.list", userId ? { user_id: userId } : {});
-  const list = Array.isArray(collections) ? collections : [];
-  cmsCollectionsCache.set("all", list);
-  return list;
-}
 
 async function fetchCollection(slug: string): Promise<any[]> {
   if (collectionCache.has(slug)) return collectionCache.get(slug)!;
-  const collections = await getCmsCollections();
-  const collection = collections.find((c) => c.slug === slug || c.collection_slug === slug || c.name === slug);
-  const collectionId = collection?.collection_id ?? collection?.id;
-  const data = collectionId
-    ? await cmsPost("entry.list", { collection_id: collectionId })
-    : await cmsPost("content.entries.list", { collection_slug: slug, page_size: 100 });
+  const data = await cmsPost("content.entries.list", { collection_slug: slug, page_size: 100 });
   const entries =
     data == null ? [] : Array.isArray(data) ? data : data.entries || data.data || data.items || [];
   collectionCache.set(slug, entries);
@@ -111,12 +86,7 @@ const mediaCache = new Map<string, string | null>();
 async function mediaToLocalPath(mediaId: string): Promise<string | null> {
   if (mediaCache.has(mediaId)) return mediaCache.get(mediaId) ?? null;
   let result: string | null = null;
-  const user = await getCmsUser();
-  const userId = user?.user_id ?? user?.id;
-  const mediaList = await cmsPost("media.list", userId ? { user_id: userId } : {});
-  const media = Array.isArray(mediaList)
-    ? mediaList.find((m) => m.media_id === mediaId || m.id === mediaId)
-    : null;
+  const media = await cmsPost("content.media.get", { media_id: mediaId });
   if (media) {
     const ext = path.extname(media.filename || media.name || "") || ".jpg";
     const localPath = `/cms-images/${mediaId}${ext}`;
@@ -338,7 +308,7 @@ async function mapTreatment(item: any): Promise<TreatmentContent | null> {
 /** Treatment pages keyed by slug. CMS is required; no local fallback. */
 export async function getTreatments(): Promise<Record<string, TreatmentContent>> {
   if (!USE_CMS) throw new Error("USE_CMS=false is not allowed for treatments.");
-  if (!CMS_API_URL || !CMS_API_TOKEN) throw new Error("CMS_API_URL and CMS_ACCESS_TOKEN are required for treatments.");
+  if (!CMS_API_URL || !CMS_API_TOKEN) throw new Error("CMS_API_URL and CMS_API_TOKEN are required for treatments.");
   const entries = await fetchCollection(TREATMENTS_COLLECTION_SLUG);
   if (!entries.length) throw new Error(`CMS collection "${TREATMENTS_COLLECTION_SLUG}" has no treatment entries.`);
   const result: Record<string, TreatmentContent> = {};

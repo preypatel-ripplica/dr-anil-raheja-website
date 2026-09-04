@@ -76,27 +76,20 @@ for (const [scope, relative] of sourceFiles) {
 }
 
 async function collectCmsStrings() {
-  const cmsToken = process.env.CMS_ACCESS_TOKEN || process.env.CMS_API_TOKEN;
+  const cmsToken = process.env.CMS_API_TOKEN;
   if (!process.env.CMS_API_URL || !cmsToken) return;
   const base = (() => { try { return new URL(process.env.CMS_API_URL).origin; } catch { return process.env.CMS_API_URL.replace(/\/$/, ""); } })();
   const post = async (endpoint, body) => {
-    const mapped = endpoint === "content.entries.list" ? "entry.list" : endpoint;
-    const response = await fetch(`${base}/api/${mapped}`, {
+    const response = await fetch(`${base}/api/${endpoint}`, {
       method: "POST",
       headers: { "content-type": "application/json", authorization: `Bearer ${cmsToken}`, "ngrok-skip-browser-warning": "true" },
       body: JSON.stringify(body),
     });
-    if (!response.ok) throw new Error(`CMS request failed for ${mapped}: ${response.status}`);
+    if (!response.ok) throw new Error(`CMS request failed for ${endpoint}: ${response.status}`);
     return response.json();
   };
-  const user = await post("user.me", {});
-  const userId = user?.user_id ?? user?.id;
-  const collections = await post("collection.list", userId ? { user_id: userId } : {});
   for (const collectionName of ["blogs-new", "treatment-new", "video"]) {
-    const collection = (Array.isArray(collections) ? collections : []).find((item) => item.slug === collectionName || item.collection_slug === collectionName || item.name === collectionName);
-    const collectionId = collection?.collection_id ?? collection?.id;
-    if (!collectionId) throw new Error(`CMS collection "${collectionName}" not found`);
-    const data = collectionId ? await post("entry.list", { collection_id: collectionId }) : await post("content.entries.list", { collection_slug: collectionName, page_size: 100 });
+    const data = await post("content.entries.list", { collection_slug: collectionName, page_size: 100 });
     const entries = Array.isArray(data) ? data : data?.entries || data?.data || data?.items || [];
     const scope = collectionName === "blogs-new" ? "blog" : collectionName === "treatment-new" ? "treatments" : "shared-ui";
     const walk = (value, keyName = "") => {
